@@ -107,11 +107,11 @@
 }
 
 .footer-copyright {
+    border-top-color: rgb(182, 182, 182);
+    border-top-style: solid;
+    border-top-width: 1px;
+    padding-top: 10px;
     text-align: center;
-
-    @include breakpoint("small") {
-        text-align: left;
-    }
 
     > .powered-by {
         color: stencilColor("color-textSecondary");
