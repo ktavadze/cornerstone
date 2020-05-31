@@ -136,5 +136,18 @@
                 </td>
             </tr>
         {{/each}}
+
+        <script type="text/javascript">
+            // clean cart product titles
+            var cartTitles = document.querySelectorAll(".cart-item-name > a");
+
+            if (cartTitles.length) {
+                for (var i = 0; i < cartTitles.length; i++) {
+                    var ogTitle = cartTitles[i].innerHTML;
+                    var cleanTitle = ogTitle.substring(0, ogTitle.indexOf(' ('));
+                    cartTitles[i].innerHTML = cleanTitle;
+                }
+            }
+        </script>
     </tbody>
 </table>

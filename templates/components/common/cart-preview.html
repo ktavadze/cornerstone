@@ -41,6 +41,18 @@
                     </div>
                 </li>
             {{/each}}
+            <script type="text/javascript">
+                // clean minicart product titles
+                var previewCartTitles = document.querySelectorAll(".previewCartItem-name > a");
+
+                if (previewCartTitles.length) {
+                    for (var i = 0; i < previewCartTitles.length; i++) {
+                        var ogTitle = previewCartTitles[i].innerHTML;
+                        var cleanTitle = ogTitle.substring(0, ogTitle.indexOf(' ('));
+                        previewCartTitles[i].innerHTML = cleanTitle;
+                    }
+                }
+            </script>
         </ul>
         <div class="previewCartAction">
             {{#if cart.show_primary_checkout_button}}

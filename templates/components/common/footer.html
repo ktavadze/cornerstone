@@ -130,15 +130,37 @@
 </footer>
 
 <script type="text/javascript">
-    var header = document.querySelector("header");
-    if (window.scrollY == 0) {
-        console.log("top");
-    }
-    window.onscroll = function() {
+    configureCustomHeader()
+    cleanProductNames();
+
+    function configureCustomHeader() {
+        // initialize header state
+        var header = document.querySelector("header");
+
         if (window.scrollY == 0) {
             header.classList.remove("header-custom");
-        } else {
-            header.classList.add("header-custom");
         }
-    };
+
+        // update header state on scroll
+        window.onscroll = function() {
+            if (window.scrollY == 0) {
+                header.classList.remove("header-custom");
+            } else {
+                header.classList.add("header-custom");
+            }
+        };
+    }
+
+    function cleanProductNames() {
+        // clean plp product titles
+        var plpCardTitles = document.querySelectorAll(".card-title > a");
+
+        if (plpCardTitles.length) {
+            for (var i = 0; i < plpCardTitles.length; i++) {
+                var ogTitle = plpCardTitles[i].innerHTML;
+                var cleanTitle = ogTitle.substring(0, ogTitle.indexOf(' ('));
+                plpCardTitles[i].innerHTML = cleanTitle;
+            }
+        }
+    }
 </script>
