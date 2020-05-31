@@ -282,6 +282,10 @@
         padding: spacing("double");
     }
 
+    @include breakpoint("medium") {
+        top: 0 !important;
+    }
+
     &.is-open {
         // scss-lint:disable ImportantRule
         left: 0 !important; // 1
