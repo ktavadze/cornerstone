@@ -285,14 +285,13 @@
     @include breakpoint("medium") {
         // scss-lint:disable ImportantRule
         background-color: stencilColor("navPages-subMenu-backgroundColor");
-        padding: spacing("single") spacing("single") (spacing("single") + spacing("half")) !important;
+        opacity: 0.8;
+        padding: 1.15rem;
         position: absolute;
         text-align: left;
 
         &.is-open {
             display: block;
-            left: 0;
-            width: 100%;
         }
 
         .navPages-action-moreIcon {
@@ -340,8 +339,7 @@
 .navPage-subMenu-item {
     @include breakpoint("medium") {
         // scss-lint:disable ImportantRule
-        @include grid-column(3);
-        padding: 0 0.75rem !important; // 1
+        padding: 0;
 
         .navPages-action {
             text-transform: none;
@@ -350,7 +348,8 @@
 
         > .navPage-subMenu-action {
             border-bottom: 1px solid stencilColor("navPages-subMenu-separatorColor");
-            margin-bottom: spacing("half") + spacing("quarter");
+            padding: 0;
+            text-transform: uppercase;
         }
     }
 }
@@ -361,8 +360,6 @@
 
     @include breakpoint("medium") {
         .navPage-subMenu-action {
-            padding-left: spacing("single");
-            padding-right: spacing("single");
             width: 100%;
         }
 

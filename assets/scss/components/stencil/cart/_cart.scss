@@ -549,6 +549,15 @@ $cart-item-label-offset:                $cart-thumbnail-maxWidth + $cart-item-sp
 //
 // -----------------------------------------------------------------------------
 
+#cart-preview-dropdown {
+    max-width: 450px !important;
+
+    @include breakpoint("small") {
+        width: 300px !important;
+        max-width: 300px;
+    }
+}
+
 .previewCartList {
     @include u-listReset;
     border-collapse: collapse;

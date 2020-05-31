@@ -24,9 +24,9 @@
     z-index: zIndex("higher");
 
     @include breakpoint("medium") {
-        border-bottom: container("border");
+        background-color: transparent;
+        border-bottom: none;
         overflow: visible;
-        position: relative;
     }
 
     &.is-open {
@@ -49,7 +49,7 @@
     }
 
     @include breakpoint("medium") {
-        margin: (spacing("double") + spacing("base")) auto (spacing("double") + spacing("single"));
+        margin: 0;
         padding: 0;
 
         .header.fixed & {
@@ -178,6 +178,36 @@
 
     @include breakpoint("medium") {
         max-height: none;
+    }
+}
+
+// Custom Header
+.header-custom {
+    @include breakpoint("medium") {
+        background-color: white;
+
+        .navPages-item > .navPages-action {
+            padding: 1rem 0.75rem;
+        }
+
+        .navUser-item--account {
+            display: none;
+        }
+
+        .header-logo {
+            position: relative;
+            top: -45px;
+            left: 1.5rem;
+
+            text-align: left;
+            width: fit-content;
+            z-index: 1000;
+        }
+
+        #menu {
+            position: absolute;
+            top: 40px;
+        }
     }
 }
 

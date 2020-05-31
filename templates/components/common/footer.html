@@ -128,3 +128,17 @@
         {{/if}}
     </div>
 </footer>
+
+<script type="text/javascript">
+    var header = document.querySelector("header");
+    if (window.scrollY == 0) {
+        console.log("top");
+    }
+    window.onscroll = function() {
+        if (window.scrollY == 0) {
+            header.classList.remove("header-custom");
+        } else {
+            header.classList.add("header-custom");
+        }
+    };
+</script>
