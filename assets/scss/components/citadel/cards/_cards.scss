@@ -44,6 +44,18 @@
     display: $card-figcaption-body-display;
     pointer-events: all; // 1
     transform: translate3d(0, -50%, 0); // 2
+
+    top: 95%;
+    width: 100%;
+
+    a {
+        background-color: black !important;
+        color: white !important;
+    }
+
+    a:hover {
+        opacity: 0.75;
+    }
 }
 
 .card-image {
