@@ -119,7 +119,7 @@
     display: block;
     font-family: $fontFamily-hero;
     font-size: $fontSize-logo-small;   // 1
-    font-weight: stencilFontWeight("headings-font");
+    font-weight: 500;
     letter-spacing: remCalc(2px);
     margin-left: auto;
     margin-right: auto;
@@ -185,6 +185,7 @@
 .header-custom {
     @include breakpoint("medium") {
         background-color: white;
+        height: 90px;
 
         .navPages-item > .navPages-action {
             padding: 1rem 0.75rem;
@@ -196,12 +197,16 @@
 
         .header-logo {
             position: relative;
-            top: -45px;
+            top: -40px;
             left: 1.5rem;
 
             text-align: left;
             width: fit-content;
             z-index: 1000;
+        }
+
+        .header-logo-text {
+            font-size: 20px;
         }
 
         #menu {
