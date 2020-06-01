@@ -136,6 +136,8 @@
     function configureCustomHeader() {
         // initialize header state
         var header = document.querySelector("header");
+        var targetNavItems = document.querySelectorAll(".navPages-action.has-subMenu");
+        var activeNavItem = null;
 
         if (window.scrollY == 0) {
             header.classList.remove("header-custom");
@@ -145,10 +147,38 @@
         window.onscroll = function() {
             if (window.scrollY == 0) {
                 header.classList.remove("header-custom");
+
+                if (activeNavItem == null) {
+                    header.style.backgroundColor = "transparent";
+                } else {
+                    header.style.backgroundColor = "white";
+                }
             } else {
                 header.classList.add("header-custom");
+                header.style.backgroundColor = "white";
             }
         };
+
+        // update header background on nav item click
+        for (var i = 0; i < targetNavItems.length; i++) {
+            targetNavItems[i].onclick = function(e) {
+                if (activeNavItem == null) {
+                    activeNavItem = this;
+
+                    if (window.scrollY == 0) {
+                        header.style.backgroundColor = "white";
+                    }
+                } else if (activeNavItem == this) {
+                    activeNavItem = null;
+
+                    if (window.scrollY == 0) {
+                        header.style.backgroundColor = "transparent";
+                    }
+                } else {
+                    activeNavItem = this;
+                }
+            }
+        }
     }
 
     function cleanProductNames() {

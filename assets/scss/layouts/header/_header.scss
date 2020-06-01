@@ -18,6 +18,7 @@
 .header {
     background-color: $header-bg;
     border-bottom: container("border");
+    height: 56px;
     position: fixed;
     top: 0;
     width: 100%;
@@ -26,6 +27,7 @@
     @include breakpoint("medium") {
         background-color: transparent;
         border-bottom: none;
+        height: 140px;
         overflow: visible;
     }
 
