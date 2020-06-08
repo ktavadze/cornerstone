@@ -21,6 +21,10 @@
 .footer-info {
     @include grid-row($behavior: nest);
     font-size: 0; // 1
+
+    @include breakpoint("medium") {
+        display: flex;
+    }
 }
 
 .footer-info-col {
