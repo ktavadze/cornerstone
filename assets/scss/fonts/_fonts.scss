@@ -5,3 +5,53 @@ $fonts: $fontFamily-sans $fontFamily-serif $fontFamily-mono $fontFamily-headings
 @if contains($fonts, "'Clear Sans', sans-serif") {
     @include clear-sans;
 }
+
+@font-face {
+    font-family: "Helvetica Neue Condensed";
+    src: url("/content/HelveticaNeueLTStd-Cn.ttf");
+}
+
+@font-face {
+    font-family: "Helvetica Neue Heavy";
+    src: url("/content/HelveticaNeueLTStd-Hv.ttf");
+}
+
+@font-face {
+    font-family: "Helvetica Neue Italic";
+    src: url("/content/HelveticaNeueLTStd-It.ttf");
+}
+
+
+@font-face {
+    font-family: "Helvetica Neue Light";
+    src: url("/content/HelveticaNeueLTStd-Lt.ttf");
+}
+
+
+@font-face {
+    font-family: "Helvetica Neue Medium";
+    src: url("/content/HelveticaNeueLTStd-Md.ttf");
+}
+
+
+@font-face {
+    font-family: "Helvetica Neue Thin";
+    src: url("/content/HelveticaNeueLTStd-Th.ttf");
+}
+
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	font-family: "Helvetica Neue Light", sans-serif !important;
+}
