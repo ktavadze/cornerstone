@@ -6,40 +6,6 @@ $fonts: $fontFamily-sans $fontFamily-serif $fontFamily-mono $fontFamily-headings
     @include clear-sans;
 }
 
-@font-face {
-    font-family: "Helvetica Neue Condensed";
-    src: url("/content/HelveticaNeueLTStd-Cn.ttf");
-}
-
-@font-face {
-    font-family: "Helvetica Neue Heavy";
-    src: url("/content/HelveticaNeueLTStd-Hv.ttf");
-}
-
-@font-face {
-    font-family: "Helvetica Neue Italic";
-    src: url("/content/HelveticaNeueLTStd-It.ttf");
-}
-
-
-@font-face {
-    font-family: "Helvetica Neue Light";
-    src: url("/content/HelveticaNeueLTStd-Lt.ttf");
-}
-
-
-@font-face {
-    font-family: "Helvetica Neue Medium";
-    src: url("/content/HelveticaNeueLTStd-Md.ttf");
-}
-
-
-@font-face {
-    font-family: "Helvetica Neue Thin";
-    src: url("/content/HelveticaNeueLTStd-Th.ttf");
-}
-
-
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,

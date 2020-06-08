@@ -25,6 +25,17 @@
         {{ getFontsCollection }}
         {{{stylesheet '/assets/css/theme.css'}}}
 
+        <style type="text/css" media="screen, print">
+            @font-face {
+                font-family: "Helvetica Neue Medium";
+                src: url("{{cdn 'webdav:HelveticaNeueLTStd-Md.ttf'}}");
+            }
+            @font-face {
+                font-family: "Helvetica Neue Light";
+                src: url("{{cdn 'webdav:HelveticaNeueLTStd-Lt.ttf'}}");
+            }
+        </style>
+
         {{{head.scripts}}}
 
         {{~inject 'themeSettings' theme_settings}}
