@@ -27,7 +27,7 @@
     @include breakpoint("medium") {
         background-color: transparent;
         border-bottom: none;
-        height: 140px;
+        height: 100px;
         overflow: visible;
     }
 
@@ -51,8 +51,11 @@
     }
 
     @include breakpoint("medium") {
+        left: 1.5rem;
         margin: 0;
-        padding: 0;
+        position: absolute;
+        top: 5px;
+        z-index: 1000;
 
         .header.fixed & {
             background-color: color("greys", "lightest");
@@ -185,56 +188,13 @@
 
 // Custom Header
 .header-custom {
-    .banner-custom {
-        display: none;
-    }
-
     @include breakpoint("medium") {
         background-color: white;
         box-shadow: 0 5px 10px rgba(0,0,0,0.15);
-        height: 90px;
-
-        .navPages-item > .navPages-action {
-            padding: 1rem 0.75rem;
-        }
 
         .navUser-item--account {
             display: none;
         }
-
-        .header-logo {
-            position: relative;
-            top: -40px;
-            left: 1.5rem;
-
-            text-align: left;
-            width: fit-content;
-            z-index: 1000;
-        }
-
-        .header-logo-text {
-            font-size: 20px;
-        }
-
-        #menu {
-            position: absolute;
-            top: 40px;
-        }
-    }
-}
-
-// Custom banner
-.banner-custom {
-    display: none;
-
-    @include breakpoint("medium") {
-        position: absolute;
-        top: 13px;
-        left: 1.5rem;
-
-        display: inline;
-        font-size: 1rem;
-        font-weight: 700;
     }
 }
 

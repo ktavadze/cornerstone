@@ -45,6 +45,7 @@
     -webkit-overflow-scrolling: touch;
     position: absolute;
     right: 0;
+    text-align: center;
     z-index: zIndex("lower");
 
     @include breakpoint("medium") {
@@ -132,10 +133,6 @@
     }
 
     .navPages-item:nth-child(4) {
-        order: 5;
-    }
-
-    .navPages-item:nth-child(5) {
         order: 3;
     }
 }
@@ -262,6 +259,7 @@
 
 .navPages-action-moreIcon {
     @include square(8px);
+    display: none;
     margin-left: spacing("quarter");
     transform: rotate(-90deg);
 
