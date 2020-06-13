@@ -18,7 +18,7 @@
 .header {
     background-color: $header-bg;
     border-bottom: container("border");
-    height: 56px;
+    height: 55px;
     position: fixed;
     top: 0;
     width: 100%;
@@ -55,7 +55,7 @@
         margin: 0;
         position: absolute;
         top: 5px;
-        z-index: 1000;
+        z-index: zIndex("high");
 
         .header.fixed & {
             background-color: color("greys", "lightest");
@@ -71,11 +71,15 @@
         @include clearfix;
         color: $storeName-color;
         display: inline-block;
-        padding: $header-logo-paddingVertical 0;
+        padding: $header-logo-paddingVertical 0 0.5rem;
         position: relative;
         text-decoration: none;
         width: 60%;
         z-index: zIndex("low");
+
+        @include breakpoint("small") {
+            padding: $header-logo-paddingVertical 0;
+        }
 
         // scss-lint:disable NestingDepth
         @include breakpoint("medium") {
@@ -267,5 +271,27 @@
             transform: rotate(-45deg);
         }
 
+    }
+}
+
+.mobileMenu-search {
+    position: absolute;
+    left: 55px;
+
+    overflow: hidden;
+    width: 55px;
+    z-index: zIndex("high");
+
+    @include breakpoint("medium") {
+        display: none;
+    }
+
+    .icon {
+        height: 55px;
+        width: 1.8rem;
+    }
+
+    svg {
+        fill: #333333;
     }
 }

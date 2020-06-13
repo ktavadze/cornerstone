@@ -95,6 +95,18 @@
         margin-left: 0;
         padding-left: 0;
 
+        @media only screen and (max-width: 800px) {
+            position: absolute;
+            top: 75px;
+            right: 0;
+            bottom: 0;
+            left: 0;
+
+            background: white;
+            margin: 0;
+            overflow-y: auto;
+        }
+
         @include breakpoint("medium") {
             @include grid-row();
             border-left: 0;
@@ -428,8 +440,15 @@
 // -----------------------------------------------------------------------------
 
 .navPages-quickSearch {
-    border-bottom: container("border");
-    margin-bottom: spacing("half");
+    position: absolute;
+    top: 75px;
+    right: 4rem;
+    bottom: 0;
+    left: 4rem;
+
+    background-color: white;
+    display: none;
+    overflow: auto;
 
     @include breakpoint("medium") {
         display: none;
@@ -437,6 +456,7 @@
 
     > .container {
         padding: 0;
+        margin: 0;
     }
 
     .form {
@@ -446,6 +466,43 @@
     .form-field {
         margin-bottom: 0;
     }
+
+    .form-input {
+        border-top: none;
+        border-radius: 0;
+        border-right: none;
+        border-left: none;
+    }
+
+    .productGrid {
+        margin: 0;
+
+        .product {
+            padding: 0;
+            width: 100%
+        }
+
+        .card {
+            display: flex;
+            margin: 0;
+        }
+
+        .card-figure {
+            flex: 1;
+        }
+
+        .card-body {
+            align-items: center;
+            display: flex;
+            flex: 2;
+            flex-direction: column;
+            justify-content: center;
+        }
+    }
+}
+
+.navPages-quickSearch::-webkit-scrollbar {
+    display: none;
 }
 
 

@@ -130,15 +130,16 @@
 </footer>
 
 <script type="text/javascript">
-    configureCustomHeader()
+    configureCustomHeader();
+    configureMobileSearchAction();
     cleanProductNames();
 
     function configureCustomHeader() {
-        // initialize header state
         var header = document.querySelector("header");
         var targetNavItems = document.querySelectorAll(".navPages-action.has-subMenu");
         var activeNavItem = null;
 
+        // initialize header state
         if (window.scrollY == 0) {
             header.classList.remove("header-custom");
         }
@@ -181,10 +182,41 @@
         }
     }
 
+    function configureMobileSearchAction() {
+        var header = document.querySelector("header");
+        var navPages = document.querySelector(".navPages-container");
+        var burgerAction = document.querySelector(".mobileMenu-toggle");
+        var searchAction = document.querySelector(".mobileMenu-search");
+        var quickSearch = document.querySelector(".navPages-quickSearch");
+
+        // hide quicksearch on burger click
+        burgerAction.addEventListener("click", function(){
+            if (quickSearch.style.display === "block") {
+                header.classList.remove("is-open");
+                navPages.classList.remove("is-open");
+                quickSearch.style.display = "none";
+            }
+        });
+
+        // toggle quicksearch on search click
+        searchAction.addEventListener("click", function(){
+            if (quickSearch.style.display === "" || quickSearch.style.display === "none") {
+                header.classList.add("is-open");
+                navPages.classList.add("is-open");
+                burgerAction.classList.remove("is-open");
+                quickSearch.style.display = "block";
+            } else {
+                header.classList.remove("is-open");
+                navPages.classList.remove("is-open");
+                quickSearch.style.display = "none";
+            }
+        });
+    }
+
     function cleanProductNames() {
-        // clean plp product titles
         var plpCardTitles = document.querySelectorAll(".card-title > a");
 
+        // clean plp product titles
         if (plpCardTitles.length) {
             for (var i = 0; i < plpCardTitles.length; i++) {
                 var ogTitle = plpCardTitles[i].innerHTML;
