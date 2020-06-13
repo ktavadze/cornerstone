@@ -52,8 +52,11 @@
         background: transparent;
         display: block;
         height: auto;
+        margin: 0 150px;
         padding: 0;
         position: relative;
+        top: -45px;
+        z-index: zIndex("high");
     }
 
     &.is-open {
@@ -150,6 +153,19 @@
 
     .navPages-item:nth-child(5) {
         order: 3;
+    }
+
+    .navPages-action {
+
+        @include breakpoint("medium") {
+            font-size: 13px;
+            padding: 0.75rem 0.5rem;
+        }
+
+        @include breakpoint("large") {
+            font-size: 15px;
+            padding: 0.75rem 1.5rem;
+        }
     }
 }
 
