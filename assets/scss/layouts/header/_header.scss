@@ -199,12 +199,17 @@
 
 // Custom Header
 .header-custom {
+
+    .navUser-item--account {
+        display: none;
+    }
+
     @include breakpoint("medium") {
         background-color: white;
         box-shadow: 0 5px 10px rgba(0,0,0,0.15);
 
         .navUser-item--account {
-            display: none;
+            display: block;
         }
     }
 }

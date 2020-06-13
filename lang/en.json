@@ -148,8 +148,8 @@
         "or": "or",
         "compare": "Compare",
         "sign_up": "Register",
-        "login": "Sign in",
-        "logout": "Sign out",
+        "login": "Sign In",
+        "logout": "Sign Out",
         "account": "Account",
         "cart": "Cart",
         "search": "Search",
@@ -244,10 +244,10 @@
         }
     },
     "login": {
-        "heading": "Sign in",
+        "heading": "Sign In",
         "field_email": "Email Address:",
         "field_password": "Password:",
-        "submit_value": "Sign in",
+        "submit_value": "Sign In",
         "forgot_password": "Forgot your password?",
         "new_customer": {
             "heading": "New Customer?",

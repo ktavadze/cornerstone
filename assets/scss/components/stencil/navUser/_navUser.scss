@@ -161,10 +161,10 @@
 .navUser-item--cart {
     display: block;
     margin-top: 3px !important;
-    margin-right: 1.3rem !important;
+    margin-right: 1.25rem !important;
 
     @include breakpoint("medium") {
-        margin-top: 0 !important;
+        margin-top: 1px !important;
         margin-right: 0 !important;
     }
 
@@ -247,6 +247,32 @@
 
     .navUser-action {
         display: inline-block;
+        padding: 0 .75rem 0 0;
+    }
+
+    .icon {
+        height: 50px;
+        width: 1.8rem;
+    }
+
+    svg {
+        stroke: none;
+    }
+
+    .dropdown-menu {
+        position: absolute;
+        top: auto !important;
+        left: 44px !important;
+
+        padding: 0.75rem 1.5rem;
+        text-align: center;
+        width: 100px;
+
+        a {
+            display: block;
+            text-decoration: none;
+            line-height: 25px;
+        }
     }
 }
 
