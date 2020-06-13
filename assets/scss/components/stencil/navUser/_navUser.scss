@@ -86,7 +86,6 @@
         // scss-lint:disable NestingDepth
         svg {
             fill: stencilColor("navUser-color-hover");
-            stroke: stencilColor("navUser-color-hover");
         }
         // scss-lint:enable NestingDepth
     }
@@ -161,9 +160,17 @@
 
 .navUser-item--cart {
     display: block;
+    margin-top: 3px !important;
+    margin-right: 1.3rem !important;
+
+    @include breakpoint("medium") {
+        margin-top: 0 !important;
+        margin-right: 0 !important;
+    }
 
     .navUser-action {
         color: stencilColor("navUser-color");
+        padding: 0;
 
         // scss-lint:disable NestingDepth
         &:hover,
@@ -204,14 +211,20 @@
             }
         }
     }
+
+    .icon {
+        height: 50px;
+        width: 1.8rem;
+        margin-top: -3px;
+    }
+
+    svg {
+        stroke: none;
+    }
 }
 
 .navUser-item-cartLabel {
-    display: none;
-
-    @include breakpoint("small") {
-        display: inline;
-    }
+    display: inline;
 }
 
 .navUser-item--compare {
@@ -255,6 +268,7 @@
 // -----------------------------------------------------------------------------
 
 .navUser-action--quickSearch {
+    padding: 0 .75rem;
 
     &.is-open {
         position: relative;
@@ -271,6 +285,15 @@
             position: absolute;
             transform: translateX(-50%);
         }
+    }
+
+    .icon {
+        height: 50px;
+        width: 1.8rem;
+    }
+
+    svg {
+        stroke: none;
     }
 }
 
@@ -327,17 +350,11 @@
 // -----------------------------------------------------------------------------
 
 .countPill {
-    background-color: stencilColor("navUser-indicator-backgroundColor");
-    border-radius: 50%;
-    color: color("whites", "bright");
     display: none;
     font-size: fontSize("tiny");
     font-weight: fontWeight("bold");
-    height: 20px; // 1
-    line-height: 20px; // 1
-    margin-left: spacing("eighth");
+    padding: 0 3px;
     text-align: center;
-    width: 20px; // 1
 }
 
 .countPill--positive {
