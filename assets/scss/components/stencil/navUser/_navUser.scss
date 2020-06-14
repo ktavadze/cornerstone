@@ -25,11 +25,14 @@
     z-index: zIndex("lowest"); // 5.
 
     @include breakpoint("medium") {
-        padding: 0 spacing("single");
-        position: relative;
+        padding: 0;
+        position: static;
         right: auto;
         top: auto;
         transform: none;
+        flex-grow: 1;
+        flex-basis: 100px;
+        width: fit-content;
         z-index: zIndex("high");
     }
 
@@ -68,7 +71,10 @@
 
 .navUser-section {
     @include breakpoint("medium") {
-        position: relative; // 7
+        align-items: center;
+        display: flex;
+        height: 100%;
+        justify-content: center;
     }
 }
 
@@ -91,13 +97,13 @@
     }
 
     .icon {
-        @include square(8px);
-        margin: -1px 0 0 spacing("eighth");
+        height: $header-height;
+        width: 1.75rem;
     }
 
     svg {
         fill: stencilColor("navUser-color");
-        stroke: stencilColor("navUser-color");
+        stroke: none;
         transition: all 0.15s ease;
     }
 }
@@ -180,16 +186,13 @@
     }
 
     .dropdown-menu {
-        max-width: remCalc(320px);
+        max-width: 300px !important;
 
         // scss-lint:disable NestingDepth
         &.is-open {
-            top: auto !important; // 7
-            left: auto !important; // 7
-            right: remCalc(5px); // 7
-            @include breakpoint("medium") {
-                right: 0; // 7
-            }
+            left: auto !important;
+            top: auto !important;
+            right: 0.75rem;
 
             &:before,
             &:after {
@@ -213,13 +216,7 @@
     }
 
     .icon {
-        height: 50px;
-        width: 1.8rem;
         margin-top: -3px;
-    }
-
-    svg {
-        stroke: none;
     }
 }
 
@@ -250,23 +247,36 @@
         padding: 0 .75rem 0 0;
     }
 
-    .icon {
-        height: 50px;
-        width: 1.8rem;
-    }
-
-    svg {
-        stroke: none;
-    }
-
     .dropdown-menu {
-        position: absolute;
-        top: auto !important;
-        left: 44px !important;
-
         padding: 0.75rem 1.5rem;
         text-align: center;
-        width: 100px;
+        width: auto;
+
+        // scss-lint:disable NestingDepth
+        &.is-open {
+            left: auto !important;
+            top: auto !important;
+            right: 5rem;
+
+            &:before,
+            &:after {
+                left: auto;
+            }
+
+            &:before {
+                right: spacing("half") - remCalc(5px); // 8
+                @include breakpoint("medium") {
+                    right: spacing("half"); // 8
+                }
+            }
+
+            &:after {
+                right: spacing("half") - remCalc(3px); // 8
+                @include breakpoint("medium") {
+                    right: spacing("half") + remCalc(2px); // 8
+                }
+            }
+        }
 
         a {
             display: block;
@@ -311,15 +321,6 @@
             position: absolute;
             transform: translateX(-50%);
         }
-    }
-
-    .icon {
-        height: 50px;
-        width: 1.8rem;
-    }
-
-    svg {
-        stroke: none;
     }
 }
 
