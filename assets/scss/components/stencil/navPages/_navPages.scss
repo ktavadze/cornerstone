@@ -113,9 +113,9 @@
 
         @include breakpoint("medium") {
             @include grid-row();
-            border-left: 0;
+            display: flex;
+            flex-wrap: wrap;
             margin: auto;
-            padding-left: 0;
         }
     }
 }
@@ -142,6 +142,19 @@
 
     .navPages-item:first-child {
         order: 1;
+
+        @include breakpoint("medium") {
+            .navPage-subMenu-item {
+                flex: 1 0 10%;
+                margin: 5px;
+            }
+        }
+
+        @include breakpoint("large") {
+            .navPage-subMenu {
+                padding: 1.15rem 15%;
+            }
+        }
     }
 
     .navPages-item:nth-child(2) {
@@ -150,10 +163,34 @@
 
     .navPages-item:nth-child(3) {
         order: 4;
+
+        @include breakpoint("medium") {
+            .navPage-subMenu {
+                padding: 1.15rem 5%;
+
+                .navPage-subMenu-item {
+                    flex: 1 0 20%;
+                    margin: 5px;
+                }
+            }
+        }
+
+        @include breakpoint("large") {
+            .navPage-subMenu {
+                padding: 1.15rem 10%;
+            }
+        }
     }
 
     .navPages-item:nth-child(4) {
         order: 5;
+
+        @include breakpoint("medium") {
+            .navPage-subMenu-item {
+                flex: 1 0 10%;
+                margin: 5px;
+            }
+        }
     }
 
     .navPages-item:nth-child(5) {
@@ -256,6 +293,8 @@
 
         &.is-open {
             background-color: stencilColor("navPages-subMenu-backgroundColor");
+            border-top: 5px solid transparent;
+            border-bottom: 5px solid black;
 
             // scss-lint:disable NestingDepth
             svg {
@@ -342,7 +381,7 @@
     @include breakpoint("medium") {
         // scss-lint:disable ImportantRule
         background-color: stencilColor("navPages-subMenu-backgroundColor");
-        padding: 1.15rem 15%;
+        padding: 1.15rem 10%;
         text-align: center;
         width: 100%;
 
@@ -350,6 +389,7 @@
         left: 0;
 
         &.is-open {
+            box-shadow: 0 10px 10px rgba(0, 0, 0, 0.15);
             display: block;
         }
 

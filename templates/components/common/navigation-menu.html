@@ -3,6 +3,35 @@
         {{> components/common/quick-search}}
     </div>
     <ul class="navPages-list{{#if theme_settings.navigation_design '!==' 'simple'}} navPages-list-depth-max{{/if}}">
+        <li class="navPages-item">
+            <a class="navPages-action has-subMenu" href="/jewelry/" data-collapsible="navPages-1" aria-controls="navPages-1" aria-expanded="true">Jewelry
+                <i class="icon navPages-action-moreIcon" aria-hidden="true">
+                    <svg><use xlink:href="#icon-chevron-down"></use></svg>
+                </i>
+            </a>
+            <div class="navPage-subMenu" id="navPages-1" aria-hidden="false" tabindex="-1">
+                <ul class="navPage-subMenu-list">
+                    <li class="navPage-subMenu-item">
+                        <a class="navPage-subMenu-action navPages-action" href="/jewelry/shop-by-category/">All Jewelry</a>
+                    </li>
+                    <li class="navPage-subMenu-item">
+                        <a class="navPage-subMenu-action navPages-action" href="/jewelry/shop-by-category/earrings/">Earrings</a>
+                    </li>
+                    <li class="navPage-subMenu-item">
+                        <a class="navPage-subMenu-action navPages-action" href="/jewelry/shop-by-category/bracelets/">Bracelets</a>
+                    </li>
+                    <li class="navPage-subMenu-item">
+                        <a class="navPage-subMenu-action navPages-action" href="/jewelry/shop-by-category/necklaces/">Necklaces</a>
+                    </li>
+                    <li class="navPage-subMenu-item">
+                        <a class="navPage-subMenu-action navPages-action" href="/jewelry/shop-by-category/rings/">Rings</a>
+                    </li>
+                    <li class="navPage-subMenu-item">
+                        <a class="navPage-subMenu-action navPages-action" href="/jewelry/shop-by-category/charms/">Charms</a>
+                    </li>
+                </ul>
+            </div>
+        </li>
         {{#each categories}}
             <li class="navPages-item">
             {{#if ../theme_settings.navigation_design '===' 'simple'}}
