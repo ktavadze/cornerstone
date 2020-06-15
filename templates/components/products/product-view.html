@@ -20,7 +20,12 @@
                     var cleanTitle = ogTitle.substring(0, ogTitle.indexOf(' ('));
                     productTitle.innerHTML = cleanTitle;
                 }
+
+                console.log(product.customFields);
             </script>
+            <div class="productView-sku">
+                <span>STYLE# {{product.sku}}</span>
+            </div>
             {{#if product.brand}}
                 <h2 class="productView-brand"{{#if schema}} itemprop="brand" itemscope itemtype="http://schema.org/Brand"{{/if}}>
                     <a href="{{product.brand.url}}"{{#if schema}} itemprop="url"{{/if}}><span{{#if schema}} itemprop="name"{{/if}}>{{product.brand.name}}</span></a>
@@ -39,6 +44,7 @@
                 {{/or}}
             </div>
             {{{region name="product_below_price"}}}
+<!-- 
             <div class="productView-rating"{{#if product.num_reviews '>' 0}}{{#if schema}} itemprop="aggregateRating" itemscope itemtype="http://schema.org/AggregateRating"{{/if}}{{/if}}>
                 {{#if settings.show_product_rating}}
                     {{#if product.num_reviews '>' 0}}
@@ -69,10 +75,13 @@
                     {{> components/products/modals/writeReview}}
                 {{/if}}
             </div>
+ -->
             {{product.detail_messages}}
             <dl class="productView-info">
+<!-- 
                 <dt class="productView-info-name sku-label"{{#unless product.sku}} style="display: none;"{{/unless}}>{{lang 'products.sku'}}</dt>
                 <dd class="productView-info-value" data-product-sku{{#if schema}} itemprop="sku"{{/if}}>{{product.sku}}</dd>
+ -->
                 <dt class="productView-info-name upc-label"{{#unless product.upc}} style="display: none;"{{/unless}}>{{lang 'products.upc'}}</dt>
                 <dd class="productView-info-value" data-product-upc>{{product.upc}}</dd>
                 {{#if schema}}
@@ -152,13 +161,14 @@
                         {{> components/products/bulk-discount-rates bulk_discount_rates=product.bulk_discount_rates}}
                     </div>
                 {{/if}}
-
+<!-- 
                 {{#if theme_settings.show_custom_fields_tabs '!==' true}}
                     {{#each product.custom_fields}}
                         <dt class="productView-info-name">{{name}}:</dt>
                         <dd class="productView-info-value">{{{ sanitize value}}}</dd>
                     {{/each}}
                 {{/if}}
+ -->
             </dl>
         </div>
     </section>
@@ -256,7 +266,6 @@
                 {{> components/common/wishlist-dropdown}}
             {{/if}}
         </div>
-        {{> components/common/share}}
     </section>
 
     <article class="productView-description"{{#if schema}} itemprop="description"{{/if}}>
@@ -265,6 +274,14 @@
         {{else}}
             {{> components/products/description}}
         {{/if}}
+        <div class="productView-shipping">
+            <span>Complimentary 2-Day Shipping & Returns</span>
+        </div>
+        <div class="productView-sustainability">
+            <a href="/sustainability">Our Commitment to Sustainability</a>
+        </div>
+
+        {{> components/common/share}}
     </article>
 </div>
 
