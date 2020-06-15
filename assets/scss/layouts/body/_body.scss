@@ -13,10 +13,9 @@
     margin-top: spacing("single"); // 1
 
     @include breakpoint("medium") {
-        margin-top: 7.5rem;
+        margin-top: 5.5rem;
     }
 }
-
 
 .page {
     @include grid-row(
