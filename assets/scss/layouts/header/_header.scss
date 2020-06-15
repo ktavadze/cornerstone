@@ -25,8 +25,8 @@
     z-index: zIndex("higher");
 
     @include breakpoint("medium") {
-        background-color: transparent;
         border-bottom: none;
+        box-shadow: 0 5px 10px rgba(0,0,0,0.15);
         display: flex;
         overflow: visible;
         padding: 0 1.5rem;
@@ -199,23 +199,6 @@
 
     @include breakpoint("medium") {
         max-height: none;
-    }
-}
-
-// Custom Header
-.header-custom {
-
-    .navUser-item--account {
-        display: none;
-    }
-
-    @include breakpoint("medium") {
-        background-color: white;
-        box-shadow: 0 5px 10px rgba(0,0,0,0.15);
-
-        .navUser-item--account {
-            display: block;
-        }
     }
 }
 
