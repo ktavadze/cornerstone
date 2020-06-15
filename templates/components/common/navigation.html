@@ -64,12 +64,14 @@
                 data-dropdown="cart-preview-dropdown"
                 data-options="align:right"
                 href="{{urls.cart}}">
-                <span class="navUser-item-cartLabel">
-                    <i class="icon" aria-hidden="true">
-                        <svg><use xlink:href="#icon-bag" /></svg>
-                    </i>
+                <span class="unselectable">
+                    <span class="navUser-item-cartLabel">
+                        <i class="icon" aria-hidden="true">
+                            <svg><use xlink:href="#icon-bag" /></svg>
+                        </i>
+                    </span>
+                    &#40;<span class="countPill cart-quantity"></span>&#41;
                 </span>
-                (<span class="countPill cart-quantity"></span>)
             </a>
 
             <div class="dropdown-menu" id="cart-preview-dropdown" data-dropdown-content aria-hidden="true"></div>
