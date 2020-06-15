@@ -165,7 +165,6 @@
         // update header state on nav item click
         for (var i = 0; i < targetNavItems.length; i++) {
             targetNavItems[i].onclick = function(e) {
-                console.log(activeNavItem);
                 if (activeNavItem == null) {
                     activeNavItem = this;
 
@@ -190,7 +189,6 @@
 
         // update header state on search action click
         quickSearchAction.onclick = function(e) {
-            console.log(activeNavItem);
             if (activeNavItem == null) {
                 activeNavItem = this;
 
