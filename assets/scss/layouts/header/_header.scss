@@ -136,22 +136,17 @@
 .header-logo-text {
     display: block;
     font-family: $fontFamily-hero;
-    font-size: $fontSize-logo-small;   // 1
-    font-weight: 500;
+    font-size: $fontSize-logo-medium;
+    font-weight: bold;
     letter-spacing: remCalc(2px);
     margin-left: auto;
     margin-right: auto;
     overflow: hidden;
-    padding: remCalc(3px) 0;
+    padding-bottom: 0;
+    padding-top: 0;
     text-overflow: ellipsis;
     text-transform: uppercase;
     white-space: nowrap;
-
-    @include breakpoint("small") {
-        font-size: $fontSize-logo-medium;
-        padding-bottom: 0;
-        padding-top: 0;
-    }
 
     @include breakpoint("medium") {
         display: inline;
@@ -199,6 +194,24 @@
 
     @include breakpoint("medium") {
         max-height: none;
+    }
+}
+
+.header-clear {
+
+    @include breakpoint("medium") {
+        background-color: transparent !important;
+        box-shadow: none;
+
+        .header-logo-text,
+        .navPages-action,
+        .navUser-item--cart .navUser-action {
+            color: white;
+        }
+
+        .icon svg {
+            fill: white;
+        }
     }
 }
 

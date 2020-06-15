@@ -130,54 +130,85 @@
 </footer>
 
 <script type="text/javascript">
-    // configureCustomHeader();
     configureMobileSearchAction();
     cleanProductNames();
 
+    // RUNS ONLY ON HOME PAGE
     function configureCustomHeader() {
         var header = document.querySelector("header");
         var targetNavItems = document.querySelectorAll(".navPages-action.has-subMenu");
+        var quickSearchAction = document.querySelector(".navUser-action--quickSearch");
+        var quickSearchDropdown = document.querySelector(".dropdown--quickSearch");
         var activeNavItem = null;
 
         // initialize header state
         if (window.scrollY == 0) {
-            header.classList.remove("header-custom");
+            header.classList.add("header-clear");
         }
 
         // update header state on scroll
         window.onscroll = function() {
             if (window.scrollY == 0) {
-                header.classList.remove("header-custom");
+                header.classList.add("header-clear");
 
                 if (activeNavItem == null) {
-                    header.style.backgroundColor = "transparent";
+                    header.classList.add("header-clear");
                 } else {
-                    header.style.backgroundColor = "white";
+                    header.classList.remove("header-clear");
                 }
             } else {
-                header.classList.add("header-custom");
+                header.classList.remove("header-clear");
                 header.style.backgroundColor = "white";
             }
         };
 
-        // update header background on nav item click
+        // update header state on nav item click
         for (var i = 0; i < targetNavItems.length; i++) {
             targetNavItems[i].onclick = function(e) {
+                console.log(activeNavItem);
                 if (activeNavItem == null) {
                     activeNavItem = this;
 
                     if (window.scrollY == 0) {
-                        header.style.backgroundColor = "white";
+                        header.classList.remove("header-clear");
                     }
                 } else if (activeNavItem == this) {
                     activeNavItem = null;
 
                     if (window.scrollY == 0) {
-                        header.style.backgroundColor = "transparent";
+                        header.classList.add("header-clear");
                     }
                 } else {
+                    if (activeNavItem == quickSearchAction) {
+                        quickSearchDropdown.classList.remove("is-open");
+                    }
+
                     activeNavItem = this;
                 }
+            }
+        }
+
+        // update header state on search action click
+        quickSearchAction.onclick = function(e) {
+            console.log(activeNavItem);
+            if (activeNavItem == null) {
+                activeNavItem = this;
+
+                if (window.scrollY == 0) {
+                    header.classList.remove("header-clear");
+                }
+            } else if (activeNavItem == this) {
+                activeNavItem = null;
+
+                if (window.scrollY == 0) {
+                    header.classList.add("header-clear");
+                }
+            } else {
+                activeNavItem.click();
+
+                header.classList.remove("header-clear");
+
+                activeNavItem = this;
             }
         }
     }
