@@ -130,11 +130,12 @@
 </footer>
 
 <script type="text/javascript">
-    configureMobileSearchAction();
+    configureSearchActionMobile();
+    configureSearchActionDesktop();
     cleanProductNames();
 
     // RUNS ONLY ON HOME PAGE
-    function configureCustomHeader() {
+    function configureClearHeader() {
         var header = document.querySelector("header");
         var targetNavItems = document.querySelectorAll(".navPages-action.has-subMenu");
         var quickSearchAction = document.querySelector(".navUser-action--quickSearch");
@@ -211,12 +212,13 @@
         }
     }
 
-    function configureMobileSearchAction() {
+    function configureSearchActionMobile() {
         var header = document.querySelector("header");
         var navPages = document.querySelector(".navPages-container");
         var burgerAction = document.querySelector(".mobileMenu-toggle");
         var searchAction = document.querySelector(".mobileMenu-search");
         var quickSearch = document.querySelector(".navPages-quickSearch");
+        var quickSearchInput = document.querySelector(".navPages-quickSearch #search_query");
 
         // hide quicksearch on burger click
         burgerAction.addEventListener("click", function(){
@@ -227,18 +229,35 @@
             }
         });
 
-        // toggle quicksearch on search click
+        // toggle quicksearch and focus on search input on search click
         searchAction.addEventListener("click", function(){
             if (quickSearch.style.display === "" || quickSearch.style.display === "none") {
                 header.classList.add("is-open");
                 navPages.classList.add("is-open");
                 burgerAction.classList.remove("is-open");
                 quickSearch.style.display = "block";
+
+                // focus on search input
+                setTimeout(function () {
+                    quickSearchInput.focus();
+                }, 100);
             } else {
                 header.classList.remove("is-open");
                 navPages.classList.remove("is-open");
                 quickSearch.style.display = "none";
             }
+        });
+    }
+
+    function configureSearchActionDesktop() {
+        var quickSearchAction = document.querySelector(".navUser-action--quickSearch");
+        var quickSearchInput = document.querySelector(".dropdown--quickSearch #search_query");
+
+        // focus on search input on search click
+        quickSearchAction.addEventListener("click", function() {
+            setTimeout(function () {
+                quickSearchInput.focus();
+            }, 100);
         });
     }
 
