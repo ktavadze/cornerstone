@@ -1,3 +1,6 @@
+<div class="js-maker-enhance-static-mount" id="js-maker-static-enhance-v1-e379765a-8fd3-11ea-bc55-0242ac130003-microsite" style="height: auto; width: 100%;"
+data-microsite></div>
+
 <div class="productView" {{#if settings.data_tag_enabled}} data-event-type="product" data-entity-id="{{product.id}}" data-name="{{product.title}}" data-product-category="{{#each product.category}}{{#if @last}}{{this}}{{else}}{{this}}, {{/if}}{{/each}}" data-product-brand="{{product.brand.name}}" data-product-price="{{#if product.price.with_tax}}{{product.price.with_tax.value}}{{else}}{{product.price.without_tax.value}}{{/if}}" data-product-variant="single-product-option"{{/if}}>
 {{#each product.reviews.messages}}
         {{#if error}}
@@ -292,3 +295,5 @@
     <div class="modal-content"></div>
     <div class="loadingOverlay"></div>
 </div>
+
+<div class="js-maker-enhance-static-mount" id="js-maker-static-enhance-v1-e379765a-8fd3-11ea-bc55-0242ac130003" style="height: auto; width: 100%;"></div>
