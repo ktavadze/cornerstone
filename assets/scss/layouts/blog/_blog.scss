@@ -85,16 +85,4 @@
     margin: 0 auto;
     text-align: center;
     width: 100%;
-
-    @include breakpoint("small") {
-        width: grid-calc(10, $total-columns);
-    }
-
-    @include breakpoint("medium") {
-        width: grid-calc(8, $total-columns);
-    }
-
-    @include breakpoint("large") {
-        width: grid-calc(6, $total-columns);
-    }
 }
