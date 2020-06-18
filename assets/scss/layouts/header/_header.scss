@@ -80,6 +80,7 @@
         @include clearfix;
         color: $storeName-color;
         display: inline-block;
+        height: 100%;
         padding: $header-logo-paddingVertical 0 0.5rem;
         position: relative;
         text-decoration: none;
@@ -167,6 +168,7 @@
 }
 
 .header-logo-image-container {
+    height: 100%;
     position: relative;
 }
 
@@ -182,10 +184,18 @@
 
 .header-logo-image {
     @include lazy-loaded-img;
-    max-height: remCalc($header-height) - $header-logo-marginVertical * 2;
+    height: auto;
+    max-height: 20px;
+    width: auto;
 
     @include breakpoint("medium") {
-        max-height: none;
+        max-height: 15px;
+        right: auto;
+    }
+
+    @include breakpoint("large") {
+        max-height: 20px;
+        right: auto;
     }
 }
 
@@ -195,6 +205,10 @@
     @include breakpoint("medium") {
         max-height: none;
     }
+}
+
+.header-logo-image.white {
+    display: none;
 }
 
 .header-clear {
@@ -211,6 +225,14 @@
 
         .icon svg {
             fill: white;
+        }
+
+        .header-logo-image.black {
+            display: none;
+        }
+
+        .header-logo-image.white {
+            display: inline-block;
         }
     }
 }

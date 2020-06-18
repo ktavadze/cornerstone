@@ -4,7 +4,8 @@
             <img class="header-logo-image-unknown-size" src="{{getImage settings.store_logo.image 'logo_size'}}" alt="{{settings.store_logo.title}}" title="{{settings.store_logo.title}}">
         {{else}}
             <div class="header-logo-image-container">
-                <img class="header-logo-image" src="{{getImage settings.store_logo.image 'logo_size'}}" alt="{{settings.store_logo.title}}" title="{{settings.store_logo.title}}">
+                <img class="header-logo-image black" src="{{cdn 'assets/img/ippolita_logo_black.png'}}" alt="{{settings.store_logo.title}}" title="{{settings.store_logo.title}}">
+                <img class="header-logo-image white" src="{{cdn 'assets/img/ippolita_logo_white.png'}}" alt="{{settings.store_logo.title}}" title="{{settings.store_logo.title}}">
             </div>
         {{/if}}
     {{else}}
