@@ -28,6 +28,10 @@
     padding-bottom: 0;
 }
 
+.productView-collection {
+    margin: 0;
+}
+
 .productView-images {
     @include grid-column(12);
     padding-left: spacing("base");

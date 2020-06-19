@@ -141,11 +141,7 @@
 
 .productView-title {
     font-size: fontSize("small");
-    margin: -(spacing("half")) 0 spacing("quarter");
-
-    @include breakpoint("medium") {
-        margin-top: spacing("single");
-    }
+    margin: 0.25rem 0;
 
     @include breakpoint("large") {
         font-size: fontSize("largest");
@@ -177,11 +173,11 @@
 
 .productView-price {
     font-size: fontSize("smaller");
-    margin-bottom: spacing("third");
+    font-weight: bold;
+    margin: spacing("third") 0;
 
     @include breakpoint("medium") {
-        font-size: fontSize("larger");
-        margin-bottom: spacing("base");
+        margin: spacing("base") 0;
     }
 
     .price-section--saving {
