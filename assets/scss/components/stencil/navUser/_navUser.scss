@@ -339,12 +339,13 @@
 
 .dropdown--quickSearch {
     background-color: $dropdown--quickSearch-backgroundColor;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.15);
     display: none;
-    padding: spacing("single");
+    padding: spacing("single") 0 spacing("double");
 
     &.is-open {
         // scss-lint:disable ImportantRule
-        position: absolute;
+        position: fixed;
         top: $header-height !important;
         right: 0 !important;
         left: 0 !important;
@@ -378,12 +379,12 @@
 
     .quickSearchResults {
         position: fixed;
-        top: 125px !important;
+        top: 160px !important;
         right: 0 !important;
         bottom: 0 !important;
         left: 0 !important;
 
-        background-color: white;
+        background-color: transparent;
         overflow: auto;
     }
 
@@ -396,26 +397,57 @@
     }
 
     .productGrid {
-        margin-left: auto;
-        margin-right: auto;
-        max-width: layout("max") + ($container-padding * 5);
-        padding: 0 $container-padding * 4;
+        position: relative;
+        top: 0 !important;
+        right: 0 !important;
+        bottom: 0 !important;
+        left: 0 !important;
 
-        @include breakpoint("large") {
-            padding: 0 ($container-padding * 10);
-        }
+        background-color: white;
+        box-shadow: 0 10px 10px rgba(0, 0, 0, 0.15);
+        margin: auto;
+        opacity: 0.95;
+        overflow: auto;
 
         .product {
-            width: 50%;
+            display: block;
+            margin: auto;
+            padding: 0;
+            width: 100%;
         }
 
         .card {
+            border-bottom: none;
+            border-left: 5px solid #ffffff;
+            border-right: 5px solid #ffffff;
+            border-top: none;
             display: flex;
             margin: 0;
         }
 
+        .card:hover {
+            border-left: 5px solid #333333;
+            border-right: 5px solid #333333;
+
+            .card-body {
+                background-color: white;
+            }
+
+            .card-title > a {
+                color: #333333;
+            }
+
+            .card-text .price {
+                color: #333333;
+            }
+        }
+
         .card-figure {
             flex: 1;
+        }
+
+        .card-figcaption-body {
+            display: none;
         }
 
         .card-body {
@@ -426,9 +458,13 @@
             justify-content: center;
         }
 
-        .card-text {
-            display: none;
+        .card-title {
+            text-align: center;
         }
+    }
+
+    .productGrid::-webkit-scrollbar {
+        display: none;
     }
 }
 

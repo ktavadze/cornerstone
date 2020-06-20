@@ -5,3 +5,19 @@
     </li>
     {{/each}}
 </ul>
+<script type="text/javascript">
+    var productCardTitles = document.querySelectorAll(".card-title > a");
+
+    // clean product card titles
+    if (productCardTitles.length) {
+        for (var i = 0; i < productCardTitles.length; i++) {
+            var ogTitle = productCardTitles[i].innerHTML;
+            
+            if (ogTitle.includes(" (")) {
+                var cleanTitle = ogTitle.substring(0, ogTitle.indexOf(' ('));
+
+                productCardTitles[i].innerHTML = cleanTitle;
+            }
+        }
+    }
+</script

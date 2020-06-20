@@ -259,17 +259,27 @@
                 quickSearchInput.focus();
             }, 100);
         });
+
+         // document.addEventListener("click", function(e) {
+         //    if (e.target && e.target.className == "quickSearchResults") {
+         //        quickSearchAction.click();
+         //    }
+         // });
     }
 
     function cleanProductNames() {
-        var plpCardTitles = document.querySelectorAll(".card-title > a");
+        var productTitles = document.querySelectorAll(".card-title > a");
 
-        // clean plp product titles
-        if (plpCardTitles.length) {
-            for (var i = 0; i < plpCardTitles.length; i++) {
-                var ogTitle = plpCardTitles[i].innerHTML;
-                var cleanTitle = ogTitle.substring(0, ogTitle.indexOf(' ('));
-                plpCardTitles[i].innerHTML = cleanTitle;
+        // clean product titles
+        if (productTitles.length) {
+            for (var i = 0; i < productTitles.length; i++) {
+                var ogTitle = productTitles[i].innerHTML;
+                
+                if (ogTitle.includes(" (")) {
+                    var cleanTitle = ogTitle.substring(0, ogTitle.indexOf(' ('));
+
+                    productTitles[i].innerHTML = cleanTitle;
+                }
             }
         }
     }

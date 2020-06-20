@@ -24,8 +24,12 @@
 
                 if (productTitle) {
                     var ogTitle = productTitle.innerHTML;
-                    var cleanTitle = ogTitle.substring(0, ogTitle.indexOf(' ('));
-                    productTitle.innerHTML = cleanTitle;
+
+                    if (ogTitle.includes(" (")) {
+                        var cleanTitle = ogTitle.substring(0, ogTitle.indexOf(' ('));
+
+                        productTitle.innerHTML = cleanTitle;
+                    }
                 }
             </script>
             <div class="productView-sku">
