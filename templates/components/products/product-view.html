@@ -1,5 +1,4 @@
-<div class="js-maker-enhance-static-mount" id="js-maker-static-enhance-v1-e379765a-8fd3-11ea-bc55-0242ac130003-microsite" style="height: auto; width: 100%;"
-data-microsite></div>
+<div class="js-maker-enhance-static-mount" id="js-maker-static-enhance-v1-e379765a-8fd3-11ea-bc55-0242ac130003-microsite" style="height: auto; width: 100%;" data-microsite></div>
 
 <div class="productView" {{#if settings.data_tag_enabled}} data-event-type="product" data-entity-id="{{product.id}}" data-name="{{product.title}}" data-product-category="{{#each product.category}}{{#if @last}}{{this}}{{else}}{{this}}, {{/if}}{{/each}}" data-product-brand="{{product.brand.name}}" data-product-price="{{#if product.price.with_tax}}{{product.price.with_tax.value}}{{else}}{{product.price.without_tax.value}}{{/if}}" data-product-variant="single-product-option"{{/if}}>
 {{#each product.reviews.messages}}
@@ -13,7 +12,11 @@ data-microsite></div>
 
     <section class="productView-details">
         <div class="productView-product">
-            <h5 class="productView-collection">{{product.custom_fields.5.value}}</h5>
+            <h5 class="productView-collection">
+                {{#filter product.custom_fields "Collection" property='name' }}
+                    {{value}}
+                {{/filter}}
+            </h5>
             <h1 class="productView-title" {{#if schema}}itemprop="name"{{/if}}>{{product.title}}</h1>
             <script type="text/javascript">
                 // clean pdp product titles
@@ -24,8 +27,6 @@ data-microsite></div>
                     var cleanTitle = ogTitle.substring(0, ogTitle.indexOf(' ('));
                     productTitle.innerHTML = cleanTitle;
                 }
-
-                console.log(product.customFields);
             </script>
             <div class="productView-sku">
                 <span>STYLE# {{product.sku}}</span>
