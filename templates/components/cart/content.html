@@ -144,7 +144,8 @@
             if (cartTitles.length) {
                 for (var i = 0; i < cartTitles.length; i++) {
                     var ogTitle = cartTitles[i].innerHTML;
-                    var cleanTitle = ogTitle.substring(0, ogTitle.indexOf(' ('));
+                    var cleanTitle = ogTitle.substring(0, ogTitle.lastIndexOf(" "));
+
                     cartTitles[i].innerHTML = cleanTitle;
                 }
             }

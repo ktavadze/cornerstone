@@ -48,7 +48,8 @@
                 if (previewCartTitles.length) {
                     for (var i = 0; i < previewCartTitles.length; i++) {
                         var ogTitle = previewCartTitles[i].innerHTML;
-                        var cleanTitle = ogTitle.substring(0, ogTitle.indexOf(' ('));
+                        var cleanTitle = ogTitle.substring(0, ogTitle.lastIndexOf(" "));
+
                         previewCartTitles[i].innerHTML = cleanTitle;
                     }
                 }
