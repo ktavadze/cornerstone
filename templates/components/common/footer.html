@@ -132,7 +132,6 @@
 <script type="text/javascript">
     configureSearchActionMobile();
     configureSearchActionDesktop();
-    cleanProductNames();
 
     // RUNS ONLY ON HOME PAGE
     function configureClearHeader() {
@@ -265,22 +264,5 @@
                 quickSearchAction.click();
             }
          });
-    }
-
-    function cleanProductNames() {
-        var productTitles = document.querySelectorAll(".card-title > a");
-
-        // clean product titles
-        if (productTitles.length) {
-            for (var i = 0; i < productTitles.length; i++) {
-                var ogTitle = productTitles[i].innerHTML;
-                
-                if (ogTitle.includes(" (")) {
-                    var cleanTitle = ogTitle.substring(0, ogTitle.indexOf(' ('));
-
-                    productTitles[i].innerHTML = cleanTitle;
-                }
-            }
-        }
     }
 </script>
