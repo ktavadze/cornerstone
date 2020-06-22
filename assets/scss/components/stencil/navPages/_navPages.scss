@@ -140,10 +140,22 @@
         padding-top: spacing("half");
     }
 
-    .navPages-item:first-child {
-        order: 1;
+    .navPages-item:first-child,
+    .navPages-item:nth-child(5),
+    .navPages-item:nth-child(7) {
+        display: block;
 
         @include breakpoint("medium") {
+            display: none;
+        }
+    }
+
+    .navPages-item:nth-child(2) {
+        display: none;
+
+        @include breakpoint("medium") {
+            display: inline-block;
+
             .navPage-subMenu-item {
                 flex: 1 0 10%;
                 margin: 5px;
@@ -157,14 +169,12 @@
         }
     }
 
-    .navPages-item:nth-child(2) {
-        order: 2;
-    }
-
-    .navPages-item:nth-child(3) {
-        order: 4;
+    .navPages-item:nth-child(6) {
+        display: none;
 
         @include breakpoint("medium") {
+            display: inline-block;
+
             .navPage-subMenu {
                 padding: 1.15rem 5%;
 
@@ -182,10 +192,12 @@
         }
     }
 
-    .navPages-item:nth-child(4) {
-        order: 5;
+    .navPages-item:last-child {
+        display: none;
 
         @include breakpoint("medium") {
+            display: inline-block;
+
             .navPage-subMenu-item {
                 flex: 1 0 10%;
                 margin: 5px;
@@ -193,12 +205,7 @@
         }
     }
 
-    .navPages-item:nth-child(5) {
-        order: 3;
-    }
-
     .navPages-action {
-
         @include breakpoint("medium") {
             font-size: 13px;
             padding: 0.75rem 0.5rem;
@@ -294,7 +301,7 @@
         &.is-open {
             background-color: stencilColor("navPages-subMenu-backgroundColor");
             border-top: 5px solid transparent;
-            border-bottom: 5px solid black;
+            border-bottom: 5px solid transparent;
 
             // scss-lint:disable NestingDepth
             svg {
@@ -377,25 +384,31 @@
 .navPage-subMenu {
     display: none;
     outline: 0;
+    z-index: 51;
 
     @include breakpoint("medium") {
         // scss-lint:disable ImportantRule
         background-color: stencilColor("navPages-subMenu-backgroundColor");
+        box-shadow: 0 10px 10px rgba(0, 0, 0, 0.15);
         padding: 1.15rem 10%;
         text-align: center;
         width: 100%;
 
-        position: absolute;
+        position: fixed;
+        top: 50px;
         left: 0;
 
         &.is-open {
-            box-shadow: 0 10px 10px rgba(0, 0, 0, 0.15);
             display: block;
         }
 
         .navPages-action-moreIcon {
             display: none;
         }
+    }
+
+    @include breakpoint("large") {
+        top: 52px;
     }
 
     &.is-open {
@@ -576,8 +589,16 @@
 // -----------------------------------------------------------------------------
 
 .navPages-list--user {
+    .navPages-item:first-child {
+        display: block;
+    }
+
     @include breakpoint("medium") {
         display: none;
+
+        .navPages-item:first-child {
+            display: block;
+        }
     }
 
     // scss-lint:disable SelectorDepth, NestingDepth, IdSelector
