@@ -512,9 +512,9 @@
 .navPages-quickSearch {
     position: absolute;
     top: 75px;
-    right: 4rem;
+    right: 1rem;
     bottom: 0;
-    left: 4rem;
+    left: 1rem;
 
     background-color: white;
     display: none;
@@ -549,28 +549,37 @@
 
         .product {
             padding: 0;
-            width: 100%;
+            width: 50%;
         }
 
         .card {
-            display: flex;
+            border: none;
             margin: 0;
+
+            .card-figure {
+                display: block;
+            }
+
+            .card-body {
+                text-align: left;
+            }
+
+            .card-collection,
+            .card-title > a,
+            .card-text .price {
+                font-size: 13px;
+            }
         }
 
-        .card-figure {
-            flex: 1;
-        }
+        .card:hover {
+            .card-body {
+                background-color: white;
+            }
 
-        .card-body {
-            align-items: center;
-            display: flex;
-            flex: 2;
-            flex-direction: column;
-            justify-content: center;
-        }
-
-        .card-text {
-            display: none;
+            .card-title > a,
+            .card-text .price {
+                color: #333333;
+            }
         }
     }
 }
