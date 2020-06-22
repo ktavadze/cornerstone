@@ -208,12 +208,12 @@
     .navPages-action {
         @include breakpoint("medium") {
             font-size: 13px;
-            padding: 0.75rem 0.5rem;
+            padding: 1.1rem 0.5rem;
         }
 
         @include breakpoint("large") {
             font-size: 15px;
-            padding: 0.75rem 1.5rem;
+            padding: 1rem 1.5rem;
         }
     }
 }
@@ -395,7 +395,7 @@
         width: 100%;
 
         position: fixed;
-        top: 50px;
+        top: 55px;
         left: 0;
 
         &.is-open {
@@ -405,10 +405,6 @@
         .navPages-action-moreIcon {
             display: none;
         }
-    }
-
-    @include breakpoint("large") {
-        top: 52px;
     }
 
     &.is-open {

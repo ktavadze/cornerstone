@@ -30,6 +30,10 @@
         display: flex;
         overflow: visible;
         padding: 0 1.5rem;
+
+        .navPages-item:hover {
+            border-bottom: 5px solid black;
+        }
     }
 
     &.is-open {
@@ -233,6 +237,11 @@
 
         .header-logo-image.white {
             display: inline-block;
+        }
+
+        .navPages-item:nth-child(3):hover,
+        .navPages-item:nth-child(4):hover {
+            border-bottom: 5px solid white;
         }
     }
 }

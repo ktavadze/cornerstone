@@ -191,8 +191,6 @@
                 var quickSearchDropdown = document.querySelector(".dropdown--quickSearch");
                 var subMenu = e.target.querySelector(".navPage-subMenu");
 
-                e.target.style.borderBottom = "5px solid black";
-
                 if (quickSearchDropdown.classList.contains("is-open")) {
                     quickSearchAction.click();
                 }
@@ -204,8 +202,6 @@
 
             targetNavItems[i].addEventListener("mouseleave", function(e) {
                 var subMenu = e.target.querySelector(".navPage-subMenu");
-
-                e.target.style.borderBottom = "none";
 
                 if (subMenu) {
                     subMenu.classList.remove("is-open");
