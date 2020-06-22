@@ -22,7 +22,7 @@
     position: fixed;
     top: 0;
     width: 100%;
-    z-index: zIndex("higher");
+    z-index: 101;
 
     @include breakpoint("medium") {
         border-bottom: none;
