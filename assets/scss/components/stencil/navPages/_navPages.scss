@@ -206,14 +206,17 @@
     }
 
     .navPages-action {
+        letter-spacing: .15em;
+
         @include breakpoint("medium") {
             font-size: 13px;
+            letter-spacing: normal;
             padding: 1.1rem 0.5rem;
         }
 
         @include breakpoint("large") {
-            font-size: 15px;
-            padding: 1rem 1.5rem;
+            letter-spacing: .15em;
+            padding: 1.1rem 1.5rem;
         }
     }
 }
