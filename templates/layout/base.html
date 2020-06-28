@@ -90,6 +90,24 @@
                         var product_name_clean = product_name.substring(0, product_name.lastIndexOf(" "));
                         $(this).find('.isp_product_title').html(product_name_clean);
                     });
+                },
+                isp_serp_quickview_callback: function() {
+                    var qv_title = $('.isp_quick_view_title');
+                    var p_id = qv_title.attr('product_id');
+                    var product_data = ISP_PRODUCTS[p_id];
+
+                    for (var i = 0; i < product_data.att.length; i++) {
+                        if (product_data.att[i][0] == "Collection") {
+                            var product_collection = product_data.att[i][1];
+                            $('.isp_quick_view_content_right')
+                                .prepend('<div class="isp_quick_view_collection">' + product_collection + '</div>');
+                            break;
+                        }
+                    }
+
+                    var product_name = product_data.l;
+                    var product_name_clean = product_name.substring(0, product_name.lastIndexOf(" "));
+                    qv_title.html(product_name_clean);
                 }
             }
             var isp_related_options = {
