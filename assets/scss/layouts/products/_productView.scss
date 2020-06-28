@@ -78,3 +78,31 @@
 .productView-sustainability {
     margin: 1rem 0;
 }
+
+// ISP recommendations
+.isp_related_wrapper {
+    .isp_related_title {
+        border-bottom: 1px solid #e5e5e5;
+        font-weight: bold;
+        padding: 10px 0;
+        text-align: left;
+        text-transform: none;
+        margin-bottom: 20px;
+
+        @include breakpoint("medium") {
+            padding: 10px;
+        }
+    }
+
+    .isp_related_product_info,
+    .isp_related_product_price {
+        margin-top: 0 !important;
+        text-align: left !important;
+    }
+
+    .slick-arrow,
+    .isp_add_to_cart_btn,
+    .isp_product_quick_view_button {
+        display: none !important;
+    }
+}

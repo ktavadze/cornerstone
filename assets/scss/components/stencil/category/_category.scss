@@ -9,3 +9,16 @@
 .category-header-image {
     width: 100%;
 }
+
+// ISP quick view
+@media screen and (min-width: 769) {
+    .isp_quick_view_content_wrapper {
+        align-items: center;
+        display: flex;
+        justify-content: center;
+    }
+
+    .isp_quick_view_content_right {
+        padding-top: 25px;
+    }
+}
