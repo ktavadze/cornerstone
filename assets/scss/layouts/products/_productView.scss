@@ -81,6 +81,28 @@
 
 // ISP recommendations
 .isp_related_wrapper {
+    .slick-prev::before,
+    .slick-next::before {
+        background-image: none !important;
+    }
+
+    .slick-prev,
+    .slick-next {
+        display: none !important;
+
+        @include breakpoint("large") {
+            display: block !important;
+        }
+    }
+
+    .slick-prev {
+        left: -50px !important;
+    }
+
+    .slick-next {
+        right: -50px !important;
+    }
+
     .isp_related_title {
         border-bottom: 1px solid #e5e5e5;
         font-weight: bold;
@@ -100,7 +122,6 @@
         text-align: left !important;
     }
 
-    .slick-arrow,
     .isp_add_to_cart_btn,
     .isp_product_quick_view_button {
         display: none !important;
