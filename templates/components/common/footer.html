@@ -141,9 +141,9 @@
         var quickSearchAction = document.querySelector(".navUser-action--quickSearch");
         var quickSearchDropdown = document.querySelector(".dropdown--quickSearch");
         var jewelryAction = document.querySelector(".navPages-item:nth-child(2)");
-        var collectionsAction = document.querySelector(".navPages-item:nth-child(6)");
+        var worldAction = document.querySelector(".navPages-item:nth-child(5)");
         var giftsAction = document.querySelector(".navPages-item:last-child");
-        var targetNavItems = [jewelryAction, collectionsAction, giftsAction];
+        var targetNavItems = [jewelryAction, worldAction, giftsAction];
         var activeNavItem = null;
 
         // initialize header state
@@ -216,9 +216,9 @@
     function configureHeader() {
         var header = document.querySelector("header");
         var jewelryAction = document.querySelector(".navPages-item:nth-child(2)");
-        var collectionsAction = document.querySelector(".navPages-item:nth-child(6)");
+        var worldAction = document.querySelector(".navPages-item:nth-child(5)");
         var giftsAction = document.querySelector(".navPages-item:last-child");
-        var targetNavItems = [jewelryAction, collectionsAction, giftsAction];
+        var targetNavItems = [jewelryAction, worldAction, giftsAction];
 
         for (var i = 0; i < targetNavItems.length; i++) {
             targetNavItems[i].addEventListener("mouseenter", function(e) {

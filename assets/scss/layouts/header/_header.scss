@@ -32,7 +32,8 @@
         padding: 0 1.5rem;
 
         .navPages-item:hover {
-            border-bottom: 5px solid black;
+            margin-top: 4px;
+            border-bottom: 4px solid black;
         }
     }
 
@@ -240,8 +241,8 @@
         }
 
         .navPages-item:nth-child(3):hover,
-        .navPages-item:nth-child(4):hover {
-            border-bottom: 5px solid white;
+        .navPages-item:nth-child(6):hover {
+            border-bottom: 4px solid white;
         }
     }
 }

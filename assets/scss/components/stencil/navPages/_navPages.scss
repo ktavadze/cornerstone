@@ -141,7 +141,7 @@
     }
 
     .navPages-item:first-child,
-    .navPages-item:nth-child(5),
+    .navPages-item:nth-child(4),
     .navPages-item:nth-child(7) {
         display: block;
 
@@ -150,7 +150,8 @@
         }
     }
 
-    .navPages-item:nth-child(2) {
+    .navPages-item:nth-child(2),
+    .navPages-item:nth-child(5) {
         display: none;
 
         @include breakpoint("medium") {
@@ -165,29 +166,6 @@
         @include breakpoint("large") {
             .navPage-subMenu {
                 padding: 1.15rem 15%;
-            }
-        }
-    }
-
-    .navPages-item:nth-child(6) {
-        display: none;
-
-        @include breakpoint("medium") {
-            display: inline-block;
-
-            .navPage-subMenu {
-                padding: 1.15rem 5%;
-
-                .navPage-subMenu-item {
-                    flex: 1 0 20%;
-                    margin: 5px;
-                }
-            }
-        }
-
-        @include breakpoint("large") {
-            .navPage-subMenu {
-                padding: 1.15rem 10%;
             }
         }
     }
@@ -211,12 +189,12 @@
         @include breakpoint("medium") {
             font-size: 13px;
             letter-spacing: normal;
-            padding: 1.1rem 0.5rem;
+            padding: 1rem 0.5rem;
         }
 
         @include breakpoint("large") {
             letter-spacing: .15em;
-            padding: 1.1rem 1.5rem;
+            padding: 1rem 1.5rem;
         }
     }
 }
@@ -303,8 +281,6 @@
 
         &.is-open {
             background-color: stencilColor("navPages-subMenu-backgroundColor");
-            border-top: 5px solid transparent;
-            border-bottom: 5px solid transparent;
 
             // scss-lint:disable NestingDepth
             svg {
