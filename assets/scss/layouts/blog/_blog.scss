@@ -36,6 +36,10 @@
     // scss-lint:enable SelectorFormat
 }
 
+.blog-header {
+    display: none;
+}
+
 .blog-title {
     font-size: fontSize("large");
     margin: 0 spacing("single") spacing("quarter");
