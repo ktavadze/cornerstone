@@ -103,6 +103,20 @@ body > div#isp_product_quick_view_model .isp_quick_view_content_right {
   background-color: white !important;
 }
 
+body > div#isp_product_quick_view_model .isp_quick_view_content_right .isp_quick_view_info_bar {
+  display: none !important;
+}
+
+body > div#isp_product_quick_view_model .isp_quick_view_content_right .isp_quick_view_title {
+  font-weight: normal !important;
+}
+
+body > div#isp_product_quick_view_model .isp_quick_view_content_right .isp_quick_view_price_wrapper {
+  font-size: 18px !important;
+  font-weight: normal !important;
+  margin: 20px 0 0 0 !important;
+}
+
 body > div#isp_product_quick_view_model .isp_single_quick_view_option,
 body > div#isp_product_quick_view_model .isp_add_to_cart_quantity_quick_view:before,
 body > div#isp_product_quick_view_model .quantity_quick_view,
