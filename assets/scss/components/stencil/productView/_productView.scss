@@ -140,7 +140,7 @@
 }
 
 .productView-title {
-    font-size: fontSize("medium");
+    font-size: fontSize("large");
     margin: 0.25rem 0;
 
     @include breakpoint("medium") {
