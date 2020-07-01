@@ -138,17 +138,43 @@
         {{/each}}
 
         <script type="text/javascript">
-            // clean cart product titles
-            var cartTitles = document.querySelectorAll(".cart-item-name > a");
+            (function() {
+                // clean cart product titles
+                var cartTitles = document.querySelectorAll(".cart-item-name > a");
 
-            if (cartTitles.length) {
-                for (var i = 0; i < cartTitles.length; i++) {
-                    var ogTitle = cartTitles[i].innerHTML;
-                    var cleanTitle = ogTitle.substring(0, ogTitle.lastIndexOf(" "));
+                if (cartTitles.length) {
+                    for (var i = 0; i < cartTitles.length; i++) {
+                        var ogTitle = cartTitles[i].innerHTML;
+                        var cleanTitle = ogTitle.substring(0, ogTitle.lastIndexOf(" "));
 
-                    cartTitles[i].innerHTML = cleanTitle;
+                        cartTitles[i].innerHTML = cleanTitle;
+                    }
                 }
-            }
+
+                // clean cart product prices
+                var cartPrices = document.querySelectorAll(".cart-item-info:nth-child(3) > .cart-item-value");
+
+                if (cartPrices.length) {
+                    for (var i = 0; i < cartPrices.length; i++) {
+                        var ogPrice = cartPrices[i].innerHTML;
+                        var cleanPrice = ogPrice.slice(0, -3);
+
+                        cartPrices[i].innerHTML = cleanPrice
+                    }
+                }
+
+                // clean cart line totals
+                var cartTotals = document.querySelectorAll(".cart-item-info:nth-child(5) > .cart-item-value");
+
+                if (cartTotals.length) {
+                    for (var i = 0; i < cartTotals.length; i++) {
+                        var ogPrice = cartTotals[i].innerHTML;
+                        var cleanPrice = ogPrice.slice(0, -3);
+
+                        cartTotals[i].innerHTML = cleanPrice
+                    }
+                }
+            })();
         </script>
     </tbody>
 </table>

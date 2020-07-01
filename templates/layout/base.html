@@ -40,6 +40,7 @@
         <script type="text/javascript">!(function(){var e={enhanceId:'ippolita',enhanceTimeout:4e3},t=document.getElementById('js-maker-enhance-style'),n=setTimeout(function(){t.parentElement.removeChild(t),(window.mk_enhance_timeout=!0)},e.enhanceTimeout),a=!1,c=document.createElement('script'),f=window.location.search.match(/mk_experience_preview/)?'?_t='+new Date().getTime():'';(c.src='https://app.maker.co/enhance/'+e.enhanceId+'.js'+f),(c.type='text/javascript'),(c.async='true'),(c.onload=c.onreadystatechange=function(){var e=this.readyState;a||(e&&'complete'!=e&&'loaded'!=e)||((a=!0),clearTimeout(n))});var o=document.getElementsByTagName('script')[0];o.parentNode.insertBefore(c,o)})()</script>
 
         <script>
+            // ISP autocomplete, search results and quick view options
             var __isp_options = {
                 isp_dropdown_with_product_attributes: '1',
                 isp_serp_with_product_attributes: '1',
@@ -64,7 +65,7 @@
                     var product_name_clean = product_name.substring(0, product_name.lastIndexOf(" "));
                     jquery_li_element_html.find('.as_magento_product_name').html(product_name_clean);
 
-                    var product_price = item_data.price;
+                    var product_price = item_data.price.slice(0, -3).replace(/\B(?=(\d{3})+(?!\d))/g, ",");
                     jquery_li_element_html.find('.as_magento_price').html("&#36;" + product_price);
 
                     return jquery_li_element_html;
@@ -89,6 +90,9 @@
                         var product_name = product_data.l;
                         var product_name_clean = product_name.substring(0, product_name.lastIndexOf(" "));
                         $(this).find('.isp_product_title').html(product_name_clean);
+
+                        var product_price = product_data.p.slice(0, -3).replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+                        $(this).find('.isp_product_price').html("&#36;" + product_price);
                     });
                 },
                 isp_serp_quickview_callback: function() {
@@ -108,8 +112,13 @@
                     var product_name = product_data.l;
                     var product_name_clean = product_name.substring(0, product_name.lastIndexOf(" "));
                     qv_title.html(product_name_clean);
+
+                    var product_price = product_data.p.slice(0, -3).replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+                    $('.isp_quick_view_price_wrapper').html("&#36;" + product_price);
                 }
-            }
+            };
+
+            // ISP related options
             var isp_related_options = {
                 with_product_attributes: true,
                 isp_related_callback: function() {
@@ -133,11 +142,37 @@
                         var product_name_clean = product_name.substring(0, product_name.lastIndexOf(" "));
                         $jquery_isp(this).find('.isp_related_product_name').html(product_name_clean);
 
-                        var product_price = product_data.p;
-                        $jquery_isp(this).find('.isp_product_price').html("&#36;" + product_price + ".00");
+                        var product_price = product_data.p.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+                        $jquery_isp(this).find('.isp_product_price').html("&#36;" + product_price);
                     });
-                }
-            }
+                },
+                responsive: [
+                    {
+                        breakpoint: 1261,
+                        settings: {
+                            slidesToShow: 4,
+                            slidesToScroll: 4,
+                            infinite: false
+                        }
+                    },
+                    {
+                        breakpoint: 801,
+                        settings: {
+                            slidesToShow: 3,
+                            slidesToScroll: 3,
+                            infinite: false
+                        }
+                    },
+                    {
+                        breakpoint: 551,
+                        settings: {
+                            slidesToShow: 2,
+                            slidesToScroll: 2,
+                            infinite: false
+                        }
+                    }
+                ]
+            };
         </script>
 
         {{{head.scripts}}}

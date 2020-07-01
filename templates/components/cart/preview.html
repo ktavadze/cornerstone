@@ -69,6 +69,19 @@
                     <h4 class="productView-title">
                         {{name}}
                     </h4>
+                    <script type="text/javascript">
+                        // clean cart popup product titles
+                        (function() {
+                            var productTitle = document.querySelector(".previewCart .productView-title");
+
+                            if (productTitle) {
+                                var ogTitle = productTitle.innerHTML.trim();
+                                var cleanTitle = ogTitle.substring(0, ogTitle.lastIndexOf(" "));
+
+                                productTitle.innerHTML = cleanTitle;
+                            }
+                        })();
+                    </script>
 
                     <div class="productView-brand">
                         {{brand.name}}
@@ -81,6 +94,19 @@
                             {{> components/common/login-for-pricing}}
                         {{/or}}
                     </div>
+                    <script type="text/javascript">
+                        // clean cart popup product prices
+                        (function() {
+                            var productPriceContainer = document.querySelector(".previewCart .productView-price")
+
+                            if (productPriceContainer) {
+                                var ogPriceInfo = productPriceContainer.innerHTML.trim();
+                                var cleanPriceInfo = ogPriceInfo.slice(0, -3);
+
+                                productPriceContainer.innerHTML = cleanPriceInfo;
+                            }
+                        })();
+                    </script>
 
                     {{#each options}}
                         <dl class="productView-info">

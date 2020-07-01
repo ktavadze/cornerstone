@@ -20,14 +20,16 @@
             <h1 class="productView-title" {{#if schema}}itemprop="name"{{/if}}>{{product.title}}</h1>
             <script type="text/javascript">
                 // clean pdp product titles
-                var productTitle = document.querySelector(".productView-title");
+                (function() {
+                    var productTitle = document.querySelector(".productView .productView-title");
 
-                if (productTitle) {
-                    var ogTitle = productTitle.innerHTML;
-                    var cleanTitle = ogTitle.substring(0, ogTitle.lastIndexOf(" "));
+                    if (productTitle) {
+                        var ogTitle = productTitle.innerHTML;
+                        var cleanTitle = ogTitle.substring(0, ogTitle.lastIndexOf(" "));
 
-                    productTitle.innerHTML = cleanTitle;
-                }
+                        productTitle.innerHTML = cleanTitle;
+                    }
+                })();
             </script>
             <div class="productView-sku">
                 <span>STYLE# {{#replace "-PA" product.sku}}{{else}}{{{product.sku}}}{{/replace}}
@@ -50,6 +52,20 @@
                 {{/or}}
             </div>
             {{{region name="product_below_price"}}}
+            <script type="text/javascript">
+                // clean pdp product prices
+                (function() {
+                    var productPriceContainer = document.querySelector(".productView .productView-price")
+                    var productPrice = document.querySelector(".productView .price--withoutTax");
+
+                    if (productPriceContainer && productPrice) {
+                        var ogPrice = productPrice.innerHTML;
+                        var cleanPrice = ogPrice.slice(0, -3);
+
+                        productPriceContainer.innerHTML = cleanPrice;
+                    }
+                })();
+            </script>
 <!-- 
             <div class="productView-rating"{{#if product.num_reviews '>' 0}}{{#if schema}} itemprop="aggregateRating" itemscope itemtype="http://schema.org/AggregateRating"{{/if}}{{/if}}>
                 {{#if settings.show_product_rating}}
