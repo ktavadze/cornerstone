@@ -509,6 +509,8 @@ $cart-item-label-offset:                $cart-thumbnail-maxWidth + $cart-item-sp
 }
 
 .cart-additionalCheckoutButtons { // 1
+    display: none;
+
     @include clearfix;
 
     // scss-lint:disable SelectorFormat
