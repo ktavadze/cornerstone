@@ -35,6 +35,10 @@
     @media (min-width: 801px) {
         text-align: stencilString("optimizedCheckout-logo-position");
     }
+
+    .checkoutHeader-logo {
+        max-height: 25px;
+    }
 }
 
 //
