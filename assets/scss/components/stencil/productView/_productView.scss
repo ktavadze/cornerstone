@@ -140,11 +140,11 @@
 }
 
 .productView-title {
-    font-size: fontSize("small");
+    font-size: fontSize("medium");
     margin: 0.25rem 0;
 
-    @include breakpoint("large") {
-        font-size: fontSize("largest");
+    @include breakpoint("medium") {
+        font-size: fontSize("larger");
     }
 }
 
@@ -172,8 +172,8 @@
 // -----------------------------------------------------------------------------
 
 .productView-price {
-    font-size: fontSize("smaller");
-    font-weight: bold;
+    font-size: fontSize("small");
+    font-weight: normal;
     margin: spacing("third") 0;
 
     @include breakpoint("medium") {
