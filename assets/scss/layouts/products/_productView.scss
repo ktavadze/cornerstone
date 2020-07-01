@@ -99,8 +99,16 @@
         left: -50px !important;
     }
 
+    .slick-prev:before {
+        content: url(../img/slick_prev.png) !important;
+    }
+
     .slick-next {
         right: -50px !important;
+    }
+
+    .slick-next:before {
+        content: url(../img/slick_next.png) !important;
     }
 
     .isp_related_title {
