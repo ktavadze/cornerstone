@@ -180,6 +180,15 @@
                 flex: 1 0 10%;
                 margin: 5px;
             }
+
+            .navPage-subMenu-item:first-child {
+                flex: 1 0 20%;
+            }
+
+            .navPage-subMenu-item:nth-child(6),
+            .navPage-subMenu-item:last-child {
+                flex: 1 0 15%;
+            }
         }
     }
 
