@@ -33,7 +33,6 @@
     display: inline-block;
     float: none;
     font-size: fontSize("base"); // 2
-    margin-bottom: spacing("double");
     text-align: center;
     vertical-align: top;
 
@@ -43,6 +42,7 @@
     }
 
     @include breakpoint("medium") {
+        margin-bottom: spacing("double");
         width: width("4/12");
     }
 
@@ -91,8 +91,12 @@
 .footer-info-heading {
     color: $footer-heading-fontColor;
     font-size: fontSize("base");
-    margin-top: 45px !important;
+    margin-top: 30px !important;
     text-transform: inherit;
+
+    @include breakpoint("medium") {
+        margin-top: 45px !important;
+    }
 }
 
 .footer-info-list {
