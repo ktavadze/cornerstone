@@ -119,7 +119,7 @@
 
                     var product_name = product_data.l;
                     var product_name_clean = product_name.substring(0, product_name.lastIndexOf(" "));
-                    qv_title.html(product_name_clean);
+                    qv_title.html('<a href="' + product_data.u + '">' + product_name_clean + '</a>');
 
                     var product_price = product_data.p.slice(0, -3).replace(/\B(?=(\d{3})+(?!\d))/g, ",");
                     $('.isp_quick_view_price_wrapper').html("&#36;" + product_price);

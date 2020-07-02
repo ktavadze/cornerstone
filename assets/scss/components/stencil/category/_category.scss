@@ -119,6 +119,10 @@ body > div#isp_product_quick_view_model .isp_quick_view_content_right .isp_quick
   font-weight: normal !important;
 }
 
+body > div#isp_product_quick_view_model .isp_quick_view_content_right .isp_quick_view_title > a{
+  text-decoration: none !important;
+}
+
 body > div#isp_product_quick_view_model .isp_quick_view_content_right .isp_quick_view_price_wrapper {
   font-size: 18px !important;
   font-weight: normal !important;
