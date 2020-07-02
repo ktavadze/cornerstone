@@ -36,43 +36,6 @@
             }
         </style>
 
-        <script type="text/javascript">
-            var dataLayer = new Array();
-            // console.log(dataLayer);
-            function trackGTMEcommerce() {
-                this._addTrans = addTrans;
-                this._addItem = addItems;
-                this._trackTrans = trackTrans;
-            }
-            var transaction = {};
-            transaction.transactionProducts = [];
-            function addTrans(orderID, store, total, tax, shipping, city, state, country) {
-                transaction.transactionId = orderID;
-                transaction.transactionAffiliation = store;
-                transaction.transactionTotal = total;
-                transaction.transactionTax = tax;
-                transaction.transactionShipping = shipping;
-                // console.log(11)
-            }
-            function addItems(orderID, sku, product, variation, price, quantity) {
-                transaction.transactionProducts.push({
-                    'id': orderID,
-                    'sku': sku,
-                    'name': product,
-                    'category': variation,
-                    'price': price,
-                    'quantity': quantity
-                    });
-                // console.log('a')
-            }
-            function trackTrans() {
-                transaction.event = 'bcTransactionComplete';
-                // console.log(transaction);
-                dataLayer.push(transaction);
-            }
-            var pageTracker = new trackGTMEcommerce();
-        </script>
-
         <!-- Google Tag Manager -->
         <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
         new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -231,12 +194,12 @@
         {{~inject 'template' template}}
     </head>
     <body>
-        <svg data-src="{{cdn 'img/icon-sprite.svg'}}" class="icons-svg-sprite"></svg>
-
         <!-- Google Tag Manager (noscript) -->
         <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K5ML24Z"
         height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <!-- End Google Tag Manager (noscript) -->
+
+        <svg data-src="{{cdn 'img/icon-sprite.svg'}}" class="icons-svg-sprite"></svg>
 
         {{> components/common/header }}
         {{> components/common/body }}

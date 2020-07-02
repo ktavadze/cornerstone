@@ -86,13 +86,17 @@ a.isp_product_quick_view_button {
   text-align: left !important;
 }
 
+body > div#isp_product_quick_view_model {
+  top: 25% !important;
+}
+
 body > div#isp_product_quick_view_model #isp_product_quick_view_close_button_quick_view {
   margin: 20px !important;
 }
 
 body > div#isp_product_quick_view_model:not(.look_a_like) {
   border-radius: 0 !important;
-  padding: 25px !important;
+  padding: 50px 25px !important;
 }
 
 body > div#isp_product_quick_view_model .image_chooser_isp {
@@ -105,6 +109,10 @@ body > div#isp_product_quick_view_model .isp_quick_view_content_right {
 
 body > div#isp_product_quick_view_model .isp_quick_view_content_right .isp_quick_view_info_bar {
   display: none !important;
+}
+
+body > div#isp_product_quick_view_model .isp_quick_view_content_right .isp_quick_view_description {
+  max-height: 200px !important;
 }
 
 body > div#isp_product_quick_view_model .isp_quick_view_content_right .isp_quick_view_title {
