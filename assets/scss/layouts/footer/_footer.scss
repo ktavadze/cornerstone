@@ -104,9 +104,7 @@
     margin-left: 0;
 
     li {
-        @include breakpoint("medium") {
-            margin: 10px 0;
-        }
+        margin: 10px 0;
     }
 
     a {
