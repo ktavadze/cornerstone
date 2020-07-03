@@ -137,9 +137,14 @@ body > div#isp_product_quick_view_model .isp_quick_view_add_to_cart_btn_quick_vi
   border-radius: 0 !important;
 }
 
-@media (max-width: 981px) {
-  div.isp_center_container ul#isp_search_results_container li.isp_grid_product {
-    margin: 0 !important;
-    width: 49.5% !important;
+div#isp_search_result_page_container div.isp_center_container ul#isp_search_results_container li.isp_grid_product {
+  margin: 0 !important;
+  width: 50% !important;
+}
+
+@media (min-width: 981px) {
+  div#isp_search_result_page_container div.isp_center_container ul#isp_search_results_container li.isp_grid_product {
+    margin: 15px 0 !important;
+    width: 33.3% !important;
   }
 }
