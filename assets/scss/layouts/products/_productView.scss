@@ -132,11 +132,7 @@
     .isp_related_product_info,
     .isp_related_product_price {
         margin-top: 0 !important;
-        text-align: center !important;
-
-        @include breakpoint ("small") {
-            text-align: left !important;
-        }
+        text-align: left !important;
     }
 
     .isp_add_to_cart_btn,
