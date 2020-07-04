@@ -57,15 +57,12 @@
                         return jquery_li_element_html;
                     }
 
-                    var product_collection_element = jquery_li_element_html.find('.as_magento_product_collection');
-                    if (product_collection_element.length == 0) {
-                        for (var i = 0; i < item_data.att.length; i++) {
-                            if (item_data.att[i][0] == "Collection") {
-                                var product_collection = item_data.att[i][1];
-                                jquery_li_element_html.find('.as_magento_product_section')
-                                    .prepend('<div class="as_magento_product_collection">' + product_collection + '</div>');
-                                break;
-                            }
+                    for (var i = 0; i < item_data.att.length; i++) {
+                        if (item_data.att[i][0] == "Collection") {
+                            var product_collection = item_data.att[i][1];
+                            jquery_li_element_html.find('.as_magento_product_section')
+                                .prepend('<div class="as_magento_product_collection">' + product_collection + '</div>');
+                            break;
                         }
                     }
 
@@ -83,8 +80,7 @@
                         var p_id = $(this).attr('product_id');
                         var product_data = ISP_PRODUCTS[p_id];
 
-                        var product_collection_element = $(this).find('.isp_product_collection');
-                        if (product_collection_element.length == 0) {
+                        if (!product_data.is_clean) {
                             for (var i = 0; i < product_data.att.length; i++) {
                                 if (product_data.att[i][0] == "Collection") {
                                     var product_collection = product_data.att[i][1];
@@ -93,14 +89,16 @@
                                     break;
                                 }
                             }
+
+                            var product_name = product_data.l;
+                            var product_name_clean = product_name.substring(0, product_name.lastIndexOf(" "));
+                            $(this).find('.isp_product_title').html(product_name_clean);
+
+                            var product_price = product_data.p.slice(0, -3).replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+                            $(this).find('.isp_product_price').html("&#36;" + product_price);
+
+                            product_data.is_clean = true;
                         }
-
-                        var product_name = product_data.l;
-                        var product_name_clean = product_name.substring(0, product_name.lastIndexOf(" "));
-                        $(this).find('.isp_product_title').html(product_name_clean);
-
-                        var product_price = product_data.p.slice(0, -3).replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-                        $(this).find('.isp_product_price').html("&#36;" + product_price);
                     });
                 },
                 isp_serp_quickview_callback: function() {
@@ -134,8 +132,7 @@
                         var p_id = $jquery_isp(this).attr('isp_product_id');
                         var product_data = ISP_RELATED_PRODUCTS[p_id];
 
-                        var product_collection_element = $jquery_isp(this).find('.isp_product_collection');
-                        if (product_collection_element.length == 0) {
+                        if (!product_data.is_clean) {
                             for (var i = 0; i < product_data.att.length; i++) {
                                 if (product_data.att[i][0] == "Collection") {
                                     var product_collection = product_data.att[i][1];
@@ -144,14 +141,16 @@
                                     break;
                                 }
                             }
+
+                            var product_name = product_data.l;
+                            var product_name_clean = product_name.substring(0, product_name.lastIndexOf(" "));
+                            $jquery_isp(this).find('.isp_related_product_name').html(product_name_clean);
+
+                            var product_price = product_data.p.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+                            $jquery_isp(this).find('.isp_product_price').html("&#36;" + product_price);
+
+                            product_data.is_clean = true;
                         }
-
-                        var product_name = product_data.l;
-                        var product_name_clean = product_name.substring(0, product_name.lastIndexOf(" "));
-                        $jquery_isp(this).find('.isp_related_product_name').html(product_name_clean);
-
-                        var product_price = product_data.p.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-                        $jquery_isp(this).find('.isp_product_price').html("&#36;" + product_price);
                     });
                 },
                 responsive: [
