@@ -94,7 +94,11 @@
                             var product_name_clean = product_name.substring(0, product_name.lastIndexOf(" "));
                             $(this).find('.isp_product_title').html(product_name_clean);
 
-                            var product_price = product_data.p.slice(0, -3).replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+                            var product_price = product_data.p;
+                            if (product_price.endsWith(".00")) {
+                                product_price = product_price.slice(0, -3);
+                            }
+                            product_price = product_price.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
                             $(this).find('.isp_product_price').html("&#36;" + product_price);
 
                             product_data.is_clean = true;
