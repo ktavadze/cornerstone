@@ -238,6 +238,10 @@ $cart-item-label-offset:                $cart-thumbnail-maxWidth + $cart-item-sp
     margin-bottom: spacing("eighth");
 }
 
+.cart-item-collection {
+    margin: 0;
+}
+
 .cart-item-name {
     font-size: fontSize("smaller");
     margin: 0;
