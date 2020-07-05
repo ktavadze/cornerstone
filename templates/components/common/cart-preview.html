@@ -21,6 +21,12 @@
                             {{brand.name}}
                         </span>
 
+                        <h6 class="previewCartItem-collection">
+                            {{#filter custom_fields "Collection" property='name' }}
+                                {{value}}
+                            {{/filter}}
+                        </h6>
+
                         <h6 class="previewCartItem-name">
                             <a href="{{url}}" alt="{{name}}" title="{{name}}">{{name}}</a>
                         </h6>

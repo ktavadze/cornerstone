@@ -593,6 +593,10 @@ $cart-item-label-offset:                $cart-thumbnail-maxWidth + $cart-item-sp
     padding-left: 0;
 }
 
+.previewCartItem-collection {
+    margin: -20px 0 0;
+}
+
 .previewCartItem-name {
     margin: 0;
     text-transform: none;
