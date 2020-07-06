@@ -372,6 +372,7 @@ export default class ProductDetails {
         const $addToCartBtn = $('#form-action-addToCart', $(event.target));
         const originalBtnVal = $addToCartBtn.val();
         const waitMessage = $addToCartBtn.data('waitMessage');
+        const $previewCartAction = $('.navUser-item--cart > a > span');
 
         // Do not do AJAX if browser doesn't support FormData
         if (window.FormData === undefined) {
@@ -408,9 +409,11 @@ export default class ProductDetails {
 
             // Open preview modal and update content
             if (this.previewModal) {
-                this.previewModal.open();
+                // this.previewModal.open();
 
                 this.updateCartContent(this.previewModal, response.data.cart_item.id);
+
+                $previewCartAction.click();
             } else {
                 this.$overlay.show();
                 // if no modal, redirect to the cart page
