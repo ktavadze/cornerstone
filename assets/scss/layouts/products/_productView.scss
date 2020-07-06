@@ -57,6 +57,30 @@
 
 .productView-options {
     margin-bottom: 0;
+
+    .form-radio + .form-option {
+        padding: 5px 20px;
+
+        span {
+            padding: 0;
+        }
+    }
+
+    .form-radio:checked + .form-option {
+        box-shadow: none;
+    }
+
+    #form-action-addToCart {
+        text-transform: uppercase;
+    }
+
+    #wishlist-dropdown > li > input {
+        font-family: "Helvetica Neue Light", sans-serif !important;
+    }
+
+    #wishlist-dropdown > li > a {
+        padding: 1rem 0;
+    }
 }
 
 .productView-description {
