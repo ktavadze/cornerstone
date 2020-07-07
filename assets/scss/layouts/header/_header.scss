@@ -24,24 +24,46 @@
     width: 100%;
     z-index: 101;
 
+    &.is-open {
+        height: 100%;
+    }
+
     @include breakpoint("medium") {
         border-bottom: none;
         box-shadow: 0 5px 10px rgba(0,0,0,0.15);
         display: flex;
         overflow: visible;
-        padding: 0 1.5rem;
+        padding: 0 0.75rem;
+
+        &.is-open {
+            height: auto;
+        }
+
+        .navPages-item {
+            flex-grow: 1;
+        }
 
         .navPages-item:hover {
             margin-top: 4px;
             border-bottom: 4px solid #333;
         }
+
+        .navPages-item > .navPages-action {
+            font-family: "Helvetica Neue Roman", sans-serif !important;
+            padding: 1rem 0.3rem;
+        }
     }
 
-    &.is-open {
-        height: 100%;
+    @include breakpoint("large") {
+        padding: 0 2rem;
 
-        @include breakpoint("medium") {
-            height: auto;
+        .navPages-item {
+            flex-grow: 0;
+        }
+
+        .navPages-item > .navPages-action {
+            font-family: "Helvetica Neue Roman", sans-serif !important;
+            padding: 1rem 2rem;
         }
     }
 }
