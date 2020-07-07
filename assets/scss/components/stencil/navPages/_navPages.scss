@@ -165,7 +165,7 @@
 
         @include breakpoint("large") {
             .navPage-subMenu {
-                padding: 1.15rem 15%;
+                padding: 0.5rem 15%;
             }
         }
     }
@@ -378,7 +378,7 @@
         // scss-lint:disable ImportantRule
         background-color: stencilColor("navPages-subMenu-backgroundColor");
         box-shadow: 0 10px 10px rgba(0, 0, 0, 0.15);
-        padding: 1.15rem 10%;
+        padding: 0.5rem 10%;
         text-align: center;
         width: 100%;
 
