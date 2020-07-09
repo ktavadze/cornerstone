@@ -87,7 +87,7 @@
         @include lazy-loaded-img;
         margin: 0;
         width: 75px;
-        object-fit: contain;
+        object-fit: cover;
         /* Object-fit polyfill */
         font-family: 'object-fit: contain;';
         position: relative;
