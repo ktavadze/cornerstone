@@ -31,7 +31,7 @@
     }
 
     + .productView-thumbnails {
-        margin-top: spacing("half");
+        margin-top: 1em;
     }
 
     @media (min-width: $screen-xxsmall) and (max-width: $screen-medium) {
@@ -61,8 +61,14 @@
     @include u-listBullets("none");
     @include grid-row($behavior: "nest");
 
-    margin-left: -(spacing("quarter"));
-    margin-right: -(spacing("quarter"));
+    display: flex;
+    justify-content: center;
+    margin-left: 0;
+    margin-right: 0;
+
+    @include breakpoint("medium") {
+        display: block;
+    }
 
     .slick-list {
         margin-left: remCalc(40px);
@@ -80,7 +86,7 @@
     img {
         @include lazy-loaded-img;
         margin: 0;
-        width: get-width(stencilString('productview_thumb_size'));
+        width: 75px;
         object-fit: contain;
         /* Object-fit polyfill */
         font-family: 'object-fit: contain;';
@@ -90,25 +96,27 @@
 
 .productView-thumbnail {
     @include grid-column(3);
-    padding-left: spacing("quarter");
-    padding-right: spacing("quarter");
-    text-align: left;
+    height: 75px;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+    padding-left: 0;
+    padding-right: 0;
+    width: 75px;
 
     @include breakpoint("medium") {
-        width: 20%;
+        margin-left: 0;
+        margin-right: 1rem;
     }
 }
 
 .productView-thumbnail-link {
     border: container("border");
+    box-sizing: content-box;
     display: inline-flex;
-    height: 67px;
-    max-width: 75px;
-    padding: 2px;
+    height: 100%;
+    justify-content: center;
     position: relative;
     width: 100%;
-    box-sizing: content-box;
-    justify-content: center;
 
     &:hover,
     &.is-active {
