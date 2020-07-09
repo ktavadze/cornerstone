@@ -33,7 +33,7 @@
         box-shadow: 0 5px 10px rgba(0,0,0,0.15);
         display: flex;
         overflow: visible;
-        padding: 0 0.75rem;
+        padding: 0 2rem;
 
         &.is-open {
             height: auto;
@@ -50,13 +50,11 @@
 
         .navPages-item > .navPages-action {
             font-family: "Helvetica Neue Roman", sans-serif !important;
-            padding: 1rem 0.3rem;
+            padding: 1rem 0.35rem;
         }
     }
 
     @include breakpoint("large") {
-        padding: 0 2rem;
-
         .navPages-item {
             flex-grow: 0;
         }
