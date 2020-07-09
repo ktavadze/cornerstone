@@ -198,9 +198,17 @@
 
         // scss-lint:disable NestingDepth
         &.is-open {
-            left: auto !important;
-            right: 0.75rem;
             top: auto !important;
+            right: 0.8rem !important;
+            left: auto !important;
+
+            @include breakpoint("medium") {
+                right: 0.25rem !important;
+            }
+
+            @include breakpoint("large") {
+                right: 1.25rem !important;
+            }
 
             &:before,
             &:after {
@@ -264,11 +272,14 @@
         // scss-lint:disable NestingDepth
         &.is-open {
             left: auto !important;
-            right: 4.5rem;
             top: auto !important;
 
+            @include breakpoint("medium") {
+                right: 4.33rem !important;
+            }
+
             @include breakpoint("large") {
-                right: 5rem;
+                right: 5.66rem !important;
             }
 
             &:before,
