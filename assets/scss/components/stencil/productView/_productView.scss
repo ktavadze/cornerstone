@@ -93,10 +93,7 @@
     padding-left: spacing("quarter");
     padding-right: spacing("quarter");
     text-align: center;
-
-    @include breakpoint("large") {
-        width: 20%;
-    }
+    width: 20%;
 }
 
 .productView-thumbnail-link {
