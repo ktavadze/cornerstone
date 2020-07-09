@@ -92,8 +92,11 @@
     @include grid-column(3);
     padding-left: spacing("quarter");
     padding-right: spacing("quarter");
-    text-align: center;
-    width: 20%;
+    text-align: left;
+
+    @include breakpoint("medium") {
+        width: 20%;
+    }
 }
 
 .productView-thumbnail-link {
