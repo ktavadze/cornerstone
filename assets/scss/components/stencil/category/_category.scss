@@ -110,13 +110,17 @@ body > div#isp_product_quick_view_model {
     top: 20% !important;
 }
 
+body > div#isp_product_quick_view_model:not(.look_a_like) {
+    border-radius: 0 !important;
+    padding: 50px 25px !important;
+}
+
 body > div#isp_product_quick_view_model #isp_product_quick_view_close_button_quick_view {
     margin: 20px !important;
 }
 
-body > div#isp_product_quick_view_model:not(.look_a_like) {
-    border-radius: 0 !important;
-    padding: 50px 25px !important;
+body > div#isp_product_quick_view_model .isp_quick_view_content_left .isp_image_container > img {
+    max-width: 100%;
 }
 
 body > div#isp_product_quick_view_model .isp_quick_view_content_right {
