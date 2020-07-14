@@ -661,6 +661,7 @@ $cart-item-label-offset:                $cart-thumbnail-maxWidth + $cart-item-sp
     text-align: center;
 
     .form-option {
+        box-shadow: none;
         margin: spacing("half");
     }
 }
