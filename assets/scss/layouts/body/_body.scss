@@ -56,3 +56,101 @@
         }
     }
 }
+
+#size-guide {
+    height: 60%;
+    overflow: auto;
+    padding: 2rem;
+
+    .modal-close {
+        top: 1.5rem;
+        right: 1.25rem;
+    }
+
+    .modal-content {
+        border-bottom: 1px solid #ccc;
+        padding-bottom: 1rem;
+    }
+
+    .sizeGuide-action {
+        color: #999;
+        display: inline-block;
+        font-weight: bold;
+        text-decoration: none;
+        margin-right: 5rem;
+
+        &.is-open {
+            color: black !important;
+        }
+    }
+
+    .sizeGuide-subSection {
+        top: 5rem !important;
+        left: 0 !important;
+
+        background-color: white;
+        max-width: 100%;
+        padding: 0 2rem 3rem;
+
+        h5 {
+            font-weight: bold;
+            text-transform: none;
+        }
+    }
+
+    .bangle-sizes-container,
+    .ring-sizes-container,
+    .necklace-sizes-container {
+        align-items: center;
+        display: flex;
+        justify-content: center;
+
+        div {
+            flex: 1;
+
+            h5 {
+                margin-top: 0;
+            }
+        }
+    }
+
+    .additional-sizes-container {
+        margin-top: 2rem;
+    }
+
+    @media (max-width: 551px) {
+        height: 100%;
+        max-height: 100%;
+        max-width: 100%;
+        padding: 2rem 1rem;
+        width: 100%;
+
+        .modal-close {
+            top: 1.5rem;
+            right: 0.5rem;
+        }
+
+        .sizeGuide-action {
+            margin-right: 1rem;
+        }
+
+        .sizeGuide-subSection {
+            padding: 0 1rem 3rem;
+        }
+
+        .bangle-sizes-container,
+        .ring-sizes-container,
+        .necklace-sizes-container {
+            flex-wrap: wrap;
+
+            div {
+                min-width: 50%;
+
+                h5 {
+                    margin-top: 1rem;
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
+}

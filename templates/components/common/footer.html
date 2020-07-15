@@ -73,7 +73,7 @@
                 <h5 class="footer-info-heading">Services</h5>
                 <ul class="footer-info-list">
                     <li>
-                        <a href="/#">Size Guide</a>
+                        <a class="size-guide-action" href="#size-guide" data-reveal-id="size-guide">Size Guide</a>
                     </li>
                 </ul>
             </article>
@@ -82,7 +82,7 @@
                 <h5 class="footer-info-heading">Our Company</h5>
                 <ul class="footer-info-list">
                     <li>
-                        <a href="/about">About</a>
+                        <a href="/about/collections">About</a>
                     </li>
                     <li>
                         <a href="/legal/#terms-of-use">Terms &amp; Conditions</a>
@@ -133,6 +133,7 @@
     configureHeader();
     configureSearchActionMobile();
     configureSearchActionDesktop();
+    configureSizeGuideAction();
 
     // RUNS ONLY ON HOME PAGE
     function configureClearHeader() {
@@ -296,6 +297,18 @@
         document.addEventListener("click", function(e) {
             if (e.target && e.target.className == "quickSearchResults") {
                 quickSearchAction.click();
+            }
+        });
+    }
+
+    function configureSizeGuideAction() {
+        var banglesAction = document.querySelector("#size-guide .sizeGuide-action:first-child");
+
+        document.addEventListener("click", function(e) {
+            if (e.target && e.target.className == "size-guide-action") {
+                setTimeout(function () {
+                    banglesAction.click();
+                }, 100);
             }
         });
     }

@@ -315,8 +315,7 @@
         margin-bottom: 2rem;
 
         // scss-lint:disable SelectorDepth, NestingDepth
-        > .form-checkbox + .form-label
-        {
+        > .form-checkbox + .form-label {
             display: inline-block;
             margin-left: spacing("single");
             width: auto;
@@ -365,6 +364,11 @@
                 width: auto;
             }
         }
+    }
+
+    .size-guide-action-container {
+        font-size: 13px;
+        margin: -1.5rem 0 2rem;
     }
 }
 
