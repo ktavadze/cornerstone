@@ -57,6 +57,7 @@
     }
 }
 
+// size guide
 #size-guide {
     height: 60%;
     overflow: auto;
@@ -152,5 +153,24 @@
                 }
             }
         }
+    }
+}
+
+// assistance
+#assistance-content {
+    #track-your-order,
+    #shipping,
+    #exchanges-and-returns,
+    #faqs,
+    #care-and-repair {
+        padding-top: 4rem,
+    }
+}
+
+// legal
+#legal-content {
+    #privacy-policy,
+    #terms-of-use {
+        padding-top: 4rem;
     }
 }
