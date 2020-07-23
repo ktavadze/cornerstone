@@ -117,6 +117,7 @@
     .slick-prev,
     .slick-next {
         display: none !important;
+        z-index: 999 !important;
 
         @include breakpoint("large") {
             display: block !important;
