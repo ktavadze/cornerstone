@@ -44,9 +44,6 @@
                     }
                 })();
             </script>
-            <div class="productView-sku">
-                <span>STYLE# {{#replace "-PA" product.sku}}{{else}}{{{product.sku}}}{{/replace}}
-            </div>
             {{#if product.brand}}
                 <h2 class="productView-brand"{{#if schema}} itemprop="brand" itemscope itemtype="http://schema.org/Brand"{{/if}}>
                     <a href="{{product.brand.url}}"{{#if schema}} itemprop="url"{{/if}}><span{{#if schema}} itemprop="name"{{/if}}>{{product.brand.name}}</span></a>
@@ -307,6 +304,9 @@
     </section>
 
     <article class="productView-description"{{#if schema}} itemprop="description"{{/if}}>
+        <div class="productView-sku">
+            <span>STYLE# {{#replace "-PA" product.sku}}{{else}}{{{product.sku}}}{{/replace}}
+        </div>
         {{#if theme_settings.show_product_details_tabs}}
             {{> components/products/description-tabs}}
         {{else}}
