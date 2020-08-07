@@ -410,6 +410,10 @@ $optimizedCheckout-input--error-boxShadow: 0 0 3px transparentize(stencilColor("
         letter-spacing: 0.05em !important;
     }
 
+    .layout-main .paymentProviderHeader-cc {
+        display: none;
+    }
+
     .cart-priceItem--total .cart-priceItem-value {
         font-size: 1.33rem;
     }
