@@ -14,6 +14,10 @@
     border-radius: $alert-modal-borderRadius;
     font-family: $alert-font-body;
 
+    .swal2-icon {
+        display: none !important;
+    }
+
     .swal2-title {
         color: $alert-font-headingsColor;
         font-size: $alert-font-headingsSize;
