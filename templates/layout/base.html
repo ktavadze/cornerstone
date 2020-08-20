@@ -141,7 +141,11 @@
                     var product_name_clean = product_name.substring(0, product_name.lastIndexOf(" "));
                     qv_title.html('<a href="' + product_data.u + '">' + product_name_clean + '</a>');
 
-                    var product_price = product_data.p.slice(0, -3).replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+                    var product_price = product_data.p;
+                    if (product_price.endsWith(".00")) {
+                        product_price = product_price.slice(0, -3);
+                    }
+                    product_price = product_price.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
                     $('.isp_quick_view_price_wrapper').html("&#36;" + product_price);
 
                     $('.isp_view_full_details').html("View Full Details");
