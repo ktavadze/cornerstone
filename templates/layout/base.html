@@ -90,14 +90,23 @@
                         var product_data = ISP_PRODUCTS[p_id];
 
                         if (!product_data.is_clean) {
+                            var product_tag = null;
+                            var product_collection = null;
+
                             for (var i = 0; i < product_data.att.length; i++) {
-                                if (product_data.att[i][0] == "Collection") {
-                                    var product_collection = product_data.att[i][1];
-                                    $(this).find('.isp_product_info')
-                                        .prepend('<div class="isp_product_collection">' + product_collection + '</div>');
-                                    break;
+                                if (product_data.att[i][0] == "Tag") {
+                                    product_tag = product_data.att[i][1];
+                                }
+                                else if (product_data.att[i][0] == "Collection") {
+                                    product_collection = product_data.att[i][1];
                                 }
                             }
+
+                            if (product_tag) {
+                                $(this).find('.isp_product_info').prepend('<h6 class="isp_product_tag">' + product_tag + '</h6>');
+                            }
+
+                            $(this).find('.isp_product_info').prepend('<div class="isp_product_collection">' + product_collection + '</div>');
 
                             var product_name = product_data.l;
                             var product_name_clean = product_name.substring(0, product_name.lastIndexOf(" "));

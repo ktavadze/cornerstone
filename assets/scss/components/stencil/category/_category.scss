@@ -16,6 +16,12 @@ div#isp_search_result_page_container div.isp_center_container ul#isp_search_resu
     width: 50% !important;
 }
 
+@media (max-width: 768px) {
+    div#isp_search_result_page_container div.isp_center_container ul#isp_search_results_container li.isp_grid_product {
+        height: 375px !important;
+    }
+}
+
 @media (min-width: 981px) {
     div#isp_search_result_page_container div.isp_center_container ul#isp_search_results_container li.isp_grid_product {
         margin: 15px 0 !important;
@@ -28,7 +34,18 @@ li.isp_grid_product a.isp_product_quick_view_button {
     margin: 0 !important;
 }
 
+li.isp_grid_product .isp_product_tag {
+    position: absolute;
+    top: 0;
+    left: 15px;
+
+    font-family: "Helvetica Neue Roman", sans-serif !important;
+    margin: 0;
+}
+
 li.isp_grid_product div.isp_product_info {
+    margin-top: 10px !important;
+    padding: 25px 15px 10px !important;
     text-align: left !important;
 }
 

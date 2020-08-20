@@ -25,6 +25,11 @@
 
     <section class="productView-details">
         <div class="productView-product">
+            <h6 class="productView-tag">
+                {{#filter product.custom_fields "Tag" property='name' }}
+                    {{value}}
+                {{/filter}}
+            </h6>
             <a class="productView-collection">
                 {{#filter product.custom_fields "Collection" property='name' }}
                     {{value}}
@@ -128,6 +133,7 @@
                 })();
             </script>
             {{product.detail_messages}}
+<!--
             <dl class="productView-info">
 
                 {{#if schema}}
@@ -209,6 +215,7 @@
                 {{/if}}
 
             </dl>
+-->
         </div>
     </section>
 
