@@ -145,7 +145,13 @@ body > div#isp_product_quick_view_model .isp_quick_view_content_right {
 }
 
 body > div#isp_product_quick_view_model .isp_quick_view_content_right .isp_base_info {
-    margin-top: 15px;
+    margin-top: 0.5rem;
+}
+
+body > div#isp_product_quick_view_model .isp_quick_view_content_right .isp_quick_view_tag {
+    font-family: "Helvetica Neue Roman", sans-serif !important;
+    margin-bottom: 0.5rem;
+    margin-top: 0;
 }
 
 body > div#isp_product_quick_view_model .isp_quick_view_content_right .isp_quick_view_title {

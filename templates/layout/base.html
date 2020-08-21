@@ -128,13 +128,22 @@
                     var p_id = qv_title.attr('product_id');
                     var product_data = ISP_PRODUCTS[p_id];
 
+                    var product_tag = null;
+                    var product_collection = null;
+
                     for (var i = 0; i < product_data.att.length; i++) {
-                        if (product_data.att[i][0] == "Collection") {
-                            var product_collection = product_data.att[i][1];
-                            $('.isp_quick_view_content_right')
-                                .prepend('<div class="isp_quick_view_collection">' + product_collection + '</div>');
-                            break;
+                        if (product_data.att[i][0] == "Tag") {
+                            product_tag = product_data.att[i][1];
                         }
+                        else if (product_data.att[i][0] == "Collection") {
+                            product_collection = product_data.att[i][1];
+                        }
+                    }
+
+                    $('.isp_quick_view_content_right').prepend('<div class="isp_quick_view_collection">' + product_collection + '</div>');
+
+                    if (product_tag) {
+                        $('.isp_quick_view_content_right').prepend('<h6 class="isp_quick_view_tag">' + product_tag + '</h6>');
                     }
 
                     var product_name = product_data.l;
