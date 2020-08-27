@@ -176,17 +176,18 @@
             display: inline-block;
 
             .navPage-subMenu-item {
-                flex: 1 0 10%;
+                flex: 1 0 5%;
                 margin: 5px;
             }
 
             .navPage-subMenu-item:first-child {
-                flex: 1 0 20%;
+                flex: 1 0 15%;
             }
 
             .navPage-subMenu-item:nth-child(5),
+            .navPage-subMenu-item:nth-child(6),
             .navPage-subMenu-item:last-child {
-                flex: 1 0 15%;
+                flex: 1 0 10%;
             }
         }
     }
@@ -377,7 +378,7 @@
         // scss-lint:disable ImportantRule
         background-color: stencilColor("navPages-subMenu-backgroundColor");
         box-shadow: 0 10px 10px rgba(0, 0, 0, 0.15);
-        padding: 0.75rem 10%;
+        padding: 0.75rem 1rem;
         text-align: center;
         width: 100%;
 
