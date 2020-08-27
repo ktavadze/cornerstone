@@ -79,6 +79,10 @@
     }
 }
 
+.navUser-section:first-child {
+    display: none;
+}
+
 .navUser-action {
     color: stencilColor("navUser-color");
     font-weight: fontWeight("bold");

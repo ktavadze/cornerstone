@@ -583,7 +583,11 @@
 
 .navPages-list--user {
     .navPages-item:first-child {
-        display: block;
+        display: none;
+    }
+
+    .navPages-item:nth-child(2) {
+        display: block !important;
     }
 
     @include breakpoint("medium") {
