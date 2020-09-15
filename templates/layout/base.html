@@ -89,7 +89,7 @@
                         var p_id = $(this).attr('product_id');
                         var product_data = ISP_PRODUCTS[p_id];
 
-                        if (!product_data.is_clean) {
+                        if (!$(this).has('.isp_product_collection').length) {
                             var product_tag = null;
                             var product_collection = null;
 
