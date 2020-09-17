@@ -111,6 +111,30 @@
 }
 
 // ISP recommendations
+#isp-related-tabs {
+    border-bottom: 1px solid #e5e5e5;
+    font-weight: bold;
+    font-size: larger;
+    margin-bottom: 20px;
+
+    #isp-related-tab-1,
+    #isp-related-tab-2 {
+        border-left: 1px solid #e5e5e5;
+        cursor: pointer;
+        display: inline-block;
+        padding: 10px 20px;
+
+        &:hover {
+            color: #757575;
+        }
+    }
+}
+
+#isp-related-widgets {
+    height: 266px;
+    overflow: hidden;
+}
+
 .isp_related_wrapper {
     .slick-prev::before,
     .slick-next::before {
@@ -144,16 +168,7 @@
     }
 
     .isp_related_title {
-        border-bottom: 1px solid #e5e5e5;
-        font-weight: bold;
-        padding: 10px 0;
-        text-align: left;
-        text-transform: none;
-        margin-bottom: 20px;
-
-        @include breakpoint("medium") {
-            padding: 10px;
-        }
+        display: none;
     }
 
     img.isp_related_product_image {

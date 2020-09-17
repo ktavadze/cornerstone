@@ -29,11 +29,37 @@ product:
             {{> components/products/reviews reviews=product.reviews product=product urls=urls}}
         {{/all}}
 
-        <div title="Related Products" layout="horizontal" max_suggest="8" sources="related_views,similar_products,related_recently_viewed,related_purchase" id="isp-related-widget-1"></div>
+        <div id="isp-related-tabs">
+            <div id="isp-related-tab-1">You May Also Like...</div>
+            <div id="isp-related-tab-2">Complete the Look</div>
+        </div>
+
+        <div id="isp-related-widgets">
+            <div title="You May Also Like..." layout="horizontal" sources="related_views,similar_products,related_recently_viewed,related_purchase" id="isp-related-widget-1"></div>
+            <div title="Complete the Look" layout="horizontal" sources="related_purchase,related_recently_viewed,related_views,similar_products" id="isp-related-widget-2"></div>
+        </div>
 
         <script src="https://acp-magento.appspot.com/js/isp_related_products.js?v=1.0.9&UUID=2a7b6022-1080-487d-9179-6512b21800fa&store=1"></script>
 
         <!-- <script src="https://acp-magento.appspot.com/js/isp_related_products.js?v=1.0.9&UUID=eb981cff-208f-49ef-ac71-32fc911beaf1&store=1"></script> -->
+
+        <script>
+            // configure isp related tabs
+            (function() {
+                var tab1 = document.querySelector("#isp-related-tab-1");
+                var tab2 = document.querySelector("#isp-related-tab-2");
+                var widget1 = document.querySelector("#isp-related-widget-1");
+                var widget2 = document.querySelector("#isp-related-widget-2");
+
+                tab1.addEventListener("click", function() {
+                    widget1.style.display = "block";
+                });
+
+                tab2.addEventListener("click", function() {
+                    widget1.style.display = "none";
+                });
+            })();
+        </script>
     </div>
 {{/partial}}
 {{> layout/base}}
