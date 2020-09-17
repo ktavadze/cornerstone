@@ -113,26 +113,43 @@
 // ISP recommendations
 #isp-related-tabs {
     border-bottom: 1px solid #e5e5e5;
+    display: flex;
     font-weight: bold;
-    font-size: larger;
     margin-bottom: 20px;
 
     #isp-related-tab-1,
     #isp-related-tab-2 {
-        border-left: 1px solid #e5e5e5;
+        border: 1px solid #e5e5e5;
+        border-bottom: none;
+        color: #333;
         cursor: pointer;
         display: inline-block;
+        flex: 1;
+        font-size: small;
         padding: 10px 20px;
 
         &:hover {
             color: #757575;
         }
+
+        @include breakpoint("small") {
+            flex: none;
+            font-size: larger;
+        }
+    }
+
+    #isp-related-tab-2 {
+        border-left: 0;
     }
 }
 
 #isp-related-widgets {
     height: 266px;
     overflow: hidden;
+
+    #isp-related-widget-1 {
+        margin-bottom: 100px;
+    }
 }
 
 .isp_related_wrapper {
