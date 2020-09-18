@@ -278,6 +278,50 @@
     </section>
 
     <section class="productView-details">
+        <ul class="productView-variants"></ul>
+        <script type="text/javascript" async>
+            // populate product variants
+            (async function() {
+                var productVariantsList = document.querySelector(".productView .productView-variants");
+
+                var warranty = "{{product.warranty}}";
+                var variants = warranty.split(";");
+
+                if (variants.length > 1) {
+                    for (var variant of variants) {
+                        var variantWords = variant.split(",");
+                        var color = variantWords[0];
+                        var src = variantWords[1];
+                        var url = variantWords[2];
+
+                        var swatch_name = color.toLowerCase().replaceAll(" ", "-");
+                        var swatch_path = "/content/swatches/" + swatch_name + ".png";
+
+                        var a = document.createElement("a");
+                        a.href = url;
+                        a.style.background = "url(" + swatch_path + ") center";
+
+                        a.onmouseover = function(event) {
+                            event.target.previousSibling.style.display = "block";
+                        }
+                        a.onmouseout = function(event) {
+                            event.target.previousSibling.style.display = "none";
+                        }
+
+                        var popup = document.createElement("div");
+                        popup.style.background = "url(/product_images/" + src + ") center center / auto 100% no-repeat";
+                        popup.style.backgroundColor = "#fff"
+
+                        var li = document.createElement("li");
+                        li.classList.add("productView-variant");
+                        li.appendChild(popup);
+                        li.appendChild(a);
+
+                        productVariantsList.appendChild(li);
+                    }
+                }
+            })();
+        </script>
         <div class="productView-options">
             {{#if product.release_date }}
                 <p>{{product.release_date}}</p>

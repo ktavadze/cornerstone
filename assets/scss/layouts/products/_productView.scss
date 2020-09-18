@@ -35,6 +35,40 @@
     margin-top: 0;
 }
 
+.productView-variants {
+    margin: 10px 0 20px;
+    position: relative;
+    text-align: center;
+
+    @include breakpoint("small") {
+        text-align: left;
+    }
+
+    .productView-variant {
+        display: inline-block;
+
+        div {
+            position: absolute;
+            top: -110px;
+
+            border: 1px solid #e5e5e5;
+            display: none;
+            height: 100px;
+            width: 100px;
+            z-index: 99;
+        }
+
+        a {
+            border: 1px solid #e5e5e5;
+            border-radius: 50%;
+            display: block;
+            height: 40px;
+            margin-right: 10px;
+            width: 40px;
+        }
+    }
+}
+
 .productView-images {
     @include grid-column(12);
     padding-left: spacing("base");
