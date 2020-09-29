@@ -60,6 +60,96 @@ product:
                 });
             })();
         </script>
+
+        <a id="pdp-banner-anchor">
+            <img id="pdp-banner-mobile" src="" />
+            <img id="pdp-banner" src="" />
+        </a>
+        <script type="text/javascript">
+            // add collection links and banners
+            (function() {
+                var productCollection = document.querySelector(".productView .productView-collection");
+                var pdpBannerAnchor = document.querySelector("#pdp-banner-anchor");
+                var pdpBannerMobile = document.querySelector("#pdp-banner-mobile");
+                var pdpBanner = document.querySelector("#pdp-banner");
+
+                var collection = "{{#filter product.custom_fields 'Collection' property='name' }}{{value}}{{/filter}}"
+                var material = "{{#filter product.custom_fields 'Material' property='name' }}{{value}}{{/filter}}";
+
+                if (collection == "CLASSICO") {
+                    if (material == "GOLD") {
+                        productCollection.href = "/collections/gold-classico/";
+                        pdpBannerAnchor.href = "/collections/gold-classico/";
+                        pdpBannerMobile.src = "/content/banners/pdp/gold-classico-mobile.jpg";
+                        pdpBanner.src = "/content/banners/pdp/gold-classico.jpg";
+                    }
+                    else if (material == "SILVER") {
+                        productCollection.href = "/collections/silver-classico/";
+                        pdpBannerAnchor.href = "/collections/silver-classico/";
+                        pdpBannerMobile.src = "/content/banners/pdp/silver-classico-mobile.jpg";
+                        pdpBanner.src = "/content/banners/pdp/silver-classico.jpg";
+                    }
+                    else {
+                        productCollection.href = "/collections/chimera/";
+                        pdpBannerAnchor.href = "/collections/chimera/";
+                        pdpBannerMobile.src = "/content/banners/pdp/chimera-mobile.jpg";
+                        pdpBanner.src = "/content/banners/pdp/chimera.jpg";
+                    }
+                }
+                else if (collection == "LOLLIPOP®") {
+                    if (material == "GOLD") {
+                        productCollection.href = "/collections/gold-lollipop/";
+                        pdpBannerAnchor.href = "/collections/gold-lollipop/";
+                        pdpBannerMobile.src = "/content/banners/pdp/gold-lollipop-mobile.jpg";
+                        pdpBanner.src = "/content/banners/pdp/gold-lollipop.jpg";
+                    }
+                    else {
+                        productCollection.href = "/collections/silver-lollipop/";
+                        pdpBannerAnchor.href = "/collections/silver-lollipop/";
+                        pdpBannerMobile.src = "/content/banners/pdp/gold-lollipop-mobile.jpg";
+                        pdpBanner.src = "/content/banners/pdp/gold-lollipop.jpg";
+                    }
+                }
+                else if (collection == "ROCK CANDY®") {
+                    if (material == "GOLD") {
+                        productCollection.href = "/collections/gold-rock-candy/";
+                        pdpBannerAnchor.href = "/collections/gold-rock-candy/";
+                        pdpBannerMobile.src = "/content/banners/pdp/gold-rock-candy-mobile.jpg";
+                        pdpBanner.src = "/content/banners/pdp/gold-rock-candy.jpg";
+                    }
+                    else {
+                        productCollection.href = "/collections/silver-rock-candy/";
+                        pdpBannerAnchor.href = "/collections/silver-rock-candy/";
+                        pdpBannerMobile.src = "/content/banners/pdp/silver-rock-candy-mobile.jpg";
+                        pdpBanner.src = "/content/banners/pdp/silver-rock-candy.jpg";
+                    }
+                }
+                else if (collection == "POLISHED ROCK CANDY") {
+                    productCollection.href = "/collections/polished-rock-candy/";
+                    pdpBannerAnchor.href = "/collections/polished-rock-candy/";
+                    pdpBannerMobile.src = "/content/banners/pdp/polished-rock-candy-mobile.jpg";
+                    pdpBanner.src = "/content/banners/pdp/polished-rock-candy.jpg";
+                }
+                else if (collection == "ATELIER") {
+                    productCollection.href = "/collections/one-of-a-kind/";
+                    pdpBannerAnchor.href = "/collections/one-of-a-kind/";
+                    pdpBannerMobile.src = "/content/banners/pdp/one-of-a-kind-mobile.jpg";
+                    pdpBanner.src = "/content/banners/pdp/one-of-a-kind.jpg";
+                }
+                else if (collection == "IPPOLITA Charms") {
+                    productCollection.href = "/collections/ippolita-charms/";
+                    pdpBannerAnchor.href = "/collections/ippolita-charms/";
+                    pdpBannerMobile.src = "/content/banners/pdp/ippolita-charms-mobile.jpg";
+                    pdpBanner.src = "/content/banners/pdp/ippolita-charms.jpg";
+                }
+                else {
+                    productCollection.href = "/collections/" + collection.toLowerCase() + "/";
+                    pdpBannerAnchor.href = "/collections/" + collection.toLowerCase() + "/";
+                    pdpBannerMobile.src = "/content/banners/pdp/" + collection.toLowerCase() + "-mobile.jpg";
+                    pdpBanner.src = "/content/banners/pdp/" + collection.toLowerCase() + ".jpg";
+                }
+            })();
+        </script>
     </div>
 {{/partial}}
 {{> layout/base}}

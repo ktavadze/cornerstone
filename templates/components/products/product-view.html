@@ -35,57 +35,6 @@
                     {{value}}
                 {{/filter}}
             </a>
-            <script type="text/javascript">
-                // add collection link
-                (function() {
-                    var productCollection = document.querySelector(".productView .productView-collection");
-
-                    if (productCollection) {
-                        var collection = productCollection.innerHTML.trim();
-                        var material = "{{#filter product.custom_fields 'Material' property='name' }}{{value}}{{/filter}}";
-
-                        if (collection == "CLASSICO") {
-                            if (material == "GOLD") {
-                                productCollection.href = "/collections/gold-classico/";
-                            }
-                            else if (material == "SILVER") {
-                                productCollection.href = "/collections/silver-classico/";
-                            }
-                            else {
-                                productCollection.href = "/collections/chimera/";
-                            }
-                        }
-                        else if (collection == "LOLLIPOP®") {
-                            if (material == "GOLD") {
-                                productCollection.href = "/collections/gold-lollipop/";
-                            }
-                            else {
-                                productCollection.href = "/collections/silver-lollipop/";
-                            }
-                        }
-                        else if (collection == "ROCK CANDY®") {
-                            if (material == "GOLD") {
-                                productCollection.href = "/collections/gold-rock-candy/";
-                            }
-                            else {
-                                productCollection.href = "/collections/silver-rock-candy/";
-                            }
-                        }
-                        else if (collection == "POLISHED ROCK CANDY") {
-                            productCollection.href = "/collections/polished-rock-candy/";
-                        }
-                        else if (collection == "ATELIER") {
-                            productCollection.href = "/collections/one-of-a-kind/";
-                        }
-                        else if (collection == "IPPOLITA Charms") {
-                            productCollection.href = "/collections/ippolita-charms/";
-                        }
-                        else {
-                            productCollection.href = "/collections/" + collection.toLowerCase() + "/";
-                        }
-                    }
-                })();
-            </script>
             <h1 class="productView-title" {{#if schema}}itemprop="name"{{/if}}>{{product.title}}</h1>
             <script type="text/javascript">
                 // clean pdp product titles
