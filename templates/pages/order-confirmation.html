@@ -34,3 +34,50 @@
 {{/partial}}
 
 {{> layout/empty}}
+
+<!-- Hero conversion tracking -->
+<script type="text/javascript">
+    fetch('/api/storefront/order/{{checkout.order.id}}', {
+        credentials: 'include'
+    }).then(function (response) {
+        return response.json();
+    }).then(function (myJson) {
+        order = myJson;
+
+        var coupon = "";
+        if (order.coupons[0] != null) {
+            coupon = order.coupons[0].code;
+        }
+
+        var products = [];
+        for (var product of order.lineItems.physicalItems) {
+            products.push({
+                id: product.productId.toString(),
+                quantity: product.quantity,
+                name: product.name,
+                image: product.imageUrl,
+                price: product.listPrice,
+                currency: "USD",
+                brand: "IPPOLITA",
+                category: "Jewelry",
+                variant: product.sku,
+                location: ""
+            });
+        }
+
+        hero("track", {
+            type: "ecommerce:purchase",
+            purchase: {
+                id: order.orderId.toString(),
+                subtotal: order.orderAmount,
+                currency: "USD",
+                total: order.baseAmount,
+                tax: order.taxTotal,
+                shippingCost: order.shippingCostTotal,
+                shippingMethod: "",
+                coupon: coupon
+            },
+            products: products
+        });
+    });
+</script>

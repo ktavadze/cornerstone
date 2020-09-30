@@ -232,3 +232,13 @@ body > div#isp_product_quick_view_model a.isp_view_full_details,
 body > div#isp_product_quick_view_model .isp_quick_view_add_to_cart_btn_quick_view {
     border-radius: 0 !important;
 }
+
+#isp_scrollUp {
+    bottom: 10px !important;
+    right: 80px !important;
+
+    @include breakpoint("small") {
+        bottom: 15px !important;
+        right: 90px !important;
+    }
+}

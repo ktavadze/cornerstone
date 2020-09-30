@@ -154,6 +154,7 @@ product:
 {{/partial}}
 {{> layout/base}}
 
+<!-- Klaviyo viewed product tracking -->
 <script type="text/javascript">
     var _learnq = _learnq || [];
 
@@ -181,4 +182,24 @@ product:
         CompareAtPrice: item.CompareAtPrice
     }
     }]);
+</script>
+
+<!-- Hero viewed product tracking -->
+<script type="text/javascript">
+    hero("track", {
+        type: "ecommerce:detail",
+        products: [
+            {
+                id: "{{product.id}}",
+                name: "{{product.title}}",
+                image: "{{getImage product.main_image 'product_size' (cdn theme_settings.default_image_product)}}",
+                price: parseFloat("{{product.price.without_tax.value}}"),
+                currency: "USD",
+                brand: "{{product.brand.name}}",
+                category: "Jewelry",
+                variant: "{{product.sku}}",
+                location: "{{product.url}}"
+            }
+        ]
+    });
 </script>
