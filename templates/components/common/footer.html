@@ -302,14 +302,46 @@
     }
 
     function configureSizeGuideAction() {
-        var banglesAction = document.querySelector("#size-guide .sizeGuide-action:first-child");
+        var sizeGuide = document.querySelector("#size-guide");
 
-        document.addEventListener("click", function(e) {
-            if (e.target && e.target.className == "size-guide-action") {
-                setTimeout(function () {
-                    banglesAction.click();
-                }, 100);
-            }
-        });
+        if (sizeGuide) {
+            var banglesNavItem = document.querySelector("#size-guide .modal-nav-item:first-child");
+            var ringsNavItem = document.querySelector("#size-guide .modal-nav-item:nth-child(2)");
+            var necklacesNavItem = document.querySelector("#size-guide .modal-nav-item:nth-child(3)");
+
+            var banglesMainItem = document.querySelector("#size-guide .modal-main-item:first-child");
+            var ringsMainItem = document.querySelector("#size-guide .modal-main-item:nth-child(2)");
+            var necklacesMainItem = document.querySelector("#size-guide .modal-main-item:nth-child(3)");
+
+            banglesNavItem.addEventListener("click", function() {
+                banglesNavItem.style.color = "#000";
+                ringsNavItem.style.color = "#999";
+                necklacesNavItem.style.color = "#999";
+
+                banglesMainItem.style.display = "block";
+                ringsMainItem.style.display = "none";
+                necklacesMainItem.style.display = "none";
+            });
+
+            ringsNavItem.addEventListener("click", function() {
+                banglesNavItem.style.color = "#999";
+                ringsNavItem.style.color = "#000";
+                necklacesNavItem.style.color = "#999";
+
+                banglesMainItem.style.display = "none";
+                ringsMainItem.style.display = "block";
+                necklacesMainItem.style.display = "none";
+            });
+
+            necklacesNavItem.addEventListener("click", function() {
+                banglesNavItem.style.color = "#999";
+                ringsNavItem.style.color = "#999";
+                necklacesNavItem.style.color = "#000";
+
+                banglesMainItem.style.display = "none";
+                ringsMainItem.style.display = "none";
+                necklacesMainItem.style.display = "block";
+            });
+        }
     }
 </script>
