@@ -11,30 +11,62 @@
 }
 
 // ISP search results, filters and quick view
+div#isp_search_result_page_container div.isp_center_container ul#isp_search_results_container {
+    display: grid !important;
+    grid-template-columns: repeat(2, 50%);
+}
+
 div#isp_search_result_page_container div.isp_center_container ul#isp_search_results_container li.isp_grid_product {
-    height: 500px !important;
+    height: 375px;
     margin: 0 !important;
-    width: 50% !important;
+    width: 100% !important;
 }
 
-@media (max-width: 768px) {
-    div#isp_search_result_page_container div.isp_center_container ul#isp_search_results_container li.isp_grid_product {
-        height: 375px !important;
-    }
+div#isp_search_result_page_container div.isp_center_container ul#isp_search_results_container li.isp_grid_banner2x2 {
+    grid-column: 1 / span 2;
+    grid-row: 5 / span 2;
+    height: 750px;
 }
 
-@media (min-width: 981px) {
-    div#isp_search_result_page_container div.isp_center_container ul#isp_search_results_container li.isp_grid_product {
-        width: 25% !important;
-    }
+div#isp_search_result_page_container div.isp_center_container ul#isp_search_results_container li.isp_grid_banner1x2 {
+    grid-column: 1 / span 2;
+    grid-row: 11 / span 2;
+    height: 375px;
 }
 
 @media (min-width: 769px) {
+    div#isp_search_result_page_container div.isp_center_container ul#isp_search_results_container li.isp_grid_product {
+        height: 500px;
+    }
+
+    div#isp_search_result_page_container div.isp_center_container ul#isp_search_results_container li.isp_grid_banner2x2 {
+        height: 1000px;
+    }
+
+    div#isp_search_result_page_container div.isp_center_container ul#isp_search_results_container li.isp_grid_banner1x2 {
+        height: 500px;
+    }
+
     li.isp_grid_product div.isp_product_image_wrapper {
         height: 350px !important;
     }
 }
 
+@media (min-width: 981px) {
+    div#isp_search_result_page_container div.isp_center_container ul#isp_search_results_container {
+        grid-template-columns: repeat(4, 25%);
+    }
+
+    div#isp_search_result_page_container div.isp_center_container ul#isp_search_results_container li.isp_grid_banner2x2 {
+        grid-column: 1 / span 2;
+        grid-row: 3 / span 2;
+    }
+
+    div#isp_search_result_page_container div.isp_center_container ul#isp_search_results_container li.isp_grid_banner1x2 {
+        grid-column: 3 / span 2;
+        grid-row: 7 / span 1;
+    }
+}
 
 li.isp_grid_product a.isp_product_quick_view_button {
     bottom: 0 !important;

@@ -85,6 +85,46 @@
                     return jquery_li_element_html;
                 },
                 isp_serp_callback: function() {
+                    // add plp banners
+                    if (!$(".isp_grid_banner1x2").length) {
+                        var currentUrl = window.location.href;
+                        var targetUrls = [
+                            "/bracelets/",
+                            "/earrings/",
+                            "/gifts-of-color/",
+                            "/gifts-of-gold/",
+                            "/gifts-of-silver",
+                            "/gifts-under-500/",
+                            "/gifts-under-1000/",
+                            "/gifts-under-2000/",
+                            "/necklaces/",
+                            "/rings/"
+                        ];
+
+                        // look for matching target url
+                        var match = null;
+
+                        for (var targetUrl of targetUrls) {
+                            if (currentUrl.indexOf(targetUrl) > -1) {
+                                match = targetUrl;
+
+                                break;
+                            }
+                        }
+
+                        // if match found, add banners
+                        if (match) {
+                            var fileName = match.replaceAll("/", "");
+
+                            $("#isp_search_results_container").prepend('<li class="isp_grid_banner1x2"><div style="height: 100%;"></div></li>');
+                            $("#isp_search_results_container").prepend('<li class="isp_grid_banner2x2"><div style="height: 100%;"></div></li>');
+
+                            $(".isp_grid_banner2x2 > div").css("background", "url(/content/banners/plp/" + fileName + "-2x2.jpg) center center / auto 100% no-repeat");
+                            $(".isp_grid_banner1x2 > div").css("background", "url(/content/banners/plp/" + fileName + "-1x2.jpg) center center / auto 100% no-repeat");
+                        }
+                    }
+
+                    // format plp products
                     $('.isp_grid_product').each(function(index) {
                         var p_id = $(this).attr('product_id');
                         var product_data = ISP_PRODUCTS[p_id];
