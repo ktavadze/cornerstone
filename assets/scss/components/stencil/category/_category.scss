@@ -34,6 +34,15 @@ div#isp_search_result_page_container div.isp_center_container ul#isp_search_resu
     height: 375px;
 }
 
+div#isp_search_result_page_container div.isp_center_container ul#isp_search_results_container li.isp_grid_banner2x2 > div,
+div#isp_search_result_page_container div.isp_center_container ul#isp_search_results_container li.isp_grid_banner1x2 > div {
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+}
+
 @media (min-width: 769px) {
     div#isp_search_result_page_container div.isp_center_container ul#isp_search_results_container li.isp_grid_product {
         height: 500px;

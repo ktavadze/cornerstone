@@ -116,11 +116,11 @@
                         if (match) {
                             var fileName = match.replaceAll("/", "");
 
-                            $("#isp_search_results_container").prepend('<li class="isp_grid_banner1x2"><div style="height: 100%;"></div></li>');
-                            $("#isp_search_results_container").prepend('<li class="isp_grid_banner2x2"><div style="height: 100%;"></div></li>');
+                            $("#isp_search_results_container").prepend('<li class="isp_grid_banner1x2"><div></div></li>');
+                            $("#isp_search_results_container").prepend('<li class="isp_grid_banner2x2"><div></div></li>');
 
-                            $(".isp_grid_banner2x2 > div").css("background", "url(/content/banners/plp/" + fileName + "-2x2.jpg) center center / auto 100% no-repeat");
-                            $(".isp_grid_banner1x2 > div").css("background", "url(/content/banners/plp/" + fileName + "-1x2.jpg) center center / auto 100% no-repeat");
+                            $(".isp_grid_banner2x2 > div").css("background-image", "url(/content/banners/plp/" + fileName + "-2x2.jpg)");
+                            $(".isp_grid_banner1x2 > div").css("background-image", "url(/content/banners/plp/" + fileName + "-1x2.jpg)");
                         }
                     }
 
