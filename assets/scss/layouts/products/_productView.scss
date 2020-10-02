@@ -265,3 +265,31 @@
         }
     }
 }
+
+// PDP benefits
+#pdp-benefits {
+    margin-top: 5rem;
+    text-align: center;
+
+    ul {
+        display: flex;
+        flex-wrap: wrap;
+        list-style: none;
+        margin: 0;
+
+        li {
+            margin-top: 2rem;
+            min-width:  50%;
+            flex: 1;
+
+            img {
+                min-height: 75px;
+                max-width: 75px;
+            }
+
+            @include breakpoint("medium") {
+                min-width: 250px;
+            }
+        }
+    }
+}
