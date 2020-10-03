@@ -2,6 +2,29 @@
 cart: true
 ---
 {{#partial "page"}}
+
+<script>
+    // ISP related options
+    var isp_related_options.responsive = [
+        {
+            breakpoint: 3840,
+            settings: {
+                slidesToShow: 4,
+                slidesToScroll: 4,
+                infinite: false
+            }
+        },
+        {
+            breakpoint: 801,
+            settings: {
+                slidesToShow: 2,
+                slidesToScroll: 2,
+                infinite: false
+            }
+        }
+    ]
+</script>
+
 <div class="page">
 
     <main class="page-content" data-cart>
