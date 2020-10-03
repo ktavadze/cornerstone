@@ -34,7 +34,7 @@
                 <h5 class="footer-info-heading">Contact</h5>
                 <ul class="footer-info-list">
                     <li>
-                        <a href="/#">Stylist Chat</a>
+                        <a id="footer-hero-action">Stylist Chat</a>
                     </li>
                     <li>
                         <a href="/consult-a-stylist">Consult a Stylist</a>
@@ -131,6 +131,7 @@
 
 <script type="text/javascript">
     configureHeader();
+    configureFooter();
     configureSearchActionMobile();
     configureSearchActionDesktop();
     configureSizeGuideAction();
@@ -244,6 +245,14 @@
                 }
             });
         }
+    }
+
+    function configureFooter() {
+        document.querySelector("#footer-hero-action").addEventListener("click", function(event){
+            event.preventDefault();
+
+            hero("show");
+        });
     }
 
     function configureSearchActionMobile() {
