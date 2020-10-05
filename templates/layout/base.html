@@ -130,6 +130,14 @@
                         var product_data = ISP_PRODUCTS[p_id];
 
                         if (!$(this).has('.isp_product_collection').length) {
+                            console.log(index);
+                            if (index == 11) {
+                                $(".isp_grid_banner2x2").show();
+                            }
+                            else if (index == 21) {
+                                $(".isp_grid_banner1x2").show();
+                            }
+
                             var product_tag = null;
                             var product_collection = null;
 
