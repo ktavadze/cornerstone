@@ -204,7 +204,7 @@
     padding-bottom: remCalc($header-height) - $header-logo-marginVertical * 2;
 
     @include breakpoint("medium") {
-        padding-bottom: get-height(stencilString('logo_size'));
+        display: none;
     }
 }
 
