@@ -26,10 +26,30 @@
     <section class="productView-details">
         <div class="productView-product">
             <h6 class="productView-tag">
-                {{#filter product.custom_fields "Tag" property='name' }}
-                    {{value}}
-                {{/filter}}
+                <a>
+                    {{#filter product.custom_fields "Tag" property='name' }}
+                        {{value}}
+                    {{/filter}}
+                </a>
             </h6>
+            <script type="text/javascript">
+                // add tag links
+                (function() {
+                    var productTag = document.querySelector(".productView .productView-tag > a");
+
+                    var tag = "{{#filter product.custom_fields 'Tag' property='name' }}{{value}}{{/filter}}".toLowerCase();
+
+                    if (tag == "new arrival") {
+                        productTag.href = "/new-arrivals/";
+                    }
+                    else if (tag == "icon") {
+                        productTag.href = "/search-results/?lp=icons";
+                    }
+                    else if (tag == "exclusively ours") {
+                        productTag.href = "/search-results/?lp=exclusively-ours";
+                    }
+                })();
+            </script>
             <a class="productView-collection">
                 {{#filter product.custom_fields "Collection" property='name' }}
                     {{value}}
