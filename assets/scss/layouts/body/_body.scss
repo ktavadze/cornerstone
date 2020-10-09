@@ -91,7 +91,7 @@
             cursor: pointer;
             display: inline-block;
             font-weight: bold;
-            margin-right: 5rem;
+            margin-right: 7.5rem;
 
             &:hover {
                 color: black !important;
@@ -114,24 +114,51 @@
         }
 
         .bangle-sizes-container,
-        .ring-sizes-container,
-        .necklace-sizes-container {
-            align-items: center;
-            display: flex;
-            justify-content: center;
+        .ring-sizes-container  {
+            border-top: 1px solid #ccc;
+            border-left: 1px solid #ccc;
+            display: grid;
+            grid-template-columns: repeat(3, 33.33%);
 
+            > h5,
             > div {
-                flex: 1;
+                border-right: 1px solid #ccc;
+                border-bottom: 1px solid #ccc;
+                margin: 0;
+                padding: 10px 5px;
+            }
 
-                div {
-                    margin: 10px 0;
-                }
+            .white {
+                color: #fff;
             }
         }
 
-        .ring-sizes-container {
-            div:first-child > div {
-                margin: 25px 0;
+        .necklace-sizes-container {
+            display: flex;
+
+            .necklace-sizes-grid {
+                border-top: 1px solid #ccc;
+                border-left: 1px solid #ccc;
+                display: grid;
+                flex: 1;
+                grid-template-columns: repeat(2, 50%);
+
+                > h5,
+                > div {
+                    border-right: 1px solid #ccc;
+                    border-bottom: 1px solid #ccc;
+                    margin: 0;
+                    padding: 10px 5px;
+                }
+            }
+
+            .necklace-sizes-image {
+                text-align: center;
+                flex: 1;
+
+                img {
+                    max-height: 250px;
+                }
             }
         }
 
@@ -142,6 +169,14 @@
 
     .modal-footnote {
         margin-top: 2rem;
+    }
+
+    .hide-on-mobile {
+        display: block;
+    }
+
+    .show-on-mobile {
+        display: none;
     }
 
     @media (max-width: 750px) {
@@ -157,20 +192,21 @@
             right: 0.5rem;
         }
 
-        .modal-nav {
-            .modal-nav-item {
-                margin-right: 2rem;
-            }
+        .modal-nav-item {
+            margin-right: 1rem !important;
         }
 
-        .bangle-sizes-container,
-        .ring-sizes-container,
         .necklace-sizes-container {
-            flex-wrap: wrap;
+            display: block !important;
+            margin-bottom: 2rem;
+        }
 
-            > div {
-                min-width: 50%;
-            }
+        .hide-on-mobile {
+            display: none;
+        }
+
+        .show-on-mobile {
+            display: block;
         }
     }
 }
