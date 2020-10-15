@@ -79,8 +79,8 @@ product:
                 var pdpBannerMobile = document.querySelector("#pdp-banner-mobile");
                 var pdpBanner = document.querySelector("#pdp-banner");
 
-                var collection = "{{#filter product.custom_fields 'Collection' property='name' }}{{value}}{{/filter}}"
-                var material = "{{#filter product.custom_fields 'Material' property='name' }}{{value}}{{/filter}}";
+                var collection = "{{#filter product.custom_fields 'Collection' property='name' }}{{value}}{{/filter}}".toUpperCase();
+                var material = "{{#filter product.custom_fields 'Material' property='name' }}{{value}}{{/filter}}".toUpperCase();
 
                 if (collection == "CLASSICO") {
                     if (material == "GOLD") {
