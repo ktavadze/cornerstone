@@ -160,6 +160,10 @@
                 flex: 1 0 10%;
                 margin: 5px;
             }
+
+            .navPage-subMenu-item:last-child {
+                flex: 1 0 15%;
+            }
         }
 
         @include breakpoint("large") {
