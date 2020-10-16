@@ -35,36 +35,92 @@
     margin-top: 0;
 }
 
-.productView-variants {
-    margin: 10px 0 20px;
-    position: relative;
+.productView-metals-container {
+    display: none;
+    margin: 1rem 0;
     text-align: center;
 
     @include breakpoint("small") {
         text-align: left;
     }
 
-    .productView-variant {
-        display: inline-block;
+    > div {
+        font-size: 13px;
+        margin: 1rem 0;
+    }
 
-        div {
-            position: absolute;
-            top: -110px;
+    .productView-metals {
+        margin: 0;
 
-            border: 1px solid #e5e5e5;
-            display: none;
-            height: 100px;
-            width: 100px;
-            z-index: 99;
+        li {
+            display: inline-block;
+            height: 35px;
+            margin-right: 0.5rem;
+
+            div,
+            a {
+                height: 100%;
+                width: 100%;
+                padding: 5px 10px;
+            }
+
+            div {
+                border: 1px solid #333333;
+            }
+
+            a {
+                border: 1px solid #cccccc;
+                display: block;
+                text-decoration: none;
+            }
+
+            a:hover {
+                border: 1px solid #333333;
+            }
         }
+    }
+}
 
-        a {
-            border: 1px solid #e5e5e5;
-            border-radius: 50%;
-            display: block;
-            height: 40px;
-            margin-right: 10px;
-            width: 40px;
+.productView-variants-container {
+    display: none;
+    margin: 1rem 0;
+    text-align: center;
+
+    @include breakpoint("small") {
+        text-align: left;
+    }
+
+    > div {
+        font-size: 13px;
+        margin: 1rem 0;
+    }
+
+    .productView-variants {
+        margin: 0;
+        position: relative;
+
+        .productView-variant {
+            display: inline-block;
+
+            div {
+                position: absolute;
+                top: -110px;
+
+                border: 1px solid #e5e5e5;
+                display: none;
+                height: 100px;
+                width: 100px;
+                z-index: 99;
+            }
+
+            a {
+                border: 1px solid #e5e5e5;
+                border-radius: 50%;
+                display: block;
+                height: 40px;
+                margin-right: 10px;
+                width: 40px;
+            }
         }
     }
 }

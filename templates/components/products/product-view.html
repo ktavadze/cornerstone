@@ -248,16 +248,33 @@
     </section>
 
     <section class="productView-details">
-        <ul class="productView-variants"></ul>
+        <div class="productView-metals-container">
+            <div>Metal:</div>
+            <ul class="productView-metals"></ul>
+        </div>
+        <div class="productView-variants-container">
+            <div>Color:</div>
+            <ul class="productView-variants"></ul>
+        </div>
         <script type="text/javascript" async>
             // populate product variants
             (async function() {
+                var productMetalsContainer = document.querySelector(".productView-metals-container");
+                var productMetalsList = document.querySelector(".productView-metals");
+
+                var productVariantsContainer = document.querySelector(".productView-variants-container");
                 var productVariantsList = document.querySelector(".productView .productView-variants");
 
                 var warranty = "{{product.warranty}}";
-                var variants = warranty.split(";");
+                var warrantyChunks = warranty.split("|");
+
+                var variants = warrantyChunks[0].split(";");
+
+                console.log(variants);
 
                 if (variants.length > 1) {
+                    productVariantsContainer.style.display = "block";
+
                     for (var variant of variants) {
                         var variantWords = variant.split(",");
                         var color = variantWords[0];
@@ -288,6 +305,58 @@
                         li.appendChild(a);
 
                         productVariantsList.appendChild(li);
+                    }
+                }
+
+                if (warrantyChunks[1]) {
+                    productMetalsContainer.style.display = "block";
+
+                    var material = "{{#filter product.custom_fields 'Material' property='name' }}{{value}}{{/filter}}".toLowerCase();
+
+                    if (material == "gold") {
+                        var div = document.createElement("div");
+                        div.innerHTML = "18K Gold";
+
+                        var li = document.createElement("li");
+                        li.appendChild(div);
+
+                        productMetalsList.appendChild(li);
+                    }
+
+                    var metals = warrantyChunks[1].split(";");
+
+                    for (var metal of metals) {
+                        var metalWords = metal.split(",");
+                        var color = metalWords[0];
+                        var url = metalWords[1];
+
+                        var a = document.createElement("a");
+                        a.innerHTML = color;
+                        a.href = url;
+
+                        var li = document.createElement("li");
+                        li.appendChild(a);
+
+                        productMetalsList.appendChild(li);
+                    }
+
+                    if (material == "silver") {
+                        var div = document.createElement("div");
+                        div.innerHTML = "925 Silver";
+
+                        var li = document.createElement("li");
+                        li.appendChild(div);
+
+                        productMetalsList.appendChild(li);
+                    }
+                    else if (material == "rose gold") {
+                        var div = document.createElement("div");
+                        div.innerHTML = "18K Rose Gold";
+
+                        var li = document.createElement("li");
+                        li.appendChild(div);
+
+                        productMetalsList.appendChild(li);
                     }
                 }
             })();
