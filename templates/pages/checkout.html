@@ -42,3 +42,15 @@
 {{/partial}}
 
 {{> layout/empty}}
+
+<script type="text/javascript" async>
+    // update free shipping label
+    (async function() {
+        while(!document.querySelector(".shippingOptions-container li:first-child")) {
+            await new Promise(r => setTimeout(r, 50));
+        }
+
+        var target = document.querySelector(".shippingOptions-container li:first-child .shippingOption-desc");
+        target.innerHTML = "Complimentary 2-Day Shipping - Signature Required";
+    })();
+</script>
