@@ -113,6 +113,21 @@ li.isp_grid_product div.isp_product_info .isp_product_title {
     font-size: 1rem !important;
 }
 
+div#isp_search_result_page_container div.isp_left_container {
+    position: sticky;
+    top: 55px;
+
+    max-height: 95vh;
+    overflow: scroll;
+
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+}
+
 div#isp_left_container_facets div.isp_custom_price_container {
     display: none;
 }

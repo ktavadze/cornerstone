@@ -61,6 +61,7 @@
             var __isp_options = {
                 isp_dropdown_with_product_attributes: '1',
                 isp_serp_with_product_attributes: '1',
+                isp_serp_disable_sticky_nav: true,
                 isp_dropdown_callback: function(jquery_li_element_html, item_data) {
                     if (!item_data.att) {
                         return jquery_li_element_html;
@@ -150,7 +151,6 @@
                         var product_data = ISP_PRODUCTS[p_id];
 
                         if (!$(this).has('.isp_product_collection').length) {
-                            console.log(index);
                             if (index == 11) {
                                 $(".isp_grid_banner2x2").show();
                             }
