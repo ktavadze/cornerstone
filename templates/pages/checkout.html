@@ -44,6 +44,36 @@
 {{> layout/empty}}
 
 <script type="text/javascript" async>
+    // format existing coupon label
+    (async function() {
+        while(!document.querySelector('div[data-test="cart-coupon"] span[data-test="cart-price-label"]')) {
+            await new Promise(r => setTimeout(r, 50));
+        }
+
+        var target = document.querySelector('div[data-test="cart-coupon"] span[data-test="cart-price-label"]');
+
+        target.innerHTML = target.innerHTML.replace(".00", "");
+    })();
+</script>
+
+<script type="text/javascript" async>
+    // format new coupon labels
+    (function() {
+        document.addEventListener('click', async function(e) {
+            if(e.target && e.target.id == 'applyRedeemableButton') {
+                while(!document.querySelector('div[data-test="cart-coupon"] span[data-test="cart-price-label"]')) {
+                    await new Promise(r => setTimeout(r, 50));
+                }
+
+                var target = document.querySelector('div[data-test="cart-coupon"] span[data-test="cart-price-label"]');
+
+                target.innerHTML = target.innerHTML.replace(".00", "");
+            }
+        });
+    })();
+</script>
+
+<script type="text/javascript" async>
     // update free shipping label
     (async function() {
         while(!document.querySelector(".shippingOptions-container li:first-child")) {
