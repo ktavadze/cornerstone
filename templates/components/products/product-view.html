@@ -369,14 +369,27 @@
                   data-cart-item-add>
                 <input type="hidden" name="action" value="add">
                 <input type="hidden" name="product_id" value="{{product.id}}"/>
-                <div data-product-option-change style="display:none;">
-                    {{#each product.options}}
-                        {{{dynamicComponent 'components/products/options'}}}
-                    {{/each}}
+                <div class="productView-sizes">
+                    <div data-product-option-change style="display:none;">
+                        {{#each product.options}}
+                            {{{dynamicComponent 'components/products/options'}}}
+                        {{/each}}
+                    </div>
                 </div>
                 <div class="size-guide-action-container">
                     <a class="size-guide-action" href="#size-guide" data-reveal-id="size-guide">Size Guide</a>
                 </div>
+                <script type="text/javascript">
+                    // hide sizes and size guide if one size
+                    (function() {
+                        var product = {{{JSONstringify product}}};
+
+                        if (product.options[0].values[0].label == "ONE SIZE") {
+                            document.querySelector(".productView-sizes").style.display = "none";
+                            document.querySelector(".size-guide-action-container").style.display = "none";
+                        }
+                    })();
+                </script>
                 <div class="form-field form-field--stock{{#unless product.stock_level}} u-hiddenVisually{{/unless}}">
                     <label class="form-label form-label--alternate">
                         {{lang 'products.current_stock'}}
