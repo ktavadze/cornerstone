@@ -502,7 +502,11 @@ $cart-item-label-offset:                $cart-thumbnail-maxWidth + $cart-item-sp
 }
 
 .cart-additionalCheckoutButtons { // 1
-    display: none;
+    display: block;
+
+    @include breakpoint("small") {
+        display: none;
+    }
 
     @include clearfix;
 
