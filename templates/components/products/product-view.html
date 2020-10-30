@@ -270,8 +270,6 @@
 
                 var variants = warrantyChunks[0].split(";");
 
-                console.log(variants);
-
                 if (variants.length > 1) {
                     productVariantsContainer.style.display = "block";
 
@@ -297,10 +295,15 @@
 
                         var popup = document.createElement("div");
                         popup.style.background = "url(/product_images/" + src + ") center center / auto 100% no-repeat";
-                        popup.style.backgroundColor = "#fff"
+                        popup.style.backgroundColor = "#fff";
+
+                        var img = document.createElement("img");
+                        img.src = "/product_images/" + src;
+                        img.style.display = "none";
 
                         var li = document.createElement("li");
                         li.classList.add("productView-variant");
+                        li.appendChild(img);
                         li.appendChild(popup);
                         li.appendChild(a);
 
