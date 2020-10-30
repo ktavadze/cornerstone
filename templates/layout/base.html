@@ -151,6 +151,44 @@
                         var product_data = ISP_PRODUCTS[p_id];
 
                         if (!$(this).has('.isp_product_collection').length) {
+                            // add alt view hover effect
+                            fetch('/graphql', {
+                                method: 'POST',
+                                headers: {
+                                    'Content-Type': 'application/json',
+                                    'Authorization': 'Bearer {{ settings.storefront_api.token }}'
+                                },
+                                body: JSON.stringify({
+                                    query: `
+                                        query SrcsetImages {
+                                          site {
+                                            product(entityId: ${p_id}) {
+                                              images {
+                                                edges {
+                                                  node {
+                                                    isDefault
+                                                    url320wide: url(width: 320)
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          }
+                                        }
+                                    `
+                                }),
+                            })
+                            .then(res => res.json())
+                            .then(json => {
+                                if (json.data.site.product.images.edges[1]) {
+                                    $(this).hover(() => {
+                                        $(this).find('.isp_product_image').attr('src', json.data.site.product.images.edges[1].node.url320wide);
+                                    }, () => {
+                                        $(this).find('.isp_product_image').attr('src', product_data.image);
+                                    });
+                                    $(this).find('.isp_product_image').after('<img style="display: none;" src="' + json.data.site.product.images.edges[1].node.url320wide + '" />');
+                                }
+                            });
+
                             if (index == 11) {
                                 $(".isp_grid_banner2x2").show();
                             }
@@ -195,6 +233,51 @@
                     var qv_title = $('.isp_quick_view_title');
                     var p_id = qv_title.attr('product_id');
                     var product_data = ISP_PRODUCTS[p_id];
+
+                    // add image selector
+                    fetch('/graphql', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'Authorization': 'Bearer {{ settings.storefront_api.token }}'
+                        },
+                        body: JSON.stringify({
+                            query: `
+                                query SrcsetImages {
+                                  site {
+                                    product(entityId: ${p_id}) {
+                                      images {
+                                        edges {
+                                          node {
+                                            isDefault
+                                            url320wide: url(width: 320)
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                            `
+                        }),
+                    })
+                    .then(res => res.json())
+                    .then(json => {
+                        if (json.data.site.product.images.edges[1]) {
+                            $('.isp_quick_view_content_left').append('<div class="isp_image_selector"></div>');
+
+                            for (let i = 0; i < json.data.site.product.images.edges.length; i++) {
+                                $('<div data-index="' + i + '"></div>').click(() => {
+                                    $('.isp_quick_view_image_quick_view').attr('src', json.data.site.product.images.edges[i].node.url320wide);
+
+                                    $('.isp_image_selector > div').each(function() {
+                                        $(this).css("background", "white");
+                                    });
+
+                                    $('.isp_image_selector > div:nth-child(' + (i + 1) + ')').css("background", "#444");
+                                }).appendTo('.isp_image_selector');
+                            }
+                        }
+                    });
 
                     var product_tag = null;
                     var product_collection = null;

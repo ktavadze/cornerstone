@@ -216,7 +216,28 @@ body > div#isp_product_quick_view_model #isp_product_quick_view_close_button_qui
 }
 
 body > div#isp_product_quick_view_model .isp_quick_view_content_left .isp_image_container > img {
+    border-radius: 0;
     max-width: 100%;
+}
+
+body > div#isp_product_quick_view_model .isp_quick_view_content_left .isp_image_selector {
+    margin-top: 20px;
+    text-align: center;
+}
+
+body > div#isp_product_quick_view_model .isp_quick_view_content_left .isp_image_selector > div {
+    background: white;
+    border: 1px solid #ccc;
+    border-radius: 7px;
+    cursor: pointer;
+    display: inline-block;
+    height: 14px;
+    margin: 5px;
+    width: 14px;
+}
+
+body > div#isp_product_quick_view_model .isp_quick_view_content_left .isp_image_selector > div:first-child {
+    background: #444;
 }
 
 body > div#isp_product_quick_view_model .isp_quick_view_content_right {
