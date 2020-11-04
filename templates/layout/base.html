@@ -250,7 +250,7 @@
                                         edges {
                                           node {
                                             isDefault
-                                            url320wide: url(width: 320)
+                                            url640wide: url(width: 640)
                                           }
                                         }
                                       }
@@ -267,7 +267,7 @@
 
                             for (let i = 0; i < json.data.site.product.images.edges.length; i++) {
                                 $('<div data-index="' + i + '"></div>').click(() => {
-                                    $('.isp_quick_view_image_quick_view').attr('src', json.data.site.product.images.edges[i].node.url320wide);
+                                    $('.isp_quick_view_image_quick_view').attr('src', json.data.site.product.images.edges[i].node.url640wide);
 
                                     $('.isp_image_selector > div').each(function() {
                                         $(this).css("background", "white");
@@ -275,6 +275,8 @@
 
                                     $('.isp_image_selector > div:nth-child(' + (i + 1) + ')').css("background", "#444");
                                 }).appendTo('.isp_image_selector');
+
+                                $('.image_chooser_isp').append('<img src="' + json.data.site.product.images.edges[i].node.url640wide + '" />');
                             }
                         }
                     });
