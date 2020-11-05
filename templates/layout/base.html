@@ -135,7 +135,7 @@
 
                         // if match found, add banners
                         if (match) {
-                            var fileName = match.replaceAll("/", "");
+                            var fileName = match.split("/").join("");
 
                             $("#isp_search_results_container").prepend('<li class="isp_grid_banner1x2"><div></div></li>');
                             $("#isp_search_results_container").prepend('<li class="isp_grid_banner2x2"><div></div></li>');
