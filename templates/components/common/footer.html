@@ -351,6 +351,12 @@
                 ringsMainItem.style.display = "none";
                 necklacesMainItem.style.display = "block";
             });
+
+            document.querySelector("#size-guide-hero-action").addEventListener("click", function(event) {
+                event.preventDefault();
+
+                hero("show");
+            });
         }
     }
 </script>

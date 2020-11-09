@@ -86,8 +86,8 @@
                     return jquery_li_element_html;
                 },
                 isp_serp_callback: function() {
-                    // add plp banners
-                    if (!$(".isp_grid_banner1x2").length) {
+                    // add ingrid banners
+                    if (!$(".isp_grid_banner_1").length) {
                         var currentUrl = window.location.href;
                         var targetUrls = [
                             "/bracelets/",
@@ -105,7 +105,6 @@
                             "/gifts-under-1000/",
                             "/gifts-under-2000/",
                             "/gifts/",
-                            "/atelier",
                             "/carnevale",
                             "/chimera",
                             "/gold-classico",
@@ -114,6 +113,7 @@
                             "/luce",
                             "/nova",
                             "/ondine",
+                            "/one-of-a-kind",
                             "/polished-rock-candy",
                             "/silver-classico",
                             "/silver-lollipop",
@@ -137,11 +137,46 @@
                         if (match) {
                             var fileName = match.split("/").join("");
 
-                            $("#isp_search_results_container").prepend('<li class="isp_grid_banner1x2"><div></div></li>');
-                            $("#isp_search_results_container").prepend('<li class="isp_grid_banner2x2"><div></div></li>');
+                            $("#isp_search_results_container").prepend('<li class="isp_grid_banner_2"><a></a></li>');
+                            $("#isp_search_results_container").prepend('<li class="isp_grid_banner_1"><a></a></li>');
 
-                            $(".isp_grid_banner2x2 > div").css("background-image", "url(/content/banners/plp/" + fileName + "-2x2.jpg)");
-                            $(".isp_grid_banner1x2 > div").css("background-image", "url(/content/banners/plp/" + fileName + "-1x2.jpg)");
+                            $(".isp_grid_banner_1 > a").css("background-image", "url(/content/banners/plp/" + fileName + "-1.jpg)");
+                            $(".isp_grid_banner_2 > a").css("background-image", "url(/content/banners/plp/" + fileName + "-2.jpg)");
+
+                            // add link target
+                            switch (match) {
+                                case "/bracelets/":
+                                    // add bracelets banner gif (exception)
+                                    $(".isp_grid_banner_1 > a").css("background-image", "url(/content/banners/plp/" + fileName + "-1.gif)");
+
+                                    $(".isp_grid_banner_1 > a").attr("href", "/the-anniversario-stack-series/");
+                                    $(".isp_grid_banner_2 > a").attr("href", "/ippolita-classics/");
+                                    break;
+                                case "/earrings/":
+                                    $(".isp_grid_banner_1 > a").attr("href", "/search-results?lp=hoop");
+                                    $(".isp_grid_banner_2 > a").attr("href", "/search-results?lp=jet-set");
+                                    break;
+                                case "/necklaces/":
+                                    $(".isp_grid_banner_1 > a").attr("href", "/collections/chimera/");
+                                    $(".isp_grid_banner_2 > a").attr("href", "/search-results?lp=flower");
+                                    break;
+                                case "/rings/":
+                                    $(".isp_grid_banner_1 > a").attr("href", "/diario-vol-2-issue-03");
+                                    $(".isp_grid_banner_2 > a").attr("href", "/search-results/?q=silver%20ring");
+                                    break;
+                                case "/category/":
+                                    $(".isp_grid_banner_1 > a").attr("href", "/gifts/gifts-of-gold/");
+                                    $(".isp_grid_banner_2 > a").attr("href", "/collections/stardust/");
+                                    break;
+                                case "/ippolita-classics/":
+                                    $(".isp_grid_banner_1 > a").attr("href", "/gifts/gifts-of-color/");
+                                    $(".isp_grid_banner_2 > a").attr("href", "/search-results?lp=everyday-earrings");
+                                    break;
+                                default:
+                                    $(".isp_grid_banner_1 > a").css("cursor", "default");
+                                    $(".isp_grid_banner_2 > a").css("cursor", "default");
+                                    break;
+                            }
                         }
                     }
 
@@ -189,11 +224,12 @@
                                 }
                             });
 
-                            if (index == 11) {
-                                $(".isp_grid_banner2x2").show();
+                            // display ingrid banners
+                            if (index == 9) {
+                                $(".isp_grid_banner_1").show();
                             }
-                            else if (index == 21) {
-                                $(".isp_grid_banner1x2").show();
+                            else if (index == 23) {
+                                $(".isp_grid_banner_2").show();
                             }
 
                             var product_tag = null;
