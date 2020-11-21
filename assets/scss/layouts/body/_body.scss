@@ -234,3 +234,29 @@
 .alertBox.alertBox--error {
     background-color: #e5e5e5 !important;
 }
+
+// zonos
+#zonos.US {
+    display: none;
+}
+
+#zonos > .z-flag {
+    bottom: 10px !important;
+    left: 50px !important;
+    padding: 0 !important;
+
+    @media (min-width: 480px) {
+        bottom: 0px !important;
+        left: 40px !important;
+    }
+
+    @media (min-width: 980px) {
+        bottom: 10px !important;
+        left: 50px !important;
+    }
+
+    > img {
+        height: 30px !important;
+        width: 30px !important;
+    }
+}
