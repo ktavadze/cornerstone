@@ -387,7 +387,7 @@
                     (function() {
                         var product = {{{JSONstringify product}}};
 
-                        if (product.options[0].values[0].label == "ONE SIZE") {
+                        if (product.options.length == 1 && product.options[0].values[0].label == "ONE SIZE") {
                             document.querySelector(".productView-sizes").style.display = "none";
                             document.querySelector(".size-guide-action-container").style.display = "none";
                         }
