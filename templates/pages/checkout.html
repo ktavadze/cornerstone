@@ -13,6 +13,10 @@
         font-family: "Helvetica Neue Light";
         src: url("{{cdn 'webdav:HelveticaNeueLTStd-Lt.ttf'}}");
     }
+
+    #zonos {
+        display: none;
+    }
 </style>
 
 {{{head.scripts}}}
@@ -34,6 +38,58 @@
         </h2>
     </div>
 </header>
+
+<div id="gwp-callout" style="display: none">
+    <div class="alertBox alertBox--info" style="text-align: center; background-color: #666;">
+        <div class="alertBox-column alertBox-icon">
+            <icon glyph="ic-success" class="icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: #dfdfdf"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"></path></svg></icon>
+        </div>
+        <p class="alertBox-column alertBox-message">
+            <span><span style="color: #ffffff;">OUR LIMITED-EDITION JEWELRY CASE, YOURS WITH A PURCHASE OF $1,750+</span><br><span style="text-decoration: underline;"><span style="color: #ffffff;"><a href="/exclusive-travel-jewelry-case"><span style="color: #ffffff; text-decoration: underline;">CHOOSE YOUR COLOR</span></a></span></span></span>
+        </p>
+    </div>
+</div>
+
+<script type="text/javascript" async>
+    // show GWP callout
+    (async function() {
+        fetch('/api/storefront/cart?includes=consignments.availableShippingOptions', {
+            credentials: 'include'
+        }).then(function (response) {
+            return response.json();
+        }).then(function (cartJson) {
+            return cartJson[0].id;
+        }).catch(function (error) {
+            console.log(error);
+        }).then(function (cartId) {
+            fetch('/api/storefront/checkouts/' + cartId, {
+                credentials: 'include'
+            }).then(function (response) {
+                return response.json();
+            }).then(function (checkoutJson) {
+                console.log(checkoutJson);
+
+                if (checkoutJson.subtotal > 1750) {
+                    var found = false;
+
+                    for (var item of checkoutJson.cart.lineItems.physicalItems) {
+                        if (item.sku == "TRVLCASE-BLK" || item.sku == "TRVLCASE-CRL") {
+                            found = true;
+
+                            break;
+                        }
+                    }
+
+                    if (!found) {
+                        document.querySelector("#gwp-callout").style.display = "block";
+                    }
+                }
+            }).catch(function (error) {
+                console.log(error);
+            })
+        });
+    })();
+</script>
 
 {{{ checkout.checkout_content }}}
 
