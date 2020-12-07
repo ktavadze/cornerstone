@@ -482,6 +482,7 @@ $cart-item-label-offset:                $cart-thumbnail-maxWidth + $cart-item-sp
 .cart-actions {
     @include clearfix;
     clear: both;
+    margin-bottom: 3rem;
 
     .button {
         display: block;
