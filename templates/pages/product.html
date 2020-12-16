@@ -157,6 +157,19 @@ product:
             })();
         </script>
 
+        <script>
+            // hide widgets for GWP
+            (function() {
+                var product = {{{JSONstringify product}}};
+
+                if (product.sku == "TRVLCASE") {
+                    document.querySelector("#isp-related-tabs").style.display = "none";
+                    document.querySelector("#isp-related-widgets").style.display = "none";
+                    document.querySelector("#pdp-banner-anchor").style.display = "none";
+                }
+            })();
+        </script>
+
         <div id="pdp-benefits">
             <h1>Enjoy These Benefits</h1>
             <p>Whether you shop on our website or in store, we believe in providing you with a purchasing experience that's easy, comfortable and enjoyable.</p>
