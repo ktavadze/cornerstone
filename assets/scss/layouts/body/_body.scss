@@ -13,7 +13,13 @@
     margin-top: spacing("single"); // 1
 
     @include breakpoint("medium") {
-        margin-top: 5.5rem;
+        margin-top: 6.5rem;
+    }
+}
+
+.body-home {
+    @include breakpoint("medium") {
+        margin-top: 0;
     }
 }
 
@@ -60,6 +66,12 @@
 // breadcrumbs
 .breadcrumbs {
     display: none;
+    padding-top: 1rem;
+    margin-bottom: 1rem;
+
+    @include breakpoint("medium") {
+        padding-top: 0.5rem;
+    }
 }
 
 // size guide

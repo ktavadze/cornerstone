@@ -130,6 +130,7 @@
 </footer>
 
 <script type="text/javascript">
+    // configureBannerTop();
     configureHeader();
     configureFooter();
     configureSearchActionMobile();
@@ -138,6 +139,7 @@
 
     // RUNS ONLY ON HOME PAGE
     function configureClearHeader() {
+        var bannerTop = document.querySelector(".banner-top");
         var header = document.querySelector("header");
         var quickSearchAction = document.querySelector(".navUser-action--quickSearch");
         var quickSearchAction = document.querySelector(".navUser-action--quickSearch");
@@ -150,20 +152,25 @@
 
         // initialize header state
         if (window.scrollY == 0) {
+            bannerTop.classList.add("banner-top-clear");
             header.classList.add("header-clear");
         }
 
         // update header state on scroll
         window.onscroll = function() {
             if (window.scrollY == 0) {
+                bannerTop.classList.add("banner-top-clear");
                 header.classList.add("header-clear");
 
                 if (activeNavItem == null) {
+                    bannerTop.classList.add("banner-top-clear");
                     header.classList.add("header-clear");
                 } else {
+                    bannerTop.classList.remove("banner-top-clear");
                     header.classList.remove("header-clear");
                 }
             } else {
+                bannerTop.classList.remove("banner-top-clear");
                 header.classList.remove("header-clear");
             }
         };
@@ -174,12 +181,14 @@
                 activeNavItem = this;
 
                 if (window.scrollY == 0) {
+                    bannerTop.classList.remove("banner-top-clear");
                     header.classList.remove("header-clear");
                 }
             } else if (activeNavItem == this) {
                 activeNavItem = null;
 
                 if (window.scrollY == 0) {
+                    bannerTop.classList.add("banner-top-clear");
                     header.classList.add("header-clear");
                 }
             }
@@ -194,6 +203,7 @@
                 }
 
                 if (subMenu) {
+                    bannerTop.classList.remove("banner-top-clear");
                     header.classList.remove("header-clear");
                     subMenu.classList.add("is-open");
                     activeNavItem = this;
@@ -205,6 +215,7 @@
 
                 if (subMenu) {
                     if (window.scrollY == 0) {
+                        bannerTop.classList.add("banner-top-clear");
                         header.classList.add("header-clear");
                     }
 
@@ -213,6 +224,22 @@
                 }
             });
         }
+    }
+
+    function configureBannerTop() {
+        var target = document.querySelector(".banner-top");
+        var index = 0;
+        var messages = [
+            "$500 off $2,000+ with code GIFT500",
+            "$1,500 off $5,000+ with code GIFT1500",
+            "$3,000 off $10,000+ with code GIFT3000",
+            "$200 off $1,000+ with code GIFT200"
+        ];
+        window.setInterval(function() {
+            target.innerHTML = messages[index];
+
+            index = index == 3 ? 0 : index + 1;
+        }, 5000);
     }
 
     function configureHeader() {

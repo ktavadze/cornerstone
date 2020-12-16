@@ -20,7 +20,7 @@
     border-bottom: container("border");
     height: $header-height;
     position: fixed;
-    top: 0;
+    top: 25px;
     width: 100%;
     z-index: 101;
 
@@ -359,5 +359,35 @@
 
     svg {
         fill: stencilColor("navUser-color");
+    }
+}
+
+.banner-top {
+    position: fixed;
+    top: 0;
+
+    background-color: #e5e5e5;
+    color: #666;
+    height: 25px;
+    font-family: "Helvetica Neue Roman", sans-serif !important;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: .1em !important;
+    padding-top: 5px;
+    text-align: center;
+    width: 100%;
+    z-index: 102;
+
+    @include breakpoint("medium") {
+        font-size: 12px;
+        padding-left: 25px;
+        padding-top: 4px;
+    }
+}
+
+.banner-top-clear {
+    @include breakpoint("medium") {
+        background-color: transparent !important;
+        color: white !important;
     }
 }
