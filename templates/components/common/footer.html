@@ -243,12 +243,13 @@
     }
 
     function configureHeader() {
-        var header = document.querySelector("header");
         var jewelryAction = document.querySelector(".navPages-item:nth-child(2)");
-        var worldAction = document.querySelector(".navPages-item:nth-child(5)");
-        var giftsAction = document.querySelector(".navPages-item:last-child");
-        var targetNavItems = [jewelryAction, worldAction, giftsAction];
+        var newArrivalsAction = document.querySelector(".navPages-item:nth-child(4)");
+        var giftsAction = document.querySelector(".navPages-item:nth-child(6)");
+        var woiAction = document.querySelector(".navPages-item:last-child");
+        var targetNavItems = [jewelryAction, newArrivalsAction, giftsAction, woiAction];
 
+        // configure main dropdowns
         for (var i = 0; i < targetNavItems.length; i++) {
             targetNavItems[i].addEventListener("mouseenter", function(e) {
                 var quickSearchAction = document.querySelector(".navUser-action--quickSearch");
@@ -270,6 +271,66 @@
                 if (subMenu) {
                     subMenu.classList.remove("is-open");
                 }
+            });
+        }
+
+        // configure dropdown tabs
+        for (var navItem of targetNavItems) {
+            var tabLabels = navItem.querySelectorAll(".navPage-subMenu-item");
+
+            if (tabLabels.length > 1) {
+                for (var tabLabel of tabLabels) {
+                    tabLabel.addEventListener("mouseenter", function(e) {
+                        var localLabels = e.target.parentNode.querySelectorAll(".navPage-subMenu-item");
+                        var localTabs = e.target.parentNode.nextSibling.nextSibling.querySelectorAll(".navPage-subMenu-content-tab");
+
+                        for (var i = 0; i < localLabels.length; i++) {
+                            localLabels[i].classList.remove("selected");
+                            localTabs[i].style.display = "none";
+                        }
+
+                        var currentIndex = e.target.getAttribute("data-index");
+
+                        localLabels[currentIndex].classList.add("selected");
+                        localTabs[currentIndex].style.display = "flex";
+                    });
+                }
+            }
+        }
+
+        // configure right carousel action
+        var rightChevrons = document.querySelectorAll(".navPage-subMenu-content-tab > .icon-chevron-right");
+
+        for (var rightChevron of rightChevrons) {
+            rightChevron.addEventListener("click", function(e) {
+                var itemsToHide = e.currentTarget.parentNode.querySelectorAll(".navPage-subMenu-content-tab-1");
+                var itemsToShow = e.currentTarget.parentNode.querySelectorAll(".navPage-subMenu-content-tab-2");
+
+                for (var i = 0; i < itemsToHide.length; i++) {
+                    itemsToHide[i].style.display = "none";
+                    itemsToShow[i].style.display = "block";
+                }
+
+                e.currentTarget.style.display = "none";
+                e.currentTarget.parentNode.querySelector(".icon-chevron-left").style.display = "inline-block";
+            });
+        }
+
+        // configure left carousel action
+        var leftChevrons = document.querySelectorAll(".navPage-subMenu-content-tab > .icon-chevron-left");
+
+        for (var leftChevron of leftChevrons) {
+            leftChevron.addEventListener("click", function(e) {
+                var itemsToHide = e.currentTarget.parentNode.querySelectorAll(".navPage-subMenu-content-tab-2");
+                var itemsToShow = e.currentTarget.parentNode.querySelectorAll(".navPage-subMenu-content-tab-1");
+
+                for (var i = 0; i < itemsToHide.length; i++) {
+                    itemsToHide[i].style.display = "none";
+                    itemsToShow[i].style.display = "block";
+                }
+
+                e.currentTarget.style.display = "none";
+                e.currentTarget.parentNode.querySelector(".icon-chevron-right").style.display = "inline-block";
             });
         }
     }

@@ -43,14 +43,20 @@
             flex-grow: 1;
         }
 
-        .navPages-item:hover {
-            margin-top: 4px;
-            border-bottom: 4px solid #333;
-        }
-
         .navPages-item > .navPages-action {
             font-family: "Helvetica Neue Roman", sans-serif !important;
             padding: 1rem 0.5rem;
+
+            div {
+                padding: 1rem 0;
+            }
+        }
+
+        .navPages-item:hover > .navPages-action {
+            div {
+                border-top: 4px solid white;
+                border-bottom: 4px solid black;
+            }
         }
     }
 
@@ -62,7 +68,7 @@
         }
 
         .navPages-item > .navPages-action {
-            padding: 1rem 2rem;
+            padding: 0 2rem;
         }
     }
 }
@@ -259,11 +265,6 @@
 
         .header-logo-image.white {
             display: inline-block;
-        }
-
-        .navPages-item:nth-child(3):hover,
-        .navPages-item:nth-child(6):hover {
-            border-bottom: 4px solid white;
         }
     }
 }
