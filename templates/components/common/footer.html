@@ -133,6 +133,7 @@
     // configureBannerTop();
     configureHeader();
     configureFooter();
+    configureMobileNav();
     configureSearchActionMobile();
     configureSearchActionDesktop();
     configureSizeGuideAction();
@@ -343,6 +344,38 @@
         });
     }
 
+    function configureMobileNav() {
+        var mobileNavPagesItems = document.querySelectorAll(".navPages-item-mobile");
+
+        for (var mobileNavPagesItem of mobileNavPagesItems) {
+            mobileNavPagesItem.addEventListener("click", function(e) {
+                e.currentTarget.querySelector(".navPage-subMenu").style.display = "block";
+            });
+        }
+
+        var mobileSubMenuHeaders = document.querySelectorAll(".navPage-subMenu-header");
+
+        for (var mobileSubMenuHeader of mobileSubMenuHeaders) {
+            mobileSubMenuHeader.addEventListener("click", function(e) {
+                e.stopPropagation();
+
+                e.currentTarget.parentNode.parentNode.style.display = "none";
+            });
+        }
+
+        var mobileSubMenuTriggers = document.querySelectorAll(".navPage-subMenu-trigger");
+
+        for (var mobileSubMenuTrigger of mobileSubMenuTriggers) {
+            mobileSubMenuTrigger.addEventListener("click", function(e) {
+                e.stopPropagation();
+
+                var index = e.currentTarget.getAttribute("data-index");
+                var subMenus = e.currentTarget.parentNode.parentNode.parentNode.querySelectorAll(".navPage-subMenu");
+                subMenus[index].style.display = "block";
+            });
+        }
+    }
+
     function configureSearchActionMobile() {
         var header = document.querySelector("header");
         var navPages = document.querySelector(".navPages-container");
@@ -352,7 +385,7 @@
         var quickSearchInput = document.querySelector(".navPages-quickSearch #search_query");
 
         // hide quicksearch on burger click
-        burgerAction.addEventListener("click", function(){
+        burgerAction.addEventListener("click", function() {
             if (quickSearch.style.display === "block") {
                 header.classList.remove("is-open");
                 navPages.classList.remove("is-open");
@@ -361,7 +394,7 @@
         });
 
         // toggle quicksearch and focus on search input on search click
-        searchAction.addEventListener("click", function(){
+        searchAction.addEventListener("click", function() {
             if (quickSearch.style.display === "" || quickSearch.style.display === "none") {
                 header.classList.add("is-open");
                 navPages.classList.add("is-open");

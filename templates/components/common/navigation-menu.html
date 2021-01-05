@@ -3,14 +3,20 @@
         {{> components/common/quick-search}}
     </div>
     <ul class="navPages-list{{#if theme_settings.navigation_design '!==' 'simple'}} navPages-list-depth-max{{/if}}">
-        <li class="navPages-item">
-            <a class="navPages-action has-subMenu" href="/jewelry/shop-by-category/" data-collapsible="navPages-1" aria-controls="navPages-1" aria-expanded="true">Jewelry
-                <i class="icon navPages-action-moreIcon" aria-hidden="true">
+        <li class="navPages-item navPages-item-mobile">
+            <div class="navPages-action">Jewelry
+                <i class="icon navPages-action-moreIcon">
                     <svg><use xlink:href="#icon-chevron-down"></use></svg>
                 </i>
-            </a>
-            <div class="navPage-subMenu" id="navPages-1" aria-hidden="false" tabindex="-1">
+            </div>
+            <div class="navPage-subMenu" data-index="0">
                 <ul class="navPage-subMenu-list">
+                    <li class="navPage-subMenu-header navPages-action">
+                        <i class="icon navPages-action-backIcon">
+                            <svg><use xlink:href="#icon-chevron-left"></use></svg>
+                        </i>
+                        Jewelry
+                    </li>
                     <li class="navPage-subMenu-item">
                         <a class="navPage-subMenu-action navPages-action" href="/jewelry/shop-by-category/earrings/">Earrings</a>
                     </li>
@@ -28,6 +34,117 @@
                     </li>
                     <li class="navPage-subMenu-item">
                         <a class="navPage-subMenu-action navPages-action" href="/jewelry/shop-by-category/">View All Jewelry</a>
+                    </li>
+                    <li class="navPage-subMenu-trigger navPages-action" data-index="1">
+                        18K Gold Collections
+                        <i class="icon">
+                            <svg><use xlink:href="#icon-chevron-right"></use></svg>
+                        </i>
+                    </li>
+                    <li class="navPage-subMenu-trigger navPages-action" data-index="2">
+                        925 Silver Collections
+                        <i class="icon">
+                            <svg><use xlink:href="#icon-chevron-right"></use></svg>
+                        </i>
+                    </li>
+                    <li class="navPage-subMenu-trigger navPages-action" data-index="3">
+                        Explore Our Curated Edits
+                        <i class="icon">
+                            <svg><use xlink:href="#icon-chevron-right"></use></svg>
+                        </i>
+                    </li>
+                </ul>
+            </div>
+            <div class="navPage-subMenu" data-index="1">
+                <ul class="navPage-subMenu-list">
+                    <li class="navPage-subMenu-header navPages-action">
+                        <i class="icon navPages-action-backIcon">
+                            <svg><use xlink:href="#icon-chevron-left"></use></svg>
+                        </i>
+                        18K Gold Collections
+                    </li>
+                    <li class="navPage-subMenu-item">
+                        <a class="navPage-subMenu-action navPages-action" href="/collections/gold-classico/">Classico</a>
+                    </li>
+                    <li class="navPage-subMenu-item">
+                        <a class="navPage-subMenu-action navPages-action" href="/collections/stardust/">Stardust</a>
+                    </li>
+                    <li class="navPage-subMenu-item">
+                        <a class="navPage-subMenu-action navPages-action" href="/collections/gold-lollipop/">Lollipop&reg;</a>
+                    </li>
+                    <li class="navPage-subMenu-item">
+                        <a class="navPage-subMenu-action navPages-action" href="/collections/gold-rock-candy/">Rock Candy&reg;</a>
+                    </li>
+                    <li class="navPage-subMenu-item">
+                        <a class="navPage-subMenu-action navPages-action" href="/collections/polished-rock-candy/">Polished Rock Candy</a>
+                    </li>
+                    <li class="navPage-subMenu-item">
+                        <a class="navPage-subMenu-action navPages-action" href="/collections/carnevale/">Carnevale</a>
+                    </li>
+                    <li class="navPage-subMenu-item">
+                        <a class="navPage-subMenu-action navPages-action" href="/collections/nova/">Nova</a>
+                    </li>
+                    <li class="navPage-subMenu-item">
+                        <a class="navPage-subMenu-action navPages-action" href="/collections/chimera/">Chimera</a>
+                    </li>
+                    <li class="navPage-subMenu-item">
+                        <a class="navPage-subMenu-action navPages-action" href="/collections/luce/">Luce</a>
+                    </li>
+                    <li class="navPage-subMenu-item">
+                        <a class="navPage-subMenu-action navPages-action" href="/collections/atelier/">Atelier</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="navPage-subMenu" data-index="2">
+                <ul class="navPage-subMenu-list">
+                    <li class="navPage-subMenu-header navPages-action">
+                        <i class="icon navPages-action-backIcon">
+                            <svg><use xlink:href="#icon-chevron-left"></use></svg>
+                        </i>
+                        925 Silver Collections
+                    </li>
+                    <li class="navPage-subMenu-item">
+                        <a class="navPage-subMenu-action navPages-action" href="/collections/silver-classico/">Classico</a>
+                    </li>
+                    <li class="navPage-subMenu-item">
+                        <a class="navPage-subMenu-action navPages-action" href="/collections/stardust/">Stardust</a>
+                    </li>
+                    <li class="navPage-subMenu-item">
+                        <a class="navPage-subMenu-action navPages-action" href="/collections/silver-lollipop/">Lollipop&reg;</a>
+                    </li>
+                    <li class="navPage-subMenu-item">
+                        <a class="navPage-subMenu-action navPages-action" href="/collections/silver-rock-candy/">Rock Candy&reg;</a>
+                    </li>
+                    <li class="navPage-subMenu-item">
+                        <a class="navPage-subMenu-action navPages-action" href="/collections/silver-wonderland/">Wonderland</a>
+                    </li>
+                    <li class="navPage-subMenu-item">
+                        <a class="navPage-subMenu-action navPages-action" href="/collections/chimera/">Chimera</a>
+                    </li>
+                    <li class="navPage-subMenu-item">
+                        <a class="navPage-subMenu-action navPages-action" href="/collections/carnevale/">Carnevale</a>
+                    </li>
+                    <li class="navPage-subMenu-item">
+                        <a class="navPage-subMenu-action navPages-action" href="/collections/ondine/">Ondine</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="navPage-subMenu" data-index="3">
+                <ul class="navPage-subMenu-list">
+                    <li class="navPage-subMenu-header navPages-action">
+                        <i class="icon navPages-action-backIcon">
+                            <svg><use xlink:href="#icon-chevron-left"></use></svg>
+                        </i>
+                        Explore Our Curated Edits
+                    </li>
+                    <li class="navPage-subMenu-item">
+                        <a class="navPage-subMenu-action navPages-action" href="/ippolita-classics/">IPPOLITA Classics</a>
+                    </li>
+                    <li class="navPage-subMenu-item">
+                        <a class="navPage-subMenu-action navPages-action" href="/the-anniversario-stack-series/">Anniversario Stack Series</a>
+                    </li>
+                    <li class="navPage-subMenu-item">
+                        <a class="navPage-subMenu-action navPages-action" href="/20-anniversario">20 Icons</a>
                     </li>
                 </ul>
             </div>
@@ -222,14 +339,20 @@
                 </ul>
             </div>
         </li>
-        <li class="navPages-item">
-            <a class="navPages-action has-subMenu" href="/jewelry/shop-by-category/" data-collapsible="navPages-2" aria-controls="navPages-2" aria-expanded="true">New Arrivals
+        <li class="navPages-item navPages-item-mobile">
+            <div class="navPages-action">New Arrivals
                 <i class="icon navPages-action-moreIcon" aria-hidden="true">
                     <svg><use xlink:href="#icon-chevron-down"></use></svg>
                 </i>
-            </a>
-            <div class="navPage-subMenu" id="navPages-2" aria-hidden="false" tabindex="-1">
+            </div>
+            <div class="navPage-subMenu" data-index="0">
                 <ul class="navPage-subMenu-list">
+                    <li class="navPage-subMenu-header navPages-action">
+                        <i class="icon navPages-action-backIcon">
+                            <svg><use xlink:href="#icon-chevron-left"></use></svg>
+                        </i>
+                        New Arrivals
+                    </li>
                     <li class="navPage-subMenu-item">
                         <a class="navPage-subMenu-action navPages-action" href="/new-arrivals/?narrow=%5B%5B%22Material%22%2C%22GOLD%22%5D%5D&sort_by=relevency&disable_semantics=1">18K Gold</a>
                     </li>
@@ -238,6 +361,31 @@
                     </li>
                     <li class="navPage-subMenu-item">
                         <a class="navPage-subMenu-action navPages-action" href="/new-arrivals/">View All New Arrivals</a>
+                    </li>
+                    <li class="navPage-subMenu-trigger navPages-action" data-index="1">
+                        Explore Our Curated Edits
+                        <i class="icon">
+                            <svg><use xlink:href="#icon-chevron-right"></use></svg>
+                        </i>
+                    </li>
+                </ul>
+            </div>
+            <div class="navPage-subMenu" data-index="1">
+                <ul class="navPage-subMenu-list">
+                    <li class="navPage-subMenu-header navPages-action">
+                        <i class="icon navPages-action-backIcon">
+                            <svg><use xlink:href="#icon-chevron-left"></use></svg>
+                        </i>
+                        Explore Our Curated Edits
+                    </li>
+                    <li class="navPage-subMenu-item">
+                        <a class="navPage-subMenu-action navPages-action" href="/ippolita-classics/">IPPOLITA Classics</a>
+                    </li>
+                    <li class="navPage-subMenu-item">
+                        <a class="navPage-subMenu-action navPages-action" href="/the-anniversario-stack-series/">Anniversario Stack Series</a>
+                    </li>
+                    <li class="navPage-subMenu-item">
+                        <a class="navPage-subMenu-action navPages-action" href="/20-anniversario">20 Icons</a>
                     </li>
                 </ul>
             </div>
@@ -288,14 +436,20 @@
                 </ul>
             </div>
         </li>
-        <li class="navPages-item">
-            <a class="navPages-action has-subMenu" href="/gifts/" data-collapsible="navPages-3" aria-controls="navPages-3" aria-expanded="true">Gifts
+        <li class="navPages-item navPages-item-mobile">
+            <div class="navPages-action">Gifts
                 <i class="icon navPages-action-moreIcon" aria-hidden="true">
                     <svg><use xlink:href="#icon-chevron-down"></use></svg>
                 </i>
-            </a>
-            <div class="navPage-subMenu" id="navPages-3" aria-hidden="false" tabindex="-1">
+            </div>
+            <div class="navPage-subMenu">
                 <ul class="navPage-subMenu-list">
+                    <li class="navPage-subMenu-header navPages-action">
+                        <i class="icon navPages-action-backIcon">
+                            <svg><use xlink:href="#icon-chevron-left"></use></svg>
+                        </i>
+                        Gifts
+                    </li>
                     <li class="navPage-subMenu-item">
                         <a class="navPage-subMenu-action navPages-action" href="/gifts/gifts-of-gold/">18K Gold</a>
                     </li>
@@ -313,6 +467,31 @@
                     </li>
                     <li class="navPage-subMenu-item">
                         <a class="navPage-subMenu-action navPages-action" href="/gifts/">View All Gifts</a>
+                    </li>
+                    <li class="navPage-subMenu-trigger navPages-action" data-index="1">
+                        Explore Our Curated Edits
+                        <i class="icon">
+                            <svg><use xlink:href="#icon-chevron-right"></use></svg>
+                        </i>
+                    </li>
+                </ul>
+            </div>
+            <div class="navPage-subMenu" data-index="1">
+                <ul class="navPage-subMenu-list">
+                    <li class="navPage-subMenu-header navPages-action">
+                        <i class="icon navPages-action-backIcon">
+                            <svg><use xlink:href="#icon-chevron-left"></use></svg>
+                        </i>
+                        Explore Our Curated Edits
+                    </li>
+                    <li class="navPage-subMenu-item">
+                        <a class="navPage-subMenu-action navPages-action" href="/ippolita-classics/">IPPOLITA Classics</a>
+                    </li>
+                    <li class="navPage-subMenu-item">
+                        <a class="navPage-subMenu-action navPages-action" href="/the-anniversario-stack-series/">Anniversario Stack Series</a>
+                    </li>
+                    <li class="navPage-subMenu-item">
+                        <a class="navPage-subMenu-action navPages-action" href="/20-anniversario">20 Icons</a>
                     </li>
                 </ul>
             </div>
@@ -384,14 +563,20 @@
                 </ul>
             </div>
         </li>
-        <li class="navPages-item">
-            <a class="navPages-action has-subMenu" href="/world-of-ippolita/" data-collapsible="navPages-4" aria-controls="navPages-4" aria-expanded="true">World of Ippolita
+        <li class="navPages-item navPages-item-mobile">
+            <div class="navPages-action">World of Ippolita
                 <i class="icon navPages-action-moreIcon" aria-hidden="true">
                     <svg><use xlink:href="#icon-chevron-down"></use></svg>
                 </i>
-            </a>
-            <div class="navPage-subMenu" id="navPages-4" aria-hidden="false" tabindex="-1">
+            </div>
+            <div class="navPage-subMenu">
                 <ul class="navPage-subMenu-list">
+                    <li class="navPage-subMenu-header navPages-action">
+                        <i class="icon navPages-action-backIcon">
+                            <svg><use xlink:href="#icon-chevron-left"></use></svg>
+                        </i>
+                        World of Ippolita
+                    </li>
                     <li class="navPage-subMenu-item">
                         <a class="navPage-subMenu-action navPages-action" href="/timeline/">Timeline</a>
                     </li>
@@ -403,6 +588,34 @@
                     </li>
                     <li class="navPage-subMenu-item">
                         <a class="navPage-subMenu-action navPages-action" href="/diario/">Diario</a>
+                    </li>
+                    <li class="navPage-subMenu-item">
+                        <a class="navPage-subMenu-action navPages-action" href="/world-of-ippolita/">World of Ippolita</a>
+                    </li>
+                    <li class="navPage-subMenu-trigger navPages-action" data-index="1">
+                        Explore Our Curated Edits
+                        <i class="icon">
+                            <svg><use xlink:href="#icon-chevron-right"></use></svg>
+                        </i>
+                    </li>
+                </ul>
+            </div>
+            <div class="navPage-subMenu" data-index="1">
+                <ul class="navPage-subMenu-list">
+                    <li class="navPage-subMenu-header navPages-action">
+                        <i class="icon navPages-action-backIcon">
+                            <svg><use xlink:href="#icon-chevron-left"></use></svg>
+                        </i>
+                        Explore Our Curated Edits
+                    </li>
+                    <li class="navPage-subMenu-item">
+                        <a class="navPage-subMenu-action navPages-action" href="/ippolita-classics/">IPPOLITA Classics</a>
+                    </li>
+                    <li class="navPage-subMenu-item">
+                        <a class="navPage-subMenu-action navPages-action" href="/the-anniversario-stack-series/">Anniversario Stack Series</a>
+                    </li>
+                    <li class="navPage-subMenu-item">
+                        <a class="navPage-subMenu-action navPages-action" href="/20-anniversario">20 Icons</a>
                     </li>
                 </ul>
             </div>
@@ -447,7 +660,7 @@
                     </div>
                 </div>
                 <div class="navPage-subMenu-entry">
-                    <a href="/new-arrivals/">World of Ippolita</a>
+                    <a href="/world-of-ippolita/">World of Ippolita</a>
                 </div>
                 <div class="navPage-subMenu-entry">
                     Explore Our Curated Edits
@@ -460,7 +673,7 @@
                         <a href="/the-anniversario-stack-series/">Anniversario Stack Series</a>
                     </li>
                     <li>
-                        <a href="/20-anniversario">20 Icons</a>
+                        <a href="/20-anniversario/">20 Icons</a>
                     </li>
                 </ul>
             </div>

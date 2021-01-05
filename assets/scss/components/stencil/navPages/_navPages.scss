@@ -38,14 +38,14 @@
 
 .navPages-container {
     // scss-lint:disable VendorPrefix
-    bottom: 0;
+    bottom: 25px;
     display: none;
     height: 100%;
     left: 0;
     -webkit-overflow-scrolling: touch;
     position: absolute;
     right: 0;
-    text-align: center;
+    text-align: left;
     z-index: zIndex("lower");
 
     @include breakpoint("medium") {
@@ -57,6 +57,7 @@
         margin: 0;
         padding: 0;
         position: static;
+        text-align: center;
         z-index: zIndex("high");
     }
 
@@ -97,7 +98,8 @@
         border-left: 0;
         list-style: none;
         margin-left: 0;
-        padding-left: 0;
+        padding-left: 1.5rem;
+        z-index: 11;
 
         @media only screen and (max-width: 800px) {
             position: absolute;
@@ -144,6 +146,7 @@
     .navPages-item:nth-child(5),
     .navPages-item:nth-child(7) {
         display: block;
+        cursor: pointer;
 
         @include breakpoint("medium") {
             display: none;
@@ -301,7 +304,7 @@
     display: block;
     font-size: fontSize("smaller");
     font-weight: fontWeight("bold");
-    padding: spacing("half") 0;
+    padding: spacing("single") 0;
     text-decoration: none;
     text-transform: uppercase;
 
@@ -350,12 +353,15 @@
 }
 
 .navPages-action-moreIcon {
-    @include square(8px);
-    display: none;
-    margin-left: spacing("quarter");
+    @include square(14px);
+    display: inline-block;
+    margin-top: spacing("quarter");
+    position: absolute;
+    right: 1.5rem;
     transform: rotate(-90deg);
 
     @include breakpoint("medium") {
+        display: none;
         transform: none;
     }
 
@@ -454,6 +460,26 @@
     }
 }
 
+.navPage-subMenu-header {
+    font-family: "Helvetica Neue Roman", sans-serif !important;
+
+    .navPages-action-backIcon {
+        @include square(24px);
+        display: inline-block;
+        margin: 0 15px 3px -5px;
+    }
+}
+
+.navPage-subMenu-trigger {
+    .icon {
+        @include square(24px);
+        display: inline-block;
+        margin: 0 15px 3px -5px;
+        position: absolute;
+        right: .5rem;
+    }
+}
+
 .navPage-subMenu-item {
     @include breakpoint("medium") {
         // scss-lint:disable ImportantRule
@@ -512,7 +538,7 @@
 }
 
 .navPage-subMenu-action {
-    padding: spacing("half") 0;
+    padding: spacing("single") 0;
 
     @include breakpoint("medium") {
         padding: spacing("half") 0 (spacing("half") + spacing("quarter"));
@@ -754,4 +780,12 @@
             padding: spacing("half") spacing("single");
         }
     }
+}
+
+.display-none {
+    display: none;
+}
+
+.display-block {
+    display: block;
 }
