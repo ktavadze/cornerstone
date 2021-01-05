@@ -140,7 +140,7 @@
 
     // RUNS ONLY ON HOME PAGE
     function configureClearHeader() {
-        var bannerTop = document.querySelector(".banner-top");
+        // var bannerTop = document.querySelector(".banner-top");
         var header = document.querySelector("header");
         var quickSearchAction = document.querySelector(".navUser-action--quickSearch");
         var quickSearchAction = document.querySelector(".navUser-action--quickSearch");
@@ -153,25 +153,25 @@
 
         // initialize header state
         if (window.scrollY == 0) {
-            bannerTop.classList.add("banner-top-clear");
+            // bannerTop.classList.add("banner-top-clear");
             header.classList.add("header-clear");
         }
 
         // update header state on scroll
         window.onscroll = function() {
             if (window.scrollY == 0) {
-                bannerTop.classList.add("banner-top-clear");
+                // bannerTop.classList.add("banner-top-clear");
                 header.classList.add("header-clear");
 
                 if (activeNavItem == null) {
-                    bannerTop.classList.add("banner-top-clear");
+                    // bannerTop.classList.add("banner-top-clear");
                     header.classList.add("header-clear");
                 } else {
-                    bannerTop.classList.remove("banner-top-clear");
+                    // bannerTop.classList.remove("banner-top-clear");
                     header.classList.remove("header-clear");
                 }
             } else {
-                bannerTop.classList.remove("banner-top-clear");
+                // bannerTop.classList.remove("banner-top-clear");
                 header.classList.remove("header-clear");
             }
         };
@@ -182,14 +182,14 @@
                 activeNavItem = this;
 
                 if (window.scrollY == 0) {
-                    bannerTop.classList.remove("banner-top-clear");
+                    // bannerTop.classList.remove("banner-top-clear");
                     header.classList.remove("header-clear");
                 }
             } else if (activeNavItem == this) {
                 activeNavItem = null;
 
                 if (window.scrollY == 0) {
-                    bannerTop.classList.add("banner-top-clear");
+                    // bannerTop.classList.add("banner-top-clear");
                     header.classList.add("header-clear");
                 }
             }
@@ -204,7 +204,7 @@
                 }
 
                 if (subMenu) {
-                    bannerTop.classList.remove("banner-top-clear");
+                    // bannerTop.classList.remove("banner-top-clear");
                     header.classList.remove("header-clear");
                     subMenu.classList.add("is-open");
                     activeNavItem = this;
@@ -216,7 +216,7 @@
 
                 if (subMenu) {
                     if (window.scrollY == 0) {
-                        bannerTop.classList.add("banner-top-clear");
+                        // bannerTop.classList.add("banner-top-clear");
                         header.classList.add("header-clear");
                     }
 

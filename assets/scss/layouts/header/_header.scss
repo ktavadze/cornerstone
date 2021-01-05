@@ -20,7 +20,7 @@
     border-bottom: container("border");
     height: $header-height;
     position: fixed;
-    top: 25px;
+    top: 0;
     width: 100%;
     z-index: 101;
 
@@ -362,7 +362,7 @@
         fill: stencilColor("navUser-color");
     }
 }
-
+/*
 .banner-top {
     position: fixed;
     top: 0;
@@ -392,3 +392,4 @@
         color: white !important;
     }
 }
+*/

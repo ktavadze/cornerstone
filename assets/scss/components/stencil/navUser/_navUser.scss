@@ -362,7 +362,7 @@
     &.is-open {
         // scss-lint:disable ImportantRule
         position: fixed;
-        top: 80px !important;
+        top: $header-height !important;
         right: 0 !important;
         left: 0 !important;
 
