@@ -208,11 +208,17 @@
 
     .navPages-item:last-child {
         .navPage-subMenu-list {
-            max-width: 40rem;
+            max-width: 20rem;
         }
 
-        .navPage-subMenu-content {
-            max-width: 40rem;
+        .navPage-subMenu-content-tab:first-child {
+            margin: auto;
+            max-width: 30rem;
+        }
+
+        .navPage-subMenu-content-tab:last-child {
+            margin: auto;
+            max-width: 50rem;
         }
     }
 
