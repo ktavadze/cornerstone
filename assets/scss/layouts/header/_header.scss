@@ -40,6 +40,7 @@
         }
 
         .navPages-item {
+            height: 100%;
             flex-grow: 1;
         }
 
@@ -48,14 +49,13 @@
             padding: 1rem 0.5rem;
 
             div {
-                padding: 1rem 0;
+                padding: 0.33rem 0 3px;
             }
         }
 
         .navPages-item:hover > .navPages-action {
             div {
-                border-top: 4px solid white;
-                border-bottom: 4px solid black;
+                border-bottom: 3px solid #333;
             }
         }
     }
@@ -69,6 +69,10 @@
 
         .navPages-item > .navPages-action {
             padding: 0 2rem;
+
+            div {
+                padding: 1.25rem 0 3px;
+            }
         }
     }
 }

@@ -118,6 +118,7 @@
             display: flex;
             flex-wrap: wrap;
             margin: 5px auto 20px;
+            padding-left: 0;
         }
     }
 }
@@ -671,6 +672,7 @@
     background-color: white;
     display: none;
     overflow: auto;
+    z-index: 99;
 
     @include breakpoint("medium") {
         display: none;
