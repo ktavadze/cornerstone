@@ -123,6 +123,10 @@ div#isp_search_result_page_container div.isp_left_container {
     &::-webkit-scrollbar {
         display: none;
     }
+
+    @-moz-document url-prefix() {
+        position: static;
+    }
 }
 
 div#isp_left_container_facets div.isp_facet_gemstone div.isp_facet_value {
