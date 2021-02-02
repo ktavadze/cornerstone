@@ -126,6 +126,11 @@
                         var match = null;
 
                         for (var targetUrl of targetUrls) {
+                            if (currentUrl.indexOf("/new-arrivals/gold/") > -1 ||
+                                currentUrl.indexOf("/new-arrivals/silver/") > -1) {
+                                break;
+                            }
+
                             if (currentUrl.indexOf(targetUrl) > -1) {
                                 match = targetUrl;
 
@@ -161,12 +166,12 @@
                                     $(".isp_grid_banner_2 > a").attr("href", "/search-results?lp=flower");
                                     break;
                                 case "/rings/":
-                                    $(".isp_grid_banner_1 > a").attr("href", "/collections/luce");
-                                    $(".isp_grid_banner_2 > a").attr("href", "/search-results/?q=silver%20ring");
+                                    $(".isp_grid_banner_1 > a").attr("href", "/collections/silver-luce/");
+                                    $(".isp_grid_banner_2 > a").attr("href", "/inspiration/color/");
                                     break;
                                 case "/category/":
                                     $(".isp_grid_banner_1 > a").attr("href", "/collections/polished-rock-candy/");
-                                    $(".isp_grid_banner_2 > a").attr("href", "/collections/stardust/");
+                                    $(".isp_grid_banner_2 > a").attr("href", "/gift-guide/");
                                     break;
                                 case "/ippolita-classics/":
                                     $(".isp_grid_banner_1 > a").attr("href", "/search-results?lp=diamonds-for-day");
