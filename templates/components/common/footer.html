@@ -294,6 +294,17 @@
 
                         localLabels[currentIndex].classList.add("selected");
                         localTabs[currentIndex].style.display = "flex";
+
+                        // choose tab link
+                        var localLinks = e.target.parentNode.parentNode.querySelectorAll(".navPage-subMenu-entry-links > a");
+
+                        if (localLinks.length) {
+                            for (var i = 0; i < localLinks.length; i++) {
+                                localLinks[i].style.display = "none";
+                            }
+
+                            localLinks[currentIndex].style.display = "block";
+                        }
                     });
                 }
             }
