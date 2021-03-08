@@ -167,6 +167,24 @@
         text-transform: uppercase;
     }
 
+    .button.klaviyo-bis-trigger {
+        margin: 0 0 1rem !important;
+        width: 100% !important;
+
+        @include breakpoint("small") {
+            width: 50% !important;
+        }
+
+        @include breakpoint("medium") {
+            width: 100% !important;
+        }
+
+        @include breakpoint("large") {
+            margin: 0 10px 1rem 0 !important;
+            width: auto !important;
+        }
+    }
+
     .form-wishlist > a {
         height: 40px;
     }
