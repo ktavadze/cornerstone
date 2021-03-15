@@ -20,7 +20,7 @@
     border-bottom: container("border");
     height: $header-height;
     position: fixed;
-    top: 25px;
+    top: 0;
     width: 100%;
     z-index: 101;
 
@@ -373,6 +373,7 @@
 
     background-color: #e5e5e5;
     color: #666;
+    display: none;
     height: 25px;
     font-family: "Helvetica Neue Roman", sans-serif !important;
     font-size: 10px;
