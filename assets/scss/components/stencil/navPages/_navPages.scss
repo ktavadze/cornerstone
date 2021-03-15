@@ -579,6 +579,10 @@
             }
         }
 
+        > div:hover {
+            opacity: .90;
+        }
+
         .icon {
             position: absolute;
             top: 2rem;
@@ -632,12 +636,15 @@
     > li {
         background: #444;
         flex: 1;
-        padding: 4px 0 !important;
 
         > a {
             color: #fff;
+            display: block;
+            height: 100%;
             letter-spacing: .15em !important;
+            padding: 4px 0 !important;
             text-decoration: none;
+            width: 100%;
         }
     }
 
@@ -645,6 +652,10 @@
         border-left: 4px solid white;
         border-right: 4px solid white;
         flex: 1.25;
+    }
+
+    > li:hover {
+        opacity: .90;
     }
 }
 
