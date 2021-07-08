@@ -182,6 +182,103 @@
                         }
                     }
 
+                    // add seo widget
+                    if (!$("#isp_collection_info_header").length) {
+                        var currentUrl = window.location.href;
+                        var targetUrls = [
+                            "/bracelets/",
+                            "/charms/",
+                            "/earrings/",
+                            "/necklaces/",
+                            "/rings/",
+                            "/category/"
+                        ];
+
+                        // look for matching target url
+                        var match = null;
+
+                        for (var targetUrl of targetUrls) {
+                            if (currentUrl.indexOf(targetUrl) > -1) {
+                                match = targetUrl;
+
+                                break;
+                            }
+                        }
+
+                        // if match found, add widget
+                        if (match) {
+                            $('#isp_center_container').append('<div id="isp_collection_info_header"></div>');
+                            $('#isp_center_container').append('<div id="isp_collection_info_content"></div>');
+
+                            var links = {
+                                "18k gold": "/jewelry/category/?narrow=%5B%5B%22Material%22%2C%22GOLD%22%5D%5D&",
+                                "925 silver": "/jewelry/category/?narrow=%5B%5B%22Material%22%2C%22SILVER%22%5D%5D",
+                                "chimera": "/collections/chimera/",
+                                "rose gold": "/jewelry/category/?narrow=%5B%5B%22Material%22%2C%22ROSE%20GOLD%22%5D%5D",
+                                "mother-of-pearl": "/jewelry/category/?narrow=%5B%5B%22Gemstone%22%2C%22Mother-of-Pearl%22%5D%5D",
+                                "diamond": "/jewelry/category/?narrow=%5B%5B%22Gemstone%22%2C%22Diamond%22%5D%5D",
+                                "turquoise": "/jewelry/category/?narrow=%5B%5B%22Gemstone%22%2C%22Turquoise%22%5D%5D",
+                                "rock crystal": "/jewelry/category/?narrow=%5B%5B%22Gemstone%22%2C%22Rock%20Crystal%22%5D%5D",
+                                "sculptural metal": "/inspiration/sculptural-metal/",
+                                "squiggle": "/search-results/?lp=squiggle",
+                                "necklaces": "/jewelry/category/necklaces/",
+                                "charms": "/jewelry/category/charms/",
+                                "bracelets": "/jewelry/category/bracelets/",
+                                "rings": "/jewelry/category/rings/",
+                                "earrings": "/jewelry/category/earrings/",
+                                "studs": "/jewelry/category/earrings/stud/",
+                                "hoop earrings": "/search-results/?lp=hoop",
+                                "drops": "/jewelry/category/earrings/drop/",
+                                "ear cuffs": "/search-results/?lp=earcuff",
+                                "signature stacks": "/signature-stacks/",
+                                "bangle": "/jewelry/category/bracelets/bangle/",
+                                "jewelry": "/jewelry/category/",
+                                "bands": "/jewelry/category/rings/",
+                                "statement rings": "/jewelry/category/rings/",
+                                "clip earrings": "/jewelry/category/earrings/clip/",
+                                "hammered": "/search-results/?lp=hammered-jewelry",
+                                "metal-sculpting": "/inspiration/sculptural-metal/",
+                                "body-imprinting": "/search-results/?lp=body-imprinting"
+                            };
+
+                            // add language
+                            switch (match) {
+                                case "/bracelets/":
+                                    $("#isp_collection_info_header").html("About IPPOLITA Bracelets");
+                                    $("#isp_collection_info_content").html("Worn stacked or solo, IPPOLITA <a href='" + links["bracelets"] + "'>bracelets</a> highlight the elegance of gleaming <a href='" + links["18k gold"] + "'>18k gold</a> and <a href='" + links["925 silver"] + "'>925 silver</a> in understated expressions as well as those inset with brilliant diamonds or colorful stones. Explore a free-form mix of <a href='" + links["bracelets"] + "'>bracelets</a>, including <a href='" + links["signature stacks"] + "'>signature stacks</a>, which feature our most-loved <a href='" + links["bangle"] + "'>bangle bracelets</a>, specially curated to honor IPPOLITA’s 20th anniversary. These striking <a href='" + links["jewelry"] + "'>jewelry</a> creations incorporate some of our most iconic <a href='" + links["sculptural metal"] + "'>sculpted metal</a> techniques, including the <a href='" + links["squiggle"] + "'>squiggle</a> collection, in which the sculptor molds wax in the hands before translating the resulting impressions into precious textured metals. Organic, sophisticated and luxuriously tactile, IPPOLITA bracelets are certain to leave a lasting impression.");
+                                    break;
+                                case "/earrings/":
+                                    $("#isp_collection_info_header").html("About IPPOLITA Earrings");
+                                    $("#isp_collection_info_content").html("Whether for everyday or special occasions, IPPOLITA earrings exude a perfect balance of drama and simplicity that make them ideal in any setting. A pair of delicate <a href='" + links["studs"] + "'>studs</a> can feel as appropriate with a casual daytime outfit as with formalwear or an evening ensemble. Likewise, our cascading jeweled chandeliers have an understated glamour that complements a variety of looks. Another timeless choice for anytime wear are our <a href='" + links["hoop earrings"] + "'>hoop earrings</a>, which come in simple and resplendently jeweled iterations, cast in steely <a href='" + links["925 silver"] + "'>925 silver</a> or glowing <a href='" + links["18k gold"] + "'>18k gold</a>. By mixing and matching <a href='" + links["studs"] + "'>studs</a>, <a href='" + links["hoop earrings"] + "'>hoops</a>, <a href='" + links["drops"] + "'>drops</a>, and <a href='" + links["ear cuffs"] + "'>ear cuffs</a>, it’s effortless to create an artfully styled ear stack, bringing a modern edge to your signature jewelry look. Shop our earring collections to discover timelessly alluring creations, unique gifts and investment pieces to last a lifetime.");
+                                    break;
+                                case "/necklaces/":
+                                    $("#isp_collection_info_header").html("About IPPOLITA Necklaces");
+                                    $("#isp_collection_info_content").html("Connoisseurs of IPPOLITA jewelry can’t help but be drawn to our signature necklaces — a collection of handwrought statement chains, long, layerable strands and keepsake pieces adorned with a pendant or clustered with stone charms. Fine jewelry-making techniques are used in the creation of each IPPOLITA necklace, including hand-hammering to create crinkled textures with a high-shine finish. IPPOLITA <a href='" + links["necklaces"] + "'>necklaces</a> also feature a dazzling array of hand-faceted jewels in rainbow tones, including <a href='" + links["turquoise"] + "'>turquoise</a>, <a href='" + links["rock crystal"] + "'>rock crystal</a> and <a href='" + links["mother-of-pearl"] + "'>mother-of-pearl</a>, mounted in settings of <a href='" + links["18k gold"] + "'>18k gold</a> as well as <a href='" + links["925 silver"] + "'>925 silver</a>. An artful, organic approach is used in the design of our necklaces so that the wearer feels a connection to her signature fine jewelry. For work, weekends, parties, or events — or to mark the passage of a milestone moment, the unique gift of an IPPOLITA necklace is as meaningful a gesture as it is a treasured investment piece.");
+                                    break;
+                                case "/rings/":
+                                    $("#isp_collection_info_header").html("About IPPOLITA Rings");
+                                    $("#isp_collection_info_content").html("From simple, sculpted bands to gem-encrusted cocktail pieces, IPPOLITA rings offer beautiful everyday accents for mixing and stacking — an elegant foundation to a woman’s fine jewelry wardrobe. Our rings are cast in <a href='" + links["18k gold"] + "'>18k gold</a>, <a href='" + links["925 silver"] + "'>925 silver</a>, <a href='" + links["chimera"] + "'>chimera</a>, which fuses the two, as well as <a href='" + links["rose gold"] + "'>rose gold</a>, and highlight a range of metalworking techniques, such as hand-hammering to create highly polished, organic surface textures. IPPOLITA rings also feature intricate stone settings, including micro <a href='" + links["diamond"] + ">diamond</a> pavé, and unexpected embellishments like bright ceramics for a color-pop effect. Solitaire rings often showcase jewels of unusual beauty, from smooth dome cabochons to doublets and triplets, which layer precious materials such as <a href='" + links["mother-of-pearl"] + "'>mother-of-pearl</a>, <a href='" + links["turquoise"] + "'>turquoise</a> and <a href='" + links["rock crystal"] + "'>rock crystal</a>, to create beautiful composite gemstones. <a href='" + links["statement rings"] + "'>Statement rings</a> are another IPPOLITA signature, an especially apt choice for lovers of bold, oversized jewelry creations of impeccable craftsmanship and outstanding shine.");
+                                    break;
+                                case "/category/":
+                                    $("#isp_collection_info_header").html("About IPPOLITA Jewelry");
+                                    $("#isp_collection_info_content").html("Inspired by sculpture, artistry and nature, IPPOLITA jewelry is known for its signature collections wrought in <a href='" + links["18k gold"] + "'>18k gold</a>, <a href='" + links["925 silver"] + "'>925 silver</a>, <a href='" + links["chimera"] + "'>chimera</a> which combines the two, and <a href='" + links["rose gold"] + "'>rose gold</a>. Timeless pieces fuse elegance and modernity, in clean designs with high-quality gemstones ranging from <a href='" + links["mother-of-pearl"] + "'>mother-of-pearl</a> and <a href='" + links["diamond"] + ">diamond</a> to <a href='" + links["turquoise"] + "'>turquoise</a> and <a href='" + links["rock crystal"] + "'>rock crystal</a>. Drawing from a career spanning over 20 years, founder and designer Ippolita Rostagno has more than perfected our iconic <a href='" + links["sculptural metal"] + "'>sculptural metal</a> techniques: the hand-wrought <a href='" + links["squiggle"] + "'>squiggle</a> collection, the hammered range featuring richly textured, organic precious metals and our body-imprinted pieces, which are molded to the curves of the human form. IPPOLITA <a href='" + links["necklaces"] + "'>necklaces</a> and <a href='" + links["charms"] + "'>charms</a>, bangle <a href='" + links["bracelets"] + "'>bracelets</a>, statement <a href='" + links["rings"] + "'>rings</a> and <a href='" + links["earrings"] + "'>earrings</a> are made for layering, mixing and stacking. IPPOLITA is infinitely wearable, offering iconic, feminine jewelry and investment pieces that highlight the grace and joy of everyday living.");
+                                    break;
+                                default:
+                                    $('#isp_collection_info_header').hide();
+                                    break;
+                            }
+
+                            $('#isp_collection_info_header').append('<i class="icon" aria-hidden="true"><svg><use xlink:href="#icon-add"></use></svg></i>');
+                            $('#isp_collection_info_header').append('<i class="icon" aria-hidden="true"><svg><use xlink:href="#icon-remove"></use></svg></i>');
+
+                            $('#isp_collection_info_header').click(() => {
+                                $('#isp_collection_info_content').toggle();
+                                $('#isp_collection_info_header > i:first-child').toggle();
+                                $('#isp_collection_info_header > i:last-child').toggle();
+                            });
+                        }
+                    }
+
                     // format plp products
                     $('.isp_grid_product').each(function(index) {
                         var p_id = $(this).attr('product_id');

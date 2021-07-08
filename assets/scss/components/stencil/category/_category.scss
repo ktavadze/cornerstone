@@ -47,6 +47,28 @@ div#isp_search_result_page_container div.isp_center_container ul#isp_search_resu
     width: 100%;
 }
 
+div#isp_search_result_page_container div.isp_center_container div#isp_collection_info_header {
+    border-top: 1px solid #ccc;
+    cursor: pointer;
+    float: left;
+    padding: 1rem 0;
+    width: 100%;
+
+    i {
+        float: right;
+    }
+
+    i:last-child {
+        display: none;
+    }
+}
+
+div#isp_search_result_page_container div.isp_center_container div#isp_collection_info_content {
+    display: none;
+    float: left;
+    width: 100%;
+}
+
 @media (min-width: 769px) {
     div#isp_search_result_page_container div.isp_center_container ul#isp_search_results_container li.isp_grid_product {
         height: 500px;
