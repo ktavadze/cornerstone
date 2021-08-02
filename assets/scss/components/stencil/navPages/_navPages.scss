@@ -169,9 +169,8 @@
         .navPage-subMenu-list {
             max-width: 50rem;
 
-            .navPage-subMenu-item:nth-child(2),
-            .navPage-subMenu-item:nth-child(3) {
-                flex: 1.75;
+            .navPage-subMenu-item:last-child {
+                flex: 1.25;
             }
         }
 
@@ -197,12 +196,12 @@
 
         .navPage-subMenu-content-tab:first-child {
             margin: auto;
-            max-width: 20rem;
+            max-width: 30rem;
         }
 
         .navPage-subMenu-content-tab:last-child {
             margin: auto;
-            max-width: 30rem;
+            max-width: 20rem;
         }
     }
 
@@ -214,11 +213,6 @@
         .navPage-subMenu-content-tab:first-child {
             margin: auto;
             max-width: 30rem;
-        }
-
-        .navPage-subMenu-content-tab:last-child {
-            margin: auto;
-            max-width: 50rem;
         }
     }
 
@@ -617,10 +611,13 @@
     font-weight: 700;
     letter-spacing: .15em !important;
     margin-top: 2rem;
+    margin-bottom: 2rem;
     text-transform: uppercase;
 
     > a {
+        border-bottom: 3px solid #333;
         letter-spacing: .15em !important;
+        padding-bottom: 5px;
         text-decoration: none;
     }
 }
@@ -652,10 +649,6 @@
         border-left: 4px solid white;
         border-right: 4px solid white;
         flex: 1.25;
-    }
-
-    > li:hover {
-        opacity: .90;
     }
 }
 
