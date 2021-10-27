@@ -315,9 +315,46 @@
 
 // PDP banners
 #pdp-banner-anchor {
-    display: block;
+    display: flex;
+    justify-content: center;
     padding-top: 4rem;
+    position: relative;
     width: 100%;
+
+    #pdp-banner-text {
+        position: absolute;
+        text-align: center;
+    }
+
+    .pdp-banner-text-top {
+        top: 20%;
+    }
+
+    .pdp-banner-text-bottom {
+        bottom: 5%;
+    }
+
+    .pdp-banner-text-white {
+        color: white;
+    }
+
+    #pdp-banner-text > h1,
+    #pdp-banner-text > h2,
+    #pdp-banner-text > h5 {
+        color: inherit;
+        font-family: "Helvetica Neue Roman", sans-serif !important;
+        letter-spacing: 0.1em !important;
+    }
+
+    #pdp-banner-text > h1,
+    #pdp-banner-text > h2 {
+        margin: 0;
+    }
+
+    #pdp-banner-text > h5 {
+        font-weight: bold;
+        text-decoration: underline;
+    }
 
     #pdp-banner-mobile {
         display: block;
@@ -330,12 +367,37 @@
     }
 
     @include breakpoint("small") {
+        align-items: center;
+
+        #pdp-banner-text {
+            top: auto;
+            bottom: auto;
+        }
+
+        .pdp-banner-text-left {
+            left: 2.5%;
+        }
+
+        .pdp-banner-text-right {
+            right: 2.5%;
+        }
+
         #pdp-banner-mobile {
             display: none;
         }
 
         #pdp-banner {
             display: block;
+        }
+    }
+
+    @include breakpoint("medium") {
+        .pdp-banner-text-left {
+            left: 10%;
+        }
+
+        .pdp-banner-text-right {
+            right: 10%;
         }
     }
 }

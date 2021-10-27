@@ -68,6 +68,11 @@ product:
         </script>
 
         <a id="pdp-banner-anchor">
+            <div id="pdp-banner-text">
+                <h2></h2>
+                <h1></h1>
+                <h5>SHOP NOW</h5>
+            </div>
             <img id="pdp-banner-mobile" src="" />
             <img id="pdp-banner" src="" />
         </a>
@@ -76,30 +81,56 @@ product:
             (function() {
                 var productCollection = document.querySelector(".productView .productView-collection");
                 var pdpBannerAnchor = document.querySelector("#pdp-banner-anchor");
+                var pdpBannerText = document.querySelector("#pdp-banner-text");
+                var pdpBannerTextMetal = document.querySelector("#pdp-banner-text > h2");
+                var pdpBannerTextCollection = document.querySelector("#pdp-banner-text > h1");
                 var pdpBannerMobile = document.querySelector("#pdp-banner-mobile");
                 var pdpBanner = document.querySelector("#pdp-banner");
 
                 var collection = "{{#filter product.custom_fields 'Collection' property='name' }}{{value}}{{/filter}}".toUpperCase();
                 var material = "{{#filter product.custom_fields 'Material' property='name' }}{{value}}{{/filter}}".toUpperCase();
 
+                console.log(collection);
+                console.log(material);
+
+                if (collection) {
+                    pdpBannerTextCollection.innerHTML = collection;
+                    pdpBannerMobile.setAttribute("alt", "Shop " + collection);
+                    pdpBanner.setAttribute("alt", "Shop " + collection);
+                }
+
+                if (material == "GOLD") {
+                    pdpBannerTextMetal.innerHTML = "18K GOLD";
+                }
+                else {
+                    pdpBannerTextMetal.innerHTML = "925 SILVER";
+                }
+
                 if (collection == "CLASSICO") {
                     if (material == "GOLD") {
                         productCollection.href = "/collections/gold-classico/";
                         pdpBannerAnchor.href = "/collections/gold-classico/";
                         pdpBannerMobile.src = "/content/banners/pdp/gold-classico-mobile.jpg";
-                        pdpBanner.src = "/content/banners/pdp/gold-classico.jpg";
+                        .src = "/content/banners/pdp/gold-classico.jpg";
+
+                        pdpBannerText.classList.add("pdp-banner-text-bottom", "pdp-banner-text-left", "pdp-banner-text-white");
                     }
                     else if (material == "SILVER") {
                         productCollection.href = "/collections/silver-classico/";
                         pdpBannerAnchor.href = "/collections/silver-classico/";
                         pdpBannerMobile.src = "/content/banners/pdp/silver-classico-mobile.jpg";
                         pdpBanner.src = "/content/banners/pdp/silver-classico.jpg";
+
+                        pdpBannerText.classList.add("pdp-banner-text-bottom", "pdp-banner-text-right", "pdp-banner-text-white");
                     }
                     else {
                         productCollection.href = "/collections/chimera/";
                         pdpBannerAnchor.href = "/collections/chimera/";
                         pdpBannerMobile.src = "/content/banners/pdp/chimera-mobile.jpg";
                         pdpBanner.src = "/content/banners/pdp/chimera.jpg";
+
+                        pdpBannerText.classList.add("pdp-banner-text-bottom", "pdp-banner-text-left");
+                        pdpBannerTextMetal.innerHTML = "18K GOLD & 925 SILVER";
                     }
                 }
                 else if (collection == "LOLLIPOP®") {
@@ -108,12 +139,16 @@ product:
                         pdpBannerAnchor.href = "/collections/gold-lollipop/";
                         pdpBannerMobile.src = "/content/banners/pdp/gold-lollipop-mobile.jpg";
                         pdpBanner.src = "/content/banners/pdp/gold-lollipop.jpg";
+
+                        pdpBannerText.classList.add("pdp-banner-text-top", "pdp-banner-text-left", "pdp-banner-text-white");
                     }
                     else {
                         productCollection.href = "/collections/silver-lollipop/";
                         pdpBannerAnchor.href = "/collections/silver-lollipop/";
-                        pdpBannerMobile.src = "/content/banners/pdp/gold-lollipop-mobile.jpg";
-                        pdpBanner.src = "/content/banners/pdp/gold-lollipop.jpg";
+                        pdpBannerMobile.src = "/content/banners/pdp/silver-lollipop-mobile.jpg";
+                        pdpBanner.src = "/content/banners/pdp/silver-lollipop.jpg";
+
+                        pdpBannerText.classList.add("pdp-banner-text-bottom", "pdp-banner-text-right");
                     }
                 }
                 else if (collection == "ROCK CANDY®") {
@@ -122,12 +157,16 @@ product:
                         pdpBannerAnchor.href = "/collections/gold-rock-candy/";
                         pdpBannerMobile.src = "/content/banners/pdp/gold-rock-candy-mobile.jpg";
                         pdpBanner.src = "/content/banners/pdp/gold-rock-candy.jpg";
+
+                        pdpBannerText.classList.add("pdp-banner-text-bottom", "pdp-banner-text-left", "pdp-banner-text-white");
                     }
                     else {
                         productCollection.href = "/collections/silver-rock-candy/";
                         pdpBannerAnchor.href = "/collections/silver-rock-candy/";
                         pdpBannerMobile.src = "/content/banners/pdp/silver-rock-candy-mobile.jpg";
                         pdpBanner.src = "/content/banners/pdp/silver-rock-candy.jpg";
+
+                        pdpBannerText.classList.add("pdp-banner-text-bottom", "pdp-banner-text-right");
                     }
                 }
                 else if (collection == "LUCE") {
@@ -136,12 +175,16 @@ product:
                         pdpBannerAnchor.href = "/collections/gold-luce/";
                         pdpBannerMobile.src = "/content/banners/pdp/gold-luce-mobile.jpg";
                         pdpBanner.src = "/content/banners/pdp/gold-luce.jpg";
+
+                        pdpBannerText.classList.add("pdp-banner-text-bottom", "pdp-banner-text-left", "pdp-banner-text-white");
                     }
                     else {
                         productCollection.href = "/collections/silver-luce/";
                         pdpBannerAnchor.href = "/collections/silver-luce/";
                         pdpBannerMobile.src = "/content/banners/pdp/silver-luce-mobile.jpg";
                         pdpBanner.src = "/content/banners/pdp/silver-luce.jpg";
+
+                        pdpBannerText.classList.add("pdp-banner-text-bottom", "pdp-banner-text-left");
                     }
                 }
                 else if (collection == "POLISHED ROCK CANDY") {
@@ -149,30 +192,63 @@ product:
                     pdpBannerAnchor.href = "/collections/polished-rock-candy/";
                     pdpBannerMobile.src = "/content/banners/pdp/polished-rock-candy-mobile.jpg";
                     pdpBanner.src = "/content/banners/pdp/polished-rock-candy.jpg";
+
+                    pdpBannerText.classList.add("pdp-banner-text-bottom", "pdp-banner-text-right", "pdp-banner-text-white");
                 }
                 else if (collection == "ATELIER") {
                     productCollection.href = "/collections/one-of-a-kind/";
                     pdpBannerAnchor.href = "/collections/one-of-a-kind/";
                     pdpBannerMobile.src = "/content/banners/pdp/one-of-a-kind-mobile.jpg";
                     pdpBanner.src = "/content/banners/pdp/one-of-a-kind.jpg";
+
+                    pdpBannerText.classList.add("pdp-banner-text-top", "pdp-banner-text-right", "pdp-banner-text-white");
+                    pdpBannerTextMetal.innerHTML = "";
                 }
-                else if (collection == "IPPOLITA CHARMS") {
+                else if (collection == "IPPOLITA CHARMS" || collection == "CHARMS") {
                     productCollection.href = "/collections/ippolita-charms/";
                     pdpBannerAnchor.href = "/collections/ippolita-charms/";
                     pdpBannerMobile.src = "/content/banners/pdp/ippolita-charms-mobile.jpg";
                     pdpBanner.src = "/content/banners/pdp/ippolita-charms.jpg";
+
+                    pdpBannerText.classList.add("pdp-banner-text-bottom", "pdp-banner-text-left", "pdp-banner-text-white");
+                    pdpBannerTextMetal.innerHTML = "";
                 }
                 else if (collection == "ARTIST CHARMS") {
                     productCollection.href = "/collections/artist-charms/";
                     pdpBannerAnchor.href = "/collections/artist-charms/";
-                    pdpBannerMobile.src = "/content/banners/pdp/ippolita-charms-mobile.jpg";
-                    pdpBanner.src = "/content/banners/pdp/ippolita-charms.jpg";
+                    pdpBannerMobile.src = "/content/banners/pdp/artist-charms-mobile.jpg";
+                    pdpBanner.src = "/content/banners/pdp/artist-charms.jpg";
+
+                    pdpBannerTextMetal.innerHTML = "";
+                    pdpBannerText.classList.add("pdp-banner-text-bottom", "pdp-banner-text-left", "pdp-banner-text-white");
                 }
                 else {
                     productCollection.href = "/collections/" + collection.toLowerCase() + "/";
                     pdpBannerAnchor.href = "/collections/" + collection.toLowerCase() + "/";
                     pdpBannerMobile.src = "/content/banners/pdp/" + collection.toLowerCase() + "-mobile.jpg";
                     pdpBanner.src = "/content/banners/pdp/" + collection.toLowerCase() + ".jpg";
+
+                    if (collection == "CARNEVALE") {
+                        pdpBannerText.classList.add("pdp-banner-text-bottom", "pdp-banner-text-left");
+                        pdpBannerTextMetal.innerHTML = "18K GOLD & 925 SILVER";
+                    }
+                    else if (collection == "CHIMERA") {
+                        pdpBannerText.classList.add("pdp-banner-text-bottom", "pdp-banner-text-left");
+                        pdpBannerTextMetal.innerHTML = "18K GOLD & 925 SILVER";
+                    }
+                    else if (collection == "NOVA") {
+                        pdpBannerText.classList.add("pdp-banner-text-top", "pdp-banner-text-right", "pdp-banner-text-white");
+                    }
+                    else if (collection == "ONDINE") {
+                        pdpBannerText.classList.add("pdp-banner-text-bottom", "pdp-banner-text-right", "pdp-banner-text-white");
+                    }
+                    else if (collection == "STARDUST") {
+                        pdpBannerText.classList.add("pdp-banner-text-top", "pdp-banner-text-left");
+                        pdpBannerTextMetal.innerHTML = "18K GOLD & 925 SILVER";
+                    }
+                    else if (collection == "WONDERLAND") {
+                        pdpBannerText.classList.add("pdp-banner-text-top", "pdp-banner-text-left");
+                    }
                 }
             })();
         </script>
