@@ -192,14 +192,18 @@
     .navPages-item:nth-child(6) {
         .navPage-subMenu-list {
             max-width: 20rem;
+
+            .navPage-subMenu-item:first-child {
+                flex: 1.25;
+            }
         }
 
-        .navPage-subMenu-content-tab:first-child {
+        .navPage-subMenu-content-tab:nth-child(2) {
             margin: auto;
             max-width: 30rem;
         }
 
-        .navPage-subMenu-content-tab:nth-child(2) {
+        .navPage-subMenu-content-tab:last-child {
             margin: auto;
             max-width: 20rem;
         }
