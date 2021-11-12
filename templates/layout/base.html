@@ -119,7 +119,8 @@
                             "/silver-lollipop",
                             "/silver-rock-candy",
                             "/stardust",
-                            "/wonderland"
+                            "/wonderland",
+                            "/?lp=signature-stacks"
                         ];
 
                         // look for matching target url
@@ -142,11 +143,18 @@
                         if (match) {
                             var fileName = match.split("/").join("");
 
-                            $("#isp_search_results_container").prepend('<li class="isp_grid_banner_2"><a></a></li>');
-                            $("#isp_search_results_container").prepend('<li class="isp_grid_banner_1"><a></a></li>');
+                            if (match == "/?lp=signature-stacks") {
+                                $("#isp_search_results_container").prepend('<li class="isp_grid_banner_0"><a></a></li>');
 
-                            $(".isp_grid_banner_1 > a").css("background-image", "url(/content/banners/plp/" + fileName + "-1.jpg)");
-                            $(".isp_grid_banner_2 > a").css("background-image", "url(/content/banners/plp/" + fileName + "-2.jpg)");
+                                $(".isp_grid_banner_0 > a").css("background-image", "url(/content/banners/plp/signature-stacks-1.gif)");
+                            }
+                            else {
+                                $("#isp_search_results_container").prepend('<li class="isp_grid_banner_2"><a></a></li>');
+                                $("#isp_search_results_container").prepend('<li class="isp_grid_banner_1"><a></a></li>');
+
+                                $(".isp_grid_banner_1 > a").css("background-image", "url(/content/banners/plp/" + fileName + "-1.jpg)");
+                                $(".isp_grid_banner_2 > a").css("background-image", "url(/content/banners/plp/" + fileName + "-2.jpg)");
+                            }
 
                             // add link target
                             switch (match) {
@@ -324,7 +332,10 @@
                             });
 
                             // display ingrid banners
-                            if (index == 9) {
+                            if (index == 7) {
+                                $(".isp_grid_banner_0").show();
+                            }
+                            else if (index == 9) {
                                 $(".isp_grid_banner_1").show();
                             }
                             else if (index == 23) {

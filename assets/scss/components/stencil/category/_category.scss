@@ -22,11 +22,16 @@ div#isp_search_result_page_container div.isp_center_container ul#isp_search_resu
     width: 100% !important;
 }
 
+div#isp_search_result_page_container div.isp_center_container ul#isp_search_results_container li.isp_grid_banner_0,
 div#isp_search_result_page_container div.isp_center_container ul#isp_search_results_container li.isp_grid_banner_1,
 div#isp_search_result_page_container div.isp_center_container ul#isp_search_results_container li.isp_grid_banner_2 {
     display: none;
     grid-column: 1 / span 2;
     height: 375px;
+}
+
+div#isp_search_result_page_container div.isp_center_container ul#isp_search_results_container li.isp_grid_banner_0 {
+    grid-row: 4 / span 1;
 }
 
 div#isp_search_result_page_container div.isp_center_container ul#isp_search_results_container li.isp_grid_banner_1 {
@@ -37,6 +42,7 @@ div#isp_search_result_page_container div.isp_center_container ul#isp_search_resu
     grid-row: 14 / span 1;
 }
 
+div#isp_search_result_page_container div.isp_center_container ul#isp_search_results_container li.isp_grid_banner_0 > a,
 div#isp_search_result_page_container div.isp_center_container ul#isp_search_results_container li.isp_grid_banner_1 > a,
 div#isp_search_result_page_container div.isp_center_container ul#isp_search_results_container li.isp_grid_banner_2 > a {
     background-position: center center;
@@ -74,6 +80,7 @@ div#isp_search_result_page_container div.isp_center_container div#isp_collection
         height: 500px;
     }
 
+    div#isp_search_result_page_container div.isp_center_container ul#isp_search_results_container li.isp_grid_banner_0,
     div#isp_search_result_page_container div.isp_center_container ul#isp_search_results_container li.isp_grid_banner_1,
     div#isp_search_result_page_container div.isp_center_container ul#isp_search_results_container li.isp_grid_banner_2 {
         height: 500px;
@@ -89,9 +96,16 @@ div#isp_search_result_page_container div.isp_center_container div#isp_collection
         grid-template-columns: repeat(4, 25%);
     }
 
+    div#isp_search_result_page_container div.isp_center_container ul#isp_search_results_container li.isp_grid_banner_0,
     div#isp_search_result_page_container div.isp_center_container ul#isp_search_results_container li.isp_grid_banner_1,
     div#isp_search_result_page_container div.isp_center_container ul#isp_search_results_container li.isp_grid_banner_2 {
         padding: 20px;
+    }
+
+    div#isp_search_result_page_container div.isp_center_container ul#isp_search_results_container li.isp_grid_banner_0 {
+        grid-column: 3 / span 2;
+        grid-row: 2 / span 1;
+        padding-right: 0;
     }
 
     div#isp_search_result_page_container div.isp_center_container ul#isp_search_results_container li.isp_grid_banner_1 {
