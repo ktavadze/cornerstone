@@ -9,3 +9,5 @@ vendor/bundle
 *.js.map
 *.zip
 .idea/
+config.stencil.json
+secrets.stencil.json
